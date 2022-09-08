@@ -1,6 +1,4 @@
-This is the repo that we are going to use for the Team Project
+This is the branch that Hai, Richard and Zoey are going to use for the Team Project
 Angust Angular Batch 2022
 
-
-
-Evil people are bad.
+Evil is bad.
