@@ -14,6 +14,10 @@ import { ProfileComponent } from './profile/profile.component';
   imports: [
     CommonModule,
     ProfilePageRoutingModule
+  ],
+  exports: [
+    NavbarComponent,
+    ProfileComponent
   ]
 })
 export class ProfilePageModule { }
