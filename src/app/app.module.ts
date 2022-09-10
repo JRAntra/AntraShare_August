@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+<<<<<<< HEAD
 import { RegisterComponent } from './register/register.component';
 import { NewsFeedComponent } from './news-feed/news-feed.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,10 +16,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MyProfileComponent } from './my-profile /my-profile.component';
 import { SettingsComponent } from './settings/settings.component';
+=======
+>>>>>>> 3da49ee (angular team project first commit)
 
 @NgModule({
   declarations: [
     AppComponent,
+<<<<<<< HEAD
     LoginComponent,
     RegisterComponent,
     NewsFeedComponent,
@@ -36,6 +40,13 @@ import { SettingsComponent } from './settings/settings.component';
     MatCheckboxModule,
     MatTabsModule,
     
+=======
+    LoginComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+>>>>>>> 3da49ee (angular team project first commit)
   ],
   providers: [],
   bootstrap: [AppComponent]

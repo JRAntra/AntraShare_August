@@ -28,7 +28,10 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+=======
+>>>>>>> 3da49ee (angular team project first commit)
               "src/styles.sass"
             ],
             "scripts": []
@@ -97,7 +100,10 @@
               "src/assets"
             ],
             "styles": [
+<<<<<<< HEAD
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+=======
+>>>>>>> 3da49ee (angular team project first commit)
               "src/styles.sass"
             ],
             "scripts": []
