@@ -6,13 +6,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { NewsFeedComponent } from './news-feed/news-feed.component';
-
+import { ProfileComponent } from './myprofile/profile.component';
+import {SettingsComponent } from './settings/settings.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    NewsFeedComponent
+    NewsFeedComponent,
+    ProfileComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
