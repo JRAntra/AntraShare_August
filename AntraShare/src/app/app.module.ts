@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { PowerModule } from './power/power.module';
 
+import { HomepageModule } from './homepage/homepage.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -14,6 +16,7 @@ import { PowerModule } from './power/power.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HomepageModule
     CoreModule,
     PowerModule
   ],
