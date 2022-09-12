@@ -1,0 +1,41 @@
+.login-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  background-color: #EDEEEC;
+  width: 24.2774566474%;
+  height: 69.0966010733vh;
+  border-radius: 8px;
+  margin-top: 60px;
+  overflow: hidden;
+}
+.login-container .button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.login-container .mat-form-field, .login-container .mat-raised-button {
+  width: 80%;
+}
+.login-container .antra-logo {
+  width: 100%;
+  margin: 0.5rem;
+}
+.login-container a {
+  margin-top: 1rem;
+  color: #3F51B4;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.login-container .agreement {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.login-container .agreement .mat-checkbox {
+  margin-top: 1rem;
+  color: black;
+}/*# sourceMappingURL=login.component.css.map */
