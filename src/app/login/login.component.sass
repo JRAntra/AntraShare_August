@@ -1,6 +1,30 @@
+@import "../../styles/_mixins"
+
 .login-container
-    color: red
+    @include flex(flex,flex-start,center)
+    flex-direction: column
+    background-color: #EDEEEC
     width: calc( (420px/(655px*2 + 420px))*100% )
-    height: calc( (618px/(250px*2 + 618px))*100vh )
-    border: 1px solid black
-    margin-top: 100px
+    height: calc( (618px/(250px*2 + 618px))*125vh )
+    border-radius: 8px
+    margin-top: 60px
+    overflow: hidden
+    .button-wrapper
+        @include flex(flex,center,center)
+        width: 100%
+    .mat-form-field, .mat-raised-button
+        width: 80%
+    .antra-logo
+        width: 100%
+        margin: 0.5rem
+    a
+        margin-top: 1rem
+        color: #3F51B4
+        text-decoration: underline
+        cursor: pointer
+    .agreement
+        width: 90%
+        @include flex(flex,space-between,center)
+        .mat-checkbox
+            margin-top: 1rem
+            color: black

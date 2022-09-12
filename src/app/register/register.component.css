@@ -1,0 +1,23 @@
+h1 {
+  margin: 2rem;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #EDEEEC;
+  width: 24.2774566474%;
+  border-radius: 8px;
+  padding: 1.5rem 0;
+}
+.register-container .button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.register-container .mat-form-field, .register-container .mat-raised-button {
+  width: 80%;
+}/*# sourceMappingURL=register.component.css.map */
