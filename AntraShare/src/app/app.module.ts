@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { SettingComponent } from './setting/setting.component';
 
+import { ProfileModule } from './profile/profile.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,8 @@ import { SettingComponent } from './setting/setting.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule
+    AdminModule,
+    ProfileModule
   ],
   providers: [],
   bootstrap: [AppComponent]
