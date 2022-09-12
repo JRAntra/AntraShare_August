@@ -14,7 +14,8 @@ import { SettingComponent } from './setting/setting.component';
     PowerRoutingModule
   ],
   exports:[
-    SettingComponent
+    SettingComponent,
+    AdminComponent
   ]
 })
 export class PowerModule { }
