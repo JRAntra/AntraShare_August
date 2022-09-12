@@ -12,6 +12,9 @@ import { RegisterComponent } from './register/register.component';
 import { SettingComponent } from './setting/setting.component';
 
 import { ProfileModule } from './profile/profile.module';
+import { HomepageComponent } from './homepage/homepage.component';
+import { PostStoryComponent } from './homepage/post-story/post-story.component';
+import { StoryComponent } from './homepage/story/story.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ProfileModule } from './profile/profile.module';
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    SettingComponent
+    SettingComponent,
+    HomepageComponent,
+    PostStoryComponent,
+    StoryComponent
   ],
   imports: [
     BrowserModule,
