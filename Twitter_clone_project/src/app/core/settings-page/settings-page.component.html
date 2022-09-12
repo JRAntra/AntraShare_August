@@ -1,0 +1,36 @@
+<style>
+  .pageOverAll {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 100px;
+  }
+  .panel {
+    height: 300px;
+    border: 1px solid black;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+</style>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<div class="pageOverAll">
+  <div class="panel">
+    <p>This will be the settings panel</p>
+    <p>Modify user name</p>
+    <p>Modify email address</p>
+    <p>Modify icon</p>
+  </div>
+  <!-- <button>log out</button> -->
+  <button mat-raised-button color="primary">Log Off</button>
+</div>
