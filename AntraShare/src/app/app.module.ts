@@ -5,10 +5,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { ProfilePageModule } from './profile-page/profile-page.module';
+import { FeaturesModule } from './features/features.module';
 import { CoreModule } from './core/core.module';
-import { PowerModule } from './power/power.module';
-import { HomepageModule } from './homepage/homepage.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,10 +16,10 @@ import { HomepageModule } from './homepage/homepage.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProfilePageModule,
-    HomepageModule,
+    
+    FeaturesModule,
     CoreModule,
-    PowerModule
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
