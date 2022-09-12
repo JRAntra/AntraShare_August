@@ -1,32 +1,56 @@
 <style>
+    .profile{
+        margin:0;
+        width:100vh;
+        height:90vh;
+        font-size: large;
+    }
     .user{
+        padding-top: 10vw;
         display:block;
         margin:auto;
         width:30vw
     }
+    .avatar{
+        position:relative;
+        display:inline;
+        width: 7vw
+    }
+    .name{
+        display: inline;
+    }
     .count{
+        margin:0;
         display: flex;
         justify-content: space-between;
         margin:auto;
         text-align: center;
         width:30vw;
+        font-size:large;
+    }
+    .icon{
+        width: 3vw;
+    }
+    span{
+        padding:2vw;
     }
 </style>
-<div>
+
+<div class="profile">
     <div class="user">
-        <img src="profile.jpg">
-        <span class="name">Zoey Xiao </span>
-        <span class="email">zoeyyyyy@gmail.com</span>
-        <p>Gender: F</p>
-        <p>Age: 37</p>
+        <img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg">
+        <h3 class="name">Zoey Xiao</h3>
+        <p class="email"><b>Email:</b> zoeyyyyy@gmail.com</p>
+        <p><b>Gender:</b> F</p>
+        <p><b>Age:</b> 37</p>
     </div>
     <div class="count">
         <div class="post">
-            <img src="doesnotexistyet.jpg">
+            <img class="icon" src="assets/comment-regular.svg">
             <span>3</span>
         </div>
         <div class="likes">
-            <img src="doesnotexistyet.jpg">
+            <img class="icon" src="assets/heart-regular.svg">
             <span>0</span>
         </div>
     </div>
