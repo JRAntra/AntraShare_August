@@ -7,6 +7,8 @@ import { HeaderComponent } from './header/header.component';
 
 import { AdminModule } from './admin/admin.module';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 import { ProfileModule } from './profile/profile.module';
 
@@ -14,7 +16,9 @@ import { ProfileModule } from './profile/profile.module';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
