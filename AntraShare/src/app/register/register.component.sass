@@ -1,36 +1,40 @@
 @import "./src/styles.sass"
 
-#login
+h2
+    margin: 0
+    padding: 0
+
+#register
     margin: 0 auto
     display: flex
     flex-direction: column
     justify-content: center
     align-items: center
-    gap: 3vh
+    gap: 2vh
     border: 1px solid black
 
     width: 50vw
     height: 60vh
 
-#login-logo
+#register-logo
     width: 40%
     height: 40%
     //background: url()
     background-color: $primary-color
 
-#login-form
+#register-form
     display: flex
     flex-direction: column
-    gap: 2vh
+    gap: 1vh
     width: 80%
 
-    input
+    input, button
         height: 4vh
         border: none
         border: solid 1px black
         border-radius: 5px
 
-    #login-button
+    #register-button
         background-color: $primary-color
         color: $secondary-color
         border: none
