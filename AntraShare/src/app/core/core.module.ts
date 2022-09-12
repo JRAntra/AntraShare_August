@@ -3,11 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { CoreRoutingModule } from './core-routing.module';
 import { RegisterPageComponent } from './register-page/register-page.component';
+import { LoginPageComponent } from './login-page/login-page.component';
+
 
 
 @NgModule({
   declarations: [
-    RegisterPageComponent
+    RegisterPageComponent,
+    LoginPageComponent,
   ],
   imports: [
     CommonModule,
@@ -15,6 +18,7 @@ import { RegisterPageComponent } from './register-page/register-page.component';
   ],
   exports: [
     RegisterPageComponent,
+    LoginPageComponent,
   ]
 })
 export class CoreModule { }
