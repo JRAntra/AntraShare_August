@@ -1,11 +1,31 @@
 <style>
-    input,button{
+    .postform{
+        margin:0;
+        padding:3vh;
+    }
+    .post_button{
         display:block;
         margin: auto;
-        width: 30vw
+        width: 50vw;
+        height:3vh;
+    }
+    .file_input, .text_input{
+        display:inline;
+        margin:0;
+    }
+    .content{
+        display:flex;
+        justify-content: space-between;
+        margin:auto;
+        padding-block: 1vh;
+        width:50vw;
+        height:3vh;
     }
 </style>
-<div>
-    <input type="text" class="content">
-    <button>Post</button>
+<div class="postform">
+    <div class="content">
+        <input type="file" name="file_input">
+        <input type="text" class="text_input">
+    </div>
+    <button class="post_button"><b>Post</b></button>
 </div>

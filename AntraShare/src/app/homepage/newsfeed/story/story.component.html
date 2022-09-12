@@ -1,25 +1,102 @@
 <style>
-    .user{
+    .storycomponent{
         display:block;
+        width: 50vw;
         margin:auto;
-        width:20vw
     }
-    .post{
-        margin:auto;
-        text-align: center;
-        width:20vw;
+    .story{
+        padding-block: 3vh;
+    }
+    .count{
+        display:flex;
+        justify-content: space-between;
+    }
+    .name{
+        font-weight: 600;
+    }
+    .time{
+        color:grey
     }
 </style>
-<div>
-    <div class="user">
-        <img src="profile.jpg">
-        <span class="name">Britney Spears </span>
-        <span class="time">3 minutes ago</span>
+<div class="storycomponent">
+    <div class="story">
+        <div class="user">
+            <img src="profile.jpg">
+            <span class="name">Britney Spears </span>
+            <span class="time">3 minutes ago</span>
+        </div>
+        <div class="post">
+            <p class="content">hi everyone</p>
+            <div class="count">
+                <div class="comment">
+                    <button><img class="icon" src="assets/comment-regular.svg"></button>
+                    <span>3</span>
+                </div>
+                <div class="like">
+                    <button><img class="icon" src="assets/heart-regular.svg"></button>
+                    <span>0</span>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="post">
-        <p class="content">hello</p>
-        <button class="comment">Comment</button>
-        <button class="like">Like</button>
+    <div class="story">
+        <div class="user">
+            <img src="profile.jpg">
+            <span class="name">piebaconcookie </span>
+            <span class="time">45 minutes ago</span>
+        </div>
+        <div class="post">
+            <p class="content">hello</p>
+            <div class="count">
+                <div class="comment">
+                    <button><img class="icon" src="assets/comment-regular.svg"></button>
+                    <span>3</span>
+                </div>
+                <div class="like">
+                    <button><img class="icon" src="assets/heart-regular.svg"></button>
+                    <span>0</span>
+                </div>
+            </div>
+        </div>
     </div>
-    
+    <div class="story">
+        <div class="user">
+            <img src="profile.jpg">
+            <span class="name">Minneapolis </span>
+            <span class="time">1 hour ago</span>
+        </div>
+        <div class="post">
+            <p class="content">hi britney</p>
+            <div class="count">
+                <div class="comment">
+                    <button><img class="icon" src="assets/comment-regular.svg"></button>
+                    <span>3</span>
+                </div>
+                <div class="like">
+                    <button><img class="icon" src="assets/heart-regular.svg"></button>
+                    <span>0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="story">
+        <div class="user">
+            <img src="profile.jpg">
+            <span class="name">banana</span>
+            <span class="time">3 hours ago</span>
+        </div>
+        <div class="post">
+            <p class="content">test</p>
+            <div class="count">
+                <div class="comment">
+                    <button><img class="icon" src="assets/comment-regular.svg"></button>
+                    <span>3</span>
+                </div>
+                <div class="like">
+                    <button><img class="icon" src="assets/heart-regular.svg"></button>
+                    <span>0</span>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
