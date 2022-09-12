@@ -10,6 +10,9 @@ The wonderful team at 3NG Pro is comprised of developers Kazim Mammadov, Eegii U
 =======
 This is the repo that we are going to use for the Team Project
 August Angular Batch 2022
+<<<<<<< HEAD
 
 this is Hwa Jing Hong
 >>>>>>> 4753314 (fixed typo)
+=======
+>>>>>>> a4d14c4 (Update ReadME.txt)
