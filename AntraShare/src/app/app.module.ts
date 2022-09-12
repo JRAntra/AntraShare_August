@@ -17,8 +17,8 @@ import { HomepageModule } from './homepage/homepage.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProfilePageModule
-    HomepageModule
+    ProfilePageModule,
+    HomepageModule,
     CoreModule,
     PowerModule
   ],

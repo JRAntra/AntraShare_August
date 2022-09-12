@@ -16,7 +16,6 @@ import { ProfileComponent } from './profile/profile.component';
     ProfilePageRoutingModule
   ],
   exports: [
-    NavbarComponent,
     ProfileComponent
   ]
 })
