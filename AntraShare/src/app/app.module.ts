@@ -8,6 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { AdminModule } from './admin/admin.module';
 import { FooterComponent } from './footer/footer.component';
 
+import { ProfileModule } from './profile/profile.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,8 @@ import { FooterComponent } from './footer/footer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AdminModule
+    AdminModule,
+    ProfileModule
   ],
   providers: [],
   bootstrap: [AppComponent]
