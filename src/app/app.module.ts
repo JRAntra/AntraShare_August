@@ -13,6 +13,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MyProfileComponent } from './my-profile /my-profile.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     LoginComponent,
     RegisterComponent,
     NewsFeedComponent,
-    NavbarComponent
+    NavbarComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,
