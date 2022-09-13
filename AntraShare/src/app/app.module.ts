@@ -13,16 +13,12 @@ import { RegisterModule } from './register/register.module';
 import { ProfileModule } from './profile/profile.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { SettingsModule } from './settings/settings.module';
-import { PostStoryComponent } from './homepage/post-story/post-story.component';
-import { StoryComponent } from './homepage/story/story.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    PostStoryComponent,
-    StoryComponent
   ],
   imports: [
     BrowserModule,
