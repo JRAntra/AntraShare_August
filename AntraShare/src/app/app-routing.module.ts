@@ -1,17 +1,28 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProfileComponent } from './features/profile-page/profile/profile.component';
-import { LoginComponent } from './features/login-page/login/login.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { SettingsComponent } from './features/settings-page/settings/settings.component';
-import { RegisterComponent } from './features/register-page/register/register.component';
+
+
+
+
 const routes: Routes = [
-  { path: '', component: LoginComponent
+  { path: '', 
+    loadChildren: () => import('./features/login-page/login-page.module').then(m => m.LoginPageModule)
   },
-  {path: 'navbar', component: NavbarComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path: 'settings', component: SettingsComponent},
-  {path: 'register', component: RegisterComponent},
+  { path: 'admin', 
+    loadChildren: () => import('./features/admin-page/admin-page.module').then(m => m.AdminPageModule)
+  },
+  { path: 'home', 
+    loadChildren: () => import('./features/home-page/home-page.module').then(m => m.HomepageModule)
+  },
+  { path: 'profile', 
+    loadChildren: () => import('./features/profile-page/profile-page.module').then(m => m.ProfilePageModule)
+  },
+  { path: 'register', 
+    loadChildren: () => import('./features/register-page/register-page.module').then(m => m.RegisterPageModule)
+  },
+  { path: 'settings', 
+    loadChildren: () => import('./features/settings-page/settings-page.module').then(m => m.SettingsPageModule)
+  },
 ];
 
 @NgModule({

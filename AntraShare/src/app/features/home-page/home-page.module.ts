@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HomepageRoutingModule } from './homepage-routing.module';
+import { HomepageRoutingModule } from './home-page-routing.module';
 import { HomeComponent } from './home/home.component';
 import { LikelistComponent } from './home/likelist/likelist.component';
 import { StoryComponent } from './home/story/story.component';
