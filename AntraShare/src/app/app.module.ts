@@ -13,7 +13,10 @@ import { RegisterModule } from './register/register.module';
 import { ProfileModule } from './profile/profile.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { SettingsModule } from './settings/settings.module';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatSliderModule } from '@angular/material/slider';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RegisterModule,
     SettingsModule,
     BrowserAnimationsModule,
+
+    MatSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
