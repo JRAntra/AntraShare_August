@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SettingComponent } from './setting.component';
+import { ListStoryComponent } from './list-story.component';
 
-describe('SettingComponent', () => {
-  let component: SettingComponent;
-  let fixture: ComponentFixture<SettingComponent>;
+describe('ListStoryComponent', () => {
+  let component: ListStoryComponent;
+  let fixture: ComponentFixture<ListStoryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SettingComponent ]
+      declarations: [ ListStoryComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SettingComponent);
+    fixture = TestBed.createComponent(ListStoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
