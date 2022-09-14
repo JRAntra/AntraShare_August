@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ProfilePageRoutingModule } from './profile-page-routing.module';
 import { ProfileComponent } from './profile/profile.component';
-
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +11,8 @@ import { ProfileComponent } from './profile/profile.component';
   ],
   imports: [
     CommonModule,
-    ProfilePageRoutingModule
+    ProfilePageRoutingModule,
+    SharedModule
   ]
 })
 export class ProfilePageModule { }
