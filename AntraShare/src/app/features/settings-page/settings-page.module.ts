@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SettingsPageRoutingModule } from './settings-page-routing.module';
 import { SettingsComponent } from './settings/settings.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { SettingsComponent } from './settings/settings.component';
   ],
   imports: [
     CommonModule,
-    SettingsPageRoutingModule
+    SettingsPageRoutingModule,
+    SharedModule
   ]
 })
 export class SettingsPageModule { }
