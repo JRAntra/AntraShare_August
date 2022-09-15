@@ -11,8 +11,21 @@
         background-color: black;
         color:white;
     }
+    ul{
+        list-style: none;
+        float: right;
+    }
 </style>
 <div class="likelist">
-    <button>Like List</button>
+    <button (click)="toggleList()">Like List</button>
+    <ul>
+        <li *ngFor="let key of likedList">
+            <span *ngIf="showList">
+                {{ key.name }} :
+                {{ key.content }}
+                {{ key.time }}
+            </span>
+        </li>
+    </ul>
 </div>
 
