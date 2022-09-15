@@ -16,6 +16,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { MyProfileComponent } from './my-profile /my-profile.component';
 import { SettingsComponent } from './settings/settings.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,7 @@ import { SettingsComponent } from './settings/settings.component';
     NewsFeedComponent,
     NavbarComponent,
     MyProfileComponent,
-    SettingsComponent
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
