@@ -9,10 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
 
 // core
+import { CoreModule } from './core/core.module'
 
 // shared
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
 
 // module
 import { AdminModule } from './admin/admin.module';
@@ -27,8 +26,6 @@ import { SettingsModule } from './settings/settings.module';
     // app
     AppComponent,
     // shared
-    HeaderComponent,
-    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +34,10 @@ import { SettingsModule } from './settings/settings.module';
     AppRoutingModule,
     // material
     MaterialModule,
+
+    //core
+    CoreModule,
+    
     // module
     AdminModule,
     HomepageModule,
