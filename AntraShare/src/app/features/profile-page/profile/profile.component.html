@@ -1,58 +1,25 @@
-<style>
-    .profile{
-        margin:0;
-        width:100vh;
-        height:90vh;
-        font-size: large;
-    }
-    .user{
-        padding-top: 10vw;
-        display:block;
-        margin:auto;
-        width:30vw
-    }
-    .avatar{
-        position:relative;
-        display:inline;
-        width: 7vw
-    }
-    .name{
-        display: inline;
-    }
-    .count{
-        margin:0;
-        display: flex;
-        justify-content: space-between;
-        margin:auto;
-        text-align: center;
-        width:30vw;
-        font-size:large;
-    }
-    .icon{
-        width: 3vw;
-    }
-    span{
-        padding:2vw;
-    }
-</style>
-
-<div class="profile">
-    <div class="user">
-        <img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg">
-        <h3 class="name">Zoey Xiao</h3>
-        <p class="email"><b>Email:</b> zoeyyyyy@gmail.com</p>
-        <p><b>Gender:</b> F</p>
-        <p><b>Age:</b> 37</p>
-    </div>
-    <div class="count">
-        <div class="post">
-            <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2462/2462719.png">
-            <span>3</span>
+<div class="profile_page">
+    <mat-card class="profile">
+        <mat-card-header class="header">
+            <img mat-card-avatar class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg">
+            <mat-card-title class="name">Zoey Xiao</mat-card-title>
+            <mat-card-subtitle class="email"> zoeyyyyy@gmail.com</mat-card-subtitle>
+        </mat-card-header >
+        <mat-card-content class="content">
+            <p><b>Gender:</b> F</p>
+            <p><b>Age:</b> 37</p>
+        </mat-card-content>
+        <div class="count">
+            <div class="comment">
+                <mat-icon> comment</mat-icon>
+                <span>3</span>
+            </div>
+            <div class="like">
+                <mat-icon>favorite_border</mat-icon>
+                <span>0</span>
+            </div>
         </div>
-        <div class="likes">
-            <img class="icon" src="https://cdn-icons-png.flaticon.com/512/126/126473.png">
-            <span>0</span>
-        </div>
-    </div>
-    
+    </mat-card>
 </div>
+
+<app-navbar></app-navbar>
