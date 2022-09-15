@@ -15,6 +15,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MyProfileComponent } from './my-profile /my-profile.component';
 import { SettingsComponent } from './settings/settings.component';
+import { CoreComponent } from './core/core.component';
+import { ComponentsComponent } from './core/components/components.component';
+import { FooterComponent } from './core/components/footer/footer.component';
+import { HeaderComponent } from './core/components/header/header.component';
+import { LoginPageComponent } from './login/components/login-page/login-page.component';
+import { RegisterPageComponent } from './login/components/register-page/register-page.component';
 
 
 @NgModule({
@@ -26,6 +32,12 @@ import { SettingsComponent } from './settings/settings.component';
     NavbarComponent,
     MyProfileComponent,
     SettingsComponent,
+    CoreComponent,
+    ComponentsComponent,
+    FooterComponent,
+    HeaderComponent,
+    LoginPageComponent,
+    RegisterPageComponent,
   ],
   imports: [
     BrowserModule,
