@@ -14,7 +14,6 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NavbarComponent } from './navbar/navbar.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MyProfileComponent } from './my-profile /my-profile.component';
-import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,7 @@ import { SettingsComponent } from './settings/settings.component';
     RegisterComponent,
     NewsFeedComponent,
     NavbarComponent,
-    MyProfileComponent,
-    SettingsComponent
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +32,7 @@ import { SettingsComponent } from './settings/settings.component';
     MatFormFieldModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatTabsModule,
-    
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
