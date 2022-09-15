@@ -12,4 +12,5 @@ export class UserListsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  usersList: string[] = ['User Tag 1', 'User Tag 2', 'User Tag 3', 'User Tag 4', 'User Tag 5'];
 }

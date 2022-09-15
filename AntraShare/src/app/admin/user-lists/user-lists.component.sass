@@ -1,44 +1,25 @@
-:root
-    
 
 *   
   margin: 0
   padding: 0
   box-sizing: border-box
 
-#lists
+#listsContainer
     height: 85vh
     background-color: rgba(164, 168, 170, 0.852)
 
-ul 
-    height: 100%
-    width: 100%
-    padding-top: 1rem
-    
+    .lists
+        text-align: center
 
-ul li
-    height: 30px
-    line-height: 30px 
-    width: 100%
-    background-color: rgb(78, 76, 76)
-    margin-bottom: 15px
-    display: flex
-    justify-content: center
+        .userTag
+            background-color: rgb(78, 76, 76)
+            margin-bottom: 15px
+            color: white
+            display: flex
+            justify-content: center
+            button
+                margin-left: 10px
 
-ul li span
-    text-align: center
-    color: white
-    
-
-ul li button
-        position: absolute
-        right: calc(60% + 20px)
-        margin-top: 5px
-        font-size: 0.8rem
-
-#addUser
-    background-color: rgb(135, 134, 134)
-    height: 30px
-    line-height: 30px 
-    text-align: center
-    margin-top: -50px
+        #addUser
+            background-color: rgb(215, 210, 210)
+            justify-content: center

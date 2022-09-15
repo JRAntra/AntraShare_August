@@ -1,10 +1,9 @@
 <div id="infoPanel">
     <h1>User Detailed Info Panel</h1>
-    <div id="info">
-        <p>UserName: Name</p>
-        <p>Password: password</p>
-        <p>UserEmail: email</p>
-        <p>Gender: gender</p>
-        <p>Age: age</p>
-    </div>
+    <mat-list class="lists">
+        <mat-list-item class="detail" *ngFor="let detail of usersDetail">
+            {{ detail }}
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
 </div>
