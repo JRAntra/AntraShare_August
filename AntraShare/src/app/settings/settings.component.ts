@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MaterialModule } from '../material.module';
 
 @Component({
   selector: 'app-settings',
@@ -10,6 +11,7 @@ export class SettingsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

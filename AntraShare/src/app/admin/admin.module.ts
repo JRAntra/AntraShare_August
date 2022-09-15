@@ -5,7 +5,6 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { UserListsComponent } from './user-lists/user-lists.component';
 import { UserDetailedInfoPanelComponent } from './user-detailed-info-panel/user-detailed-info-panel.component';
-import { UserTagComponent } from './user-lists/user-tag.component';
 
 // material
 import { MaterialModule } from '../material.module';
@@ -15,7 +14,6 @@ import { MaterialModule } from '../material.module';
     AdminComponent,
     UserListsComponent,
     UserDetailedInfoPanelComponent,
-    UserTagComponent,
   ],
   imports: [
     CommonModule,

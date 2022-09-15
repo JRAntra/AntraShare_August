@@ -10,6 +10,8 @@ export class UserDetailedInfoPanelComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
+  usersDetail: string[] = ['UserName:', 'Password:', 'UserEmail:', 'Gender:', 'Age:'];
 }

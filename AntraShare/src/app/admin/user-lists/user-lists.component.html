@@ -1,23 +1,13 @@
-<div id="lists">
-    <ul>
-        <li>
-            <span>User Tag 1</span>
-            <button>Delete</button>
-        </li>
-        <li>
-            <span>User Tag 2</span>
-            <button>Delete</button>
-        </li>
-        <li>
-            <span>User Tag 3</span>
-            <button>Delete</button>
-        </li>
-        <li>
-            <span>User Tag 3</span>
-            <button>Delete</button>
-        </li>
-    </ul>
-    <div id="addUser">
-        Add User Button
-    </div>
+<div id="listsContainer">
+    <mat-list class="lists">
+        <mat-list-item class="userTag" *ngFor="let user of usersList">
+            {{user}}
+            <button mat-flat-button color="warn">
+                Deltete
+            </button>
+        </mat-list-item>
+        <button mat-stroked-button id="addUser" color="primary">
+            Add User Button
+        </button>
+    </mat-list>
 </div>
