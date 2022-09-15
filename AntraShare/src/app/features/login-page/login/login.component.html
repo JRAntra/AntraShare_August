@@ -21,8 +21,8 @@
             name="psw"
             required
             >
-            <button type="submit">Login</button>
-            <a id="register" href="register">No Accounts? Register Now!</a>
+            <button type="submit" (click) = "onNavigateTo('home')">Login</button>
+            <a id="register" (click) = "onNavigateTo('register')">No Accounts? Register Now!</a>
             <div class="footer">
             <input id="checkbox" type="checkbox"> Agreement
             <a id="help" href="#">Need Help?</a>
