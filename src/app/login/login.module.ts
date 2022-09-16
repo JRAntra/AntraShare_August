@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { LoginPageComponent } from './components/login-page/login-page.component';
-import { RegisterPageComponent } from './components/register-page/register-page.component';
+import { LoginRoutingModule } from './login-routing.module';
+
 
 import { MatInputModule } from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
@@ -9,10 +10,10 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTabsModule} from '@angular/material/tabs';
 
 
+
 @NgModule({
     declarations:[
-        LoginPageComponent,
-        RegisterPageComponent
+       LoginPageComponent
     ],
     imports:[
         MatInputModule,
@@ -20,12 +21,13 @@ import {MatTabsModule} from '@angular/material/tabs';
         MatButtonModule,
         MatCheckboxModule,
         MatTabsModule,
-        LoginPageComponent,
-        RegisterPageComponent
+
+        LoginRoutingModule,
+        
+      
     ],
     exports:[
-        LoginPageComponent,
-        RegisterPageComponent
+        
     ]
 })
 export class LoginModule{}
