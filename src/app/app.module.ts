@@ -6,20 +6,16 @@ import { AppComponent } from './app.component';
 
 import { NewsFeedComponent } from './news-feed/news-feed.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule } from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+
 import { NavbarComponent } from './navbar/navbar.component';
-import {MatTabsModule} from '@angular/material/tabs';
 import { MyProfileComponent } from './my-profile /my-profile.component';
 import { SettingsComponent } from './settings/settings.component';
 import { CoreComponent } from './core/core.component';
 import { ComponentsComponent } from './core/components/components.component';
 import { FooterComponent } from './core/components/footer/footer.component';
 import { HeaderComponent } from './core/components/header/header.component';
-import { LoginPageComponent } from './login/components/login-page/login-page.component';
-import { RegisterPageComponent } from './login/components/register-page/register-page.component';
+
+
 
 
 @NgModule({
@@ -33,19 +29,14 @@ import { RegisterPageComponent } from './login/components/register-page/register
     ComponentsComponent,
     FooterComponent,
     HeaderComponent,
-    LoginPageComponent,
-    RegisterPageComponent,
+   
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatTabsModule,
-    
+   
   ],
   providers: [],
   bootstrap: [AppComponent]
