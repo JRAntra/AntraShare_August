@@ -94,6 +94,10 @@
         border-right: 0px;
         border-bottom: 0px;
     }
+
+    li button {
+        float: right;
+    }
 </style>
 
 <body>
@@ -105,11 +109,16 @@
     <span id="users_info_body">
         <div id="users">
             <ul>
-                <li> <span>Piebaconcookie</span> <span class="user_functions">&#8942;</span></li>
+                <!-- <li> <span>Piebaconcookie</span> <span class="user_functions">&#8942;</span></li>
                 <li> <span>Banana</span> <span class="user_functions">&#8942;</span></li>
                 <li> <span>Minneapolis</span> <span class="user_functions">&#8942;</span></li>
                 <li> <span>Ice Cream</span> <span class="user_functions">&#8942;</span></li>
-                <li> <span>XxDemonSlayer69420xX</span><span class="user_functions">&#8942;</span></li>
+                <li> <span>XxDemonSlayer69420xX</span><span class="user_functions">&#8942;</span></li> -->
+                <li *ngFor="let item of userslist">
+                    <span *ngIf="showlist">{{ item.name }}
+                        <button>{{ item.function }}</button>
+                    </span>
+                </li>
                 <li id="add_user"> Add User</li>
             </ul>
         </div>
