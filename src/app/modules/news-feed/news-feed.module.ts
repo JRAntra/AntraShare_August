@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NewsFeedRoutingModule } from './news-feed-routing.module';
 import { CoreModule } from '../core/core.module';
 import { NewsFeedComponent } from './components/news-feed/news-feed.component';
 
@@ -10,6 +11,7 @@ import { NewsFeedComponent } from './components/news-feed/news-feed.component';
   ],
   imports: [
     CommonModule,
+    NewsFeedRoutingModule,
     CoreModule
   ],
   exports: [

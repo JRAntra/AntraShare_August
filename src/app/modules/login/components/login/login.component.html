@@ -9,9 +9,9 @@
       <input matInput placeholder="Placeholder" />
     </mat-form-field>
     <div class="button-wrapper">
-        <button mat-raised-button color="primary">Login</button>
+        <button (click)="handleLogin()" mat-raised-button color="primary">Login</button>
     </div>
-    <a>No account? Register now!</a>
+    <a [routerLink]="'register'" >No account? Register now!</a>
     <div class="agreement">
         <mat-checkbox>Agreement</mat-checkbox>
         <a>Need help?</a>
