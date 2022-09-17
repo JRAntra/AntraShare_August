@@ -17,7 +17,6 @@ import { LoginLogoPanelComponent } from './components/login-page/login-logo-pane
         CommonModule,
         LoginRoutingModule,
     
-      
     ],
     exports:[
         
