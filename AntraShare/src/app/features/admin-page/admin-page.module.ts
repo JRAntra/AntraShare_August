@@ -11,6 +11,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { StorylistComponent } from './admin/storylist/storylist.component';
 import { StoryComponent } from './admin/storylist/story/story.component';
+import { MatCardModule } from '@angular/material/card';
+
 // import { ProfileComponent } from './profile/profile.component';
 // import { ProfileComponent } from '../profile-page/profile/profile.component';
 // import { ProfilelistComponent } from './profilelist/profilelist.component';
@@ -32,7 +34,8 @@ import { StoryComponent } from './admin/storylist/story/story.component';
     SharedModule,
     MatExpansionModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ]
 })
 export class AdminPageModule { }
