@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NewsFeedComponent } from './news-feed/news-feed.component';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 
 const routes: Routes = [
-  {path:'',component:NewsFeedComponent}
+    {
+        path:'',
+        component:NavbarComponent
+    }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class NewsFeedRoutingModule { }
+export class CoreRoutingModule{ }

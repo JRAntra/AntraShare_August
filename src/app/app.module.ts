@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { MyProfileModule } from './profile/my-profile-module';
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { LoginModule } from './login/login.module';
+import { NavModule } from './navbar/nav.module';
 
 
 
@@ -28,7 +29,6 @@ import { LoginModule } from './login/login.module';
     CoreModule,
     MyProfileModule,
     LoginModule,
-  
   ],
   providers: [],
   bootstrap: [AppComponent]
