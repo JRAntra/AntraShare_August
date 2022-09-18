@@ -9,7 +9,9 @@ import { NewsfeedStory } from 'src/app/shared/models/story';
 export class StoryComponent implements OnInit {
 
   @Input() story? : NewsfeedStory
-
+  @Input() publisherName? : string
+  @Input() publishedTime? : string
+  
   constructor() { }
 
   ngOnInit(): void {

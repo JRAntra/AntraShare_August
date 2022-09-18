@@ -21,6 +21,14 @@ import { ProfileModule } from './profile/profile.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { SettingsModule } from './settings/settings.module';
 
+import { HttpClientModule } from '@angular/common/http';
+
+// services
+// Add services to provider to all for component usage
+// does the same func as Injectable
+//import { NewsfeedStoryService } from './homepage/services/newsfeed-story.service';
+
+
 @NgModule({
   declarations: [
     // app
@@ -45,6 +53,8 @@ import { SettingsModule } from './settings/settings.module';
     ProfileModule,
     RegisterModule,
     SettingsModule,
+
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
