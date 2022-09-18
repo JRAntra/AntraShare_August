@@ -1,0 +1,15 @@
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+@Injectable({
+  providedIn: 'root'
+})
+export class NewsfeedStoryService {
+
+  storyList: any
+  constructor(private http: HttpClient) { }
+
+  getNewsfeedStory():Observable<any> {
+    return this.http.get<any>("http://localhost:4231/api/news")
+  }
+}
