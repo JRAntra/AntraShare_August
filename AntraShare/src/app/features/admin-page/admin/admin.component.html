@@ -23,7 +23,9 @@
     }
 
     #users {
+        padding-top: 5%;
         width: 40%;
+        height: 50%;
     }
 
     ul {
@@ -38,20 +40,26 @@
         position: relative;
         padding: 0.75rem;
         list-style-type: none;
-        background: #f1f1f1;
-        font-size: 18px;
+        background: #f9f5ff;
+        font-size: 1rem;
         transition: 0.25s;
-
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    button {
+        color: #998fc7;
     }
 
     /* Set all odd list items to a slightly different color */
     ul li:nth-child(odd) {
-        background: #f5f5f5;
+        background: #fdfdfd;
     }
 
     /* Lighter background-color on hovering li */
     ul li:hover {
-        background: white;
+        background: #d4c2fc;
+;
     }
 
     .user_functions {
@@ -74,7 +82,7 @@
     #add_user {
         color: white;
         text-align: center;
-        background-color: rgb(69, 69, 69);
+        background-color: #998fc7;
         cursor: pointer;
         padding: 0.75rem;
         width: 100%;
@@ -89,7 +97,9 @@
     #details {
         width: 60%;
         padding-left: 5%;
-        border: 1px solid darkgrey;
+        padding-top: 5%;
+        /* border: 1px solid darkgrey; */
+        background-color: #f9f5ff;
         border-top: 0px;
         border-right: 0px;
         border-bottom: 0px;
@@ -99,37 +109,55 @@
         float: right;
     }
 </style>
+alert("Hello! I am an alert box!!");
 
 <body>
-
-    <div class="header">
+    <!-- <div class="header">
         <h2 style="">Administration</h2>
-    </div>
+    </div> -->
 
     <span id="users_info_body">
         <div id="users">
             <ul>
-                <!-- <li> <span>Piebaconcookie</span> <span class="user_functions">&#8942;</span></li>
-                <li> <span>Banana</span> <span class="user_functions">&#8942;</span></li>
-                <li> <span>Minneapolis</span> <span class="user_functions">&#8942;</span></li>
-                <li> <span>Ice Cream</span> <span class="user_functions">&#8942;</span></li>
-                <li> <span>XxDemonSlayer69420xX</span><span class="user_functions">&#8942;</span></li> -->
-                <li *ngFor="let item of userslist">
-                    <span *ngIf="showlist">{{ item.name }}
-                        <button>{{ item.function }}</button>
-                    </span>
-                </li>
-                <li id="add_user"> Add User</li>
+                <mat-expansion-panel >
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        <mat-icon fontIcon="diversity_3"></mat-icon>
+                        &nbsp;Users
+                      </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <li *ngFor="let item of userslist">
+                        <span *ngIf="showlist">
+                            {{ item.name }}
+                            </span>
+                            <button mat-icon-button>
+                                <mat-icon>{{item.function}}</mat-icon>
+                            </button>
+                    </li>
+                </mat-expansion-panel>
+                <!-- <li id="add_user"> + Add User</li> -->
             </ul>
+            <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <mat-icon fontIcon="add"></mat-icon>
+                    &nbsp; Add User
+                  </mat-panel-title>
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
+            <!-- <span id="add_user">+ Add User</span> -->
         </div>
         <div id="details">
             <h1>User Details</h1>
-            <p> Username: Piebaconcookie <br>
+            <app-storylist appRemoveAfter></app-storylist>
+            <!-- <app-profile *ngFor = "let post of postlist" [post] = post></app-profile> -->
+            <!-- <p *ngFor = "let post of postlist" [post] = post></p> -->
+            <!-- <p> Username: Piebaconcookie <br>
                 Password: goodMeme <br>
                 E-mail: richardwu90@gmail.com <br>
                 Gender: male <br>
                 Age: 22 <br>
-            </p>
+            </p> -->
         </div>
     </span>
     <app-navbar></app-navbar>
