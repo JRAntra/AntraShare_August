@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { NewsFeedRoutingModule } from './newsfeed-routing.module';
-
+import { AdminRoutingModule } from './admin.routing-module';
 
 
 
@@ -10,8 +9,9 @@ import { NewsFeedRoutingModule } from './newsfeed-routing.module';
   declarations: [],
   imports: [
     CommonModule,
-    NewsFeedRoutingModule, 
+    AdminRoutingModule
    
+    
   ]
 })
-export class NewsFeedModule { }
+export class AdminModule { }

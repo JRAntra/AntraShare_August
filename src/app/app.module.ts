@@ -10,6 +10,9 @@ import { MyProfileModule } from './profile/my-profile-module';
 import { HomePageComponent } from './home/home-page/home-page.component';
 import { LoginModule } from './login/login.module';
 import { NavModule } from './navbar/nav.module';
+import { AdminPageComponent } from './admin/admin-page/admin-page.component';
+import { AdminModule } from './admin/admin.module';
+import { MyProfileComponent } from './profile/my-profile /my-profile.component';
 
 
 
@@ -19,8 +22,9 @@ import { NavModule } from './navbar/nav.module';
   declarations: [
     AppComponent,
     HomePageComponent,
-  
-  
+    MyProfileComponent
+
+   
   ],
   imports: [
     BrowserModule,
@@ -29,6 +33,7 @@ import { NavModule } from './navbar/nav.module';
     CoreModule,
     MyProfileModule,
     LoginModule,
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

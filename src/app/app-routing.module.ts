@@ -28,8 +28,12 @@ const routes: Routes = [
     loadChildren: () => import('./register/register.module').then(m =>m.RegisterModule)
   },
   {
-    path:'*',
+    path:'',
     loadChildren: () => import('./navbar/nav.module').then(m =>m.NavModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m =>m.AdminModule)
   }
  
   
