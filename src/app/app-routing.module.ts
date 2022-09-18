@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path:'settings',
     loadChildren: () => import('./settings-panel/settings.module').then(m => m.SettingsModule)
+  },
+  {
+    path:'',
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   }
 ];
 

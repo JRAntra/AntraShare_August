@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
 import { MyProfileModule } from './profile/my-profile-module';
+import { HomePageComponent } from './home/home-page/home-page.component';
 
 
 
@@ -15,6 +16,7 @@ import { MyProfileModule } from './profile/my-profile-module';
 @NgModule({
   declarations: [
     AppComponent,
+    HomePageComponent,
   
   
   ],
@@ -23,7 +25,7 @@ import { MyProfileModule } from './profile/my-profile-module';
     AppRoutingModule,
     BrowserAnimationsModule, 
     CoreModule,
-    MyProfileModule
+    MyProfileModule,
    
   ],
   providers: [],
