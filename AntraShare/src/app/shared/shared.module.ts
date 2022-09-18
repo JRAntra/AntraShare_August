@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AutohideDirective } from './autohide.directive';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AutohideDirective
+  ],
   imports: [
     CommonModule
   ]

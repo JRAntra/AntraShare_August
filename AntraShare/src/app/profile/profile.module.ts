@@ -3,12 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
-
+// materiel
 import { MaterialModule } from '../material.module';
+// core
+
+// shared
+import { AutohideDirective } from '../shared/autohide.directive';
 
 @NgModule({
   declarations: [
-    ProfileComponent
+    ProfileComponent,
+    AutohideDirective,
   ],
   imports: [
     CommonModule,
