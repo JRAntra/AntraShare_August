@@ -5,27 +5,27 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+    loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule)
   },
   {
     path: 'newsfeed',
-    loadChildren: () => import('./newsfeed/newsfeed.module').then(m => m.NewsFeedModule)
+    loadChildren: () => import('./features/newsfeed/newsfeed.module').then(m => m.NewsFeedModule)
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/my-profile-module').then(m => m.MyProfileModule)
+    loadChildren: () => import('./features/profile/my-profile-module').then(m => m.MyProfileModule)
   },
   {
     path:'settings',
-    loadChildren: () => import('./settings-panel/settings.module').then(m => m.SettingsModule)
+    loadChildren: () => import('./features/settings-panel/settings.module').then(m => m.SettingsModule)
   },
   {
     path:'',
-    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+    loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule)
   },
   {
     path:'register',
-    loadChildren: () => import('./register/register.module').then(m =>m.RegisterModule)
+    loadChildren: () => import('./features/register/register.module').then(m =>m.RegisterModule)
   },
   {
     path:'',
@@ -33,7 +33,7 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    loadChildren: () => import('./admin/admin.module').then(m =>m.AdminModule)
+    loadChildren: () => import('./features/admin/admin.module').then(m =>m.AdminModule)
   }
  
   

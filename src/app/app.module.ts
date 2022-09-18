@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
-import { MyProfileModule } from './profile/my-profile-module';
-import { HomePageComponent } from './home/home-page/home-page.component';
-import { LoginModule } from './login/login.module';
+import { MyProfileModule } from './features/profile/my-profile-module';
+import { HomePageComponent } from './features/home/home-page/home-page.component';
+import { LoginModule } from './features/login/login.module';
 import { NavModule } from './navbar/nav.module';
-import { AdminPageComponent } from './admin/admin-page/admin-page.component';
-import { AdminModule } from './admin/admin.module';
-import { MyProfileComponent } from './profile/my-profile /my-profile.component';
+import { AdminPageComponent } from './features/admin/admin-page/admin-page.component';
+import { AdminModule } from './features/admin/admin.module';
+import { MyProfileComponent } from './features/profile/my-profile /my-profile.component';
 
 
 
