@@ -22,11 +22,11 @@
             </div>
            </div>
            <div class="btn-login">
-            <button type="submit" (click)="onNavigateTo('profile')">Login</button>
+            <button type="submit" (click)="onNavigateTo('newsfeed')">Login</button>
            </div>     
             <div class="chk-box">
               <input class="chk-input" type="checkbox"> 
-              <a class="chk-a" href="register" >No Account? Register</a>
+              <a class="chk-a" [routerLink]="'register'"  >No Account? Register</a>
             </div>
            
         </form>
