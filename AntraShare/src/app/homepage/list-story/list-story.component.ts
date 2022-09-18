@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit } from '@angular/core';
+import {  NewsfeedStory } from 'src/app/shared/models/story';
 
 @Component({
   selector: 'app-list-story',
@@ -8,15 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListStoryComponent implements OnInit {
 
-  /*
-  1.Publisher Name
-2.Published Time
-3.Text Content
-4. Comment Number
-5.Liked Number
-  */
- 
-
+  @Input() storyList? : NewsfeedStory[]
   constructor() { }
 
   ngOnInit(): void {

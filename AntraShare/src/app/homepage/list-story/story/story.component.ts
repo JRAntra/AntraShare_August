@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NewsfeedStory } from 'src/app/shared/models/story';
 
 @Component({
   selector: 'app-story',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./story.component.sass']
 })
 export class StoryComponent implements OnInit {
+
+  @Input() story? : NewsfeedStory
 
   constructor() { }
 

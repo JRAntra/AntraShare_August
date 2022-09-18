@@ -1,1 +1,3 @@
-<app-story class="story"></app-story>
+<ng-container *ngFor="let story of storyList">
+    <app-story class="story" [story]="story"></app-story>
+</ng-container>
