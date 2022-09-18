@@ -9,9 +9,11 @@ import { Router } from '@angular/router';
 export class RegisterPageComponent implements OnInit {
 
   constructor(
-    // private router: Router
+    private router: Router
   ) { }
-
+  onRegister =() =>{
+    this.router.navigateByUrl('login')
+    }
   ngOnInit(): void {
   }
   // navigateTo(dest: string){

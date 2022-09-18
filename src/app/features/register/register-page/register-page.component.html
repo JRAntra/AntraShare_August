@@ -1,1 +1,29 @@
-
+<div class="regist-container">
+    <form class="regist-form">
+        <div class="user-name">
+            <label for="user-name">User Name</label>
+            <div class="userName-input">
+                <input id="user-name" type="text">
+            </div>
+        </div>
+        <div class="user-email">
+            <label for="email">Eser Email</label>
+            <div class="email-inpit">
+                <input id="email" type="text">
+            </div>
+        </div>
+        <div class="password-container">
+            <label class="psd-label" for="password">Password</label>
+            <div class="psd-inpit">
+                <input id="password" type="text">
+            </div>
+        </div>
+        <div class="psd-cinfirm">
+            <label class="confirm-psd" for="confirm-pwd">Confirm Password</label>
+            <div class="pwd-input">
+                <input id="confirm-pwd" type="text">
+            </div>
+        </div>
+        <button class="registre-btn" (click)="onRegister()" >Register</button>
+    </form>
+</div>
