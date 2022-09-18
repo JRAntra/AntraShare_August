@@ -3,6 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
+  {path:'',
+    loadChildren:() => import('./features/home/home.module').then(m => m.HomeModule)
+  },
+  {
+    path: '',
+    loadChildren: () => import('./features/navbar/nav.module').then(m => m.NavModule)
+  },
   {
     path: 'login',
     loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule)
@@ -27,10 +34,7 @@ const routes: Routes = [
     path:'register',
     loadChildren: () => import('./features/register/register.module').then(m =>m.RegisterModule)
   },
-  {
-    path:'',
-    loadChildren: () => import('./navbar/nav.module').then(m =>m.NavModule)
-  },
+ 
   {
     path: 'admin',
     loadChildren: () => import('./features/admin/admin.module').then(m =>m.AdminModule)

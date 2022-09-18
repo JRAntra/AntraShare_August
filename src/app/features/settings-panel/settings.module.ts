@@ -7,7 +7,8 @@ import { SettingsRoutingModule } from './settings.routing-module';
   declarations:[],
   imports: [
     CommonModule,
-    SettingsRoutingModule
+    SettingsRoutingModule,
+
 
   ],
   
