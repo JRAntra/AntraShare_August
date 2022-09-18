@@ -11,7 +11,7 @@ export class RegisterPageComponent implements OnInit {
   constructor(
     private router: Router
   ) { }
-  onRegister =() =>{
+  onRegisterGoTo =() =>{
     this.router.navigateByUrl('login')
     }
   ngOnInit(): void {

@@ -14,7 +14,7 @@ export class LoginPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onNavigateTo(dest: string){
+  onLogInGoTo(dest: string){
     this.router.navigateByUrl(dest)
   }
 

@@ -15,7 +15,7 @@ export class SettingsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onGoTo(dest:string){
+  onLogOutGoTo(dest:string){
     this.router.navigateByUrl(dest)
   }
 
