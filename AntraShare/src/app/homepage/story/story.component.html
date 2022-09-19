@@ -4,27 +4,27 @@
             Avatar Image
         </div>
         <div id="username">
-            Username
+            {{ post?.publisherName }}
         </div>
         <div id="published-time">
-            Published Time
+            {{ post?.publishedTime }}
         </div>
     </div>
 
     <div id="story-content">
-
+        {{ post?.content?.text }}
     </div>
 
     <div class="interact-info">
         <div class="like info">
             <div class="icon">
             </div>
-            <p>Like Number</p>
+            <p>{{ post?.likedIdList?.length }}</p>
         </div>
         <div class="comment info">
             <div class="icon">
             </div>
-            <p>Comment Number</p>
+            <p>{{ post?.comment?.length }}</p>
         </div>
     </div>
 </div>
