@@ -9,9 +9,9 @@ import { CoreModule } from './core/core.module';
 import { LoginModule } from './login/login.module';
 import { ProfileModule } from './profile/profile.module';
 import { SettingModule } from './setting/setting.module';
+import { RegisterModule } from './register/register.module';
 
 import { HttpClientModule } from '@angular/common/http';
-import { RegisterModule } from './register/register.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,8 +24,8 @@ import { RegisterModule } from './register/register.module';
     LoginModule,
     ProfileModule,
     SettingModule,
-    HttpClientModule,
     RegisterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
