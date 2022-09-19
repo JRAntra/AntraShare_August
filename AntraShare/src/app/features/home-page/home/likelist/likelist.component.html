@@ -19,11 +19,11 @@
 <div class="likelist">
     <button (click)="toggleList()">Like List</button>
     <ul>
-        <li *ngFor="let key of likedList">
+        <li *ngFor="let key of newsFeedList">
             <span *ngIf="showList">
-                {{ key.name }} :
-                {{ key.content }}
-                {{ key.time }}
+                {{ key?.publisherName }} :
+                {{ key?.content?.text }}
+                {{ key?.publishedTime }}
             </span>
         </li>
     </ul>
