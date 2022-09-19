@@ -7,9 +7,9 @@ import { ElementRef } from '@angular/core';
 export class Hidein5Directive {
 
   constructor(private el: ElementRef) {
-    console.log(el);
     setTimeout(() => {
       el.nativeElement.style.display = 'none';
     }, 5000)
   }
+
 }

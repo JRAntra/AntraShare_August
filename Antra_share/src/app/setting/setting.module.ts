@@ -12,6 +12,9 @@ import { SettingsPageComponent } from './settings-page/settings-page.component';
   imports: [
     CommonModule,
     SettingRoutingModule
+  ],
+  exports: [
+    SettingsPageComponent
   ]
 })
 export class SettingModule { }
