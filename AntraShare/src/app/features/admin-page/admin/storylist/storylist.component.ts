@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StorylistService } from '../../services/storylist.service';
-import { Post } from 'src/app/shared/model/Post';
+import { NewsfeedStory } from 'src/app/shared/models/newsfeed';
 @Component({
   selector: 'app-storylist',
   templateUrl: './storylist.component.html',
@@ -8,7 +8,7 @@ import { Post } from 'src/app/shared/model/Post';
 })
 export class StorylistComponent implements OnInit {
 
-  postlist: Post[] = [];
+  postlist: NewsfeedStory[] = [];
   constructor(private service: StorylistService) {}
 
   ngOnInit(): void {

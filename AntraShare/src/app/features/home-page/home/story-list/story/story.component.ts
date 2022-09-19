@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Post } from 'src/app/shared/model/Post';
+import { NewsfeedStory } from 'src/app/shared/models/newsfeed';
 
 @Component({
   selector: 'app-story',
@@ -14,6 +14,6 @@ export class StoryComponent implements OnInit {
     console.log(this.post?.publisherName)
   }
 
-  @Input() post? : Post;
+  @Input() post? : NewsfeedStory;
 
 }
