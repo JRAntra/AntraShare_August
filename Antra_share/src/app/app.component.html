@@ -1,4 +1,11 @@
 <!-- <app-profile-page></app-profile-page> -->
 <router-outlet></router-outlet>
 <!-- <app-settings-page></app-settings-page> -->
-<div *ngIf="displayIndicator">This is a host</div>
+
+<button (click)="onNavigatingTo('login')">takes you to login</button>
+<button (click)="onNavigatingTo('profile')">takes you to profile</button>
+<button (click)="onNavigatingTo('admin')">takes you to admin</button>
+<button (click)="onNavigatingTo('setting')">takes you to setting</button>
+
+<button (click)="toggleIndicator()">toggle</button>
+<div *ngIf="displayIndicator">Toggle on off</div>
