@@ -21,9 +21,9 @@
     <ul>
         <li *ngFor="let key of newsFeedList">
             <span *ngIf="showList">
-                {{ key.publisherName }} :
-                {{ key.content.text }}
-                {{ key.publishedTime }}
+                {{ key?.publisherName }} :
+                {{ key?.content?.text }}
+                {{ key?.publishedTime }}
             </span>
         </li>
     </ul>
