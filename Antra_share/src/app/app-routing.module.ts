@@ -7,6 +7,8 @@ import { ProfileComponent } from './profile/profile/profile.component';
 import { LoginComponent } from './login/login/login.component';
 import { RegisterPageComponent } from './register/register-page/register-page.component';
 
+// LAZY LOADING for all the paths
+
 const routes: Routes = [
   {
     path: 'login',
@@ -17,24 +19,42 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    component: AdminComponent,
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+
+    // path: 'admin',
+    // component: AdminComponent,
     //loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
   },
   {
-    path: 'settings',
-    component: SettingsPageComponent,
+    // path: 'settings',
+    // component: SettingsPageComponent,
+    path: 'setting',
+    loadChildren: () =>
+      import('./setting/setting.module').then((m) => m.SettingModule),
   },
   {
     path: 'profile',
-    component: ProfileComponent,
+    loadChildren: () =>
+      import('./profile/profile.module').then((m) => m.ProfileModule),
+    // path: 'profile',
+    // component: ProfileComponent,
   },
   {
     path: 'login',
-    component: LoginComponent,
+    loadChildren: () =>
+      import('./login/login.module').then((m) => m.LoginModule),
+
+    // path: 'login',
+    // component: LoginComponent,
   },
   {
     path: 'register',
-    component: RegisterPageComponent,
+    loadChildren: () =>
+      import('./register/register.module').then((m) => m.RegisterModule),
+
+    // path: 'register',
+    // component: RegisterPageComponent,
   },
 ];
 
