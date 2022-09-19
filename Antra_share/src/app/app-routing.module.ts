@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+/*
 import { AdminComponent } from './admin/admin/admin.component';
 import { SettingsPageComponent } from './setting/settings-page/settings-page.component';
 import { ProfileComponent } from './profile/profile/profile.component';
 import { LoginComponent } from './login/login/login.component';
-import { RegisterPageComponent } from './register/register-page/register-page.component';
+import { RegisterPageComponent } from './register/register-page/register-page.component';*/
 
 // LAZY LOADING for all the paths
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: 'newsfeed',
     //component: AfterloginComponent
     loadChildren: () =>
       import('./afterlogin/afterlogin.module').then((m) => m.AfterloginModule),
@@ -29,7 +30,7 @@ const routes: Routes = [
   {
     // path: 'settings',
     // component: SettingsPageComponent,
-    path: 'setting',
+    path: 'settings',
     loadChildren: () =>
       import('./setting/setting.module').then((m) => m.SettingModule),
   },

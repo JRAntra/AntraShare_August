@@ -9,7 +9,7 @@ const routes: Routes = [
     component: SettingsPageComponent,
   },
   {
-    path: 'login',
+    path: '',
     component: LoginComponent,
   },
 ];
