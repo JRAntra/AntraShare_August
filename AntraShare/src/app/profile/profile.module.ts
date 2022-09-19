@@ -8,7 +8,7 @@ import { MaterialModule } from '../material.module';
 // core
 
 // shared
-import { AutohideDirective } from '../shared/autohide.directive';
+import { AutohideDirective } from '../shared/directive/autohide.directive';
 
 @NgModule({
   declarations: [
