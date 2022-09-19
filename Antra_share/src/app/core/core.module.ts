@@ -5,6 +5,8 @@ import { CoreRoutingModule } from './core-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +15,8 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     CommonModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    RouterModule
   ],
   exports: [
     FooterComponent,

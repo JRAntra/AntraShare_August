@@ -10,9 +10,11 @@ import { LoginModule } from './login/login.module';
 import { ProfileModule } from './profile/profile.module';
 import { SettingModule } from './setting/setting.module';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +25,7 @@ import { SettingModule } from './setting/setting.module';
     LoginModule,
     ProfileModule,
     SettingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
