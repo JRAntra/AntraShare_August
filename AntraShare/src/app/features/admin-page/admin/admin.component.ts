@@ -1,5 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit } from '@angular/core';
+// import { UserprofilesService } from '../userprofiles.service';
+// interface Post {
+//   publisherName: string;
+//   content: {
+//     text: string;
+//     image: string;
+//     video: string;
+//   };
+//   publishedTime: string;
+//   comment: object[];
+//   likedIdList: object[];
+// }
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -7,38 +18,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  // postlist: Post[] = [];
+  // constructor(private service: UserprofilesService) {}
 
   ngOnInit(): void {
+    // console.log(this.post?.publisherName)
   }
+  // @Input() post? : Post;
   public showlist = true;
 
   userslist = [
     {
       name: 'Piebaconcookie',
       email: 'richardwu90@gmail.com',
-      function: 'Delete'
+      function: 'delete'
     },
     {
       name: 'Banana',
       email: 'banana@slug.com',
-      function: 'Delete'
+      function: 'delete'
     },
     {
       name: 'Minneapolis',
       email: 'notBurntToRuins@hotmail.com',
-      function: 'Delete'
+      function: 'delete'
     },
     {
       name: 'Ice Cream',
       email: 'icecream@soda.com',
-      function: 'Delete'
+      function: 'delete'
     },
-    {
-      name: 'Xx69DemonSlayer420xX',
-      email: 'myParentsDontLoveMe@gmail.com',
-      function: 'Delete'
-    }
+  
   ]
 
 }
