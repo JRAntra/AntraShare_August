@@ -21,6 +21,10 @@ import { ProfileModule } from './profile/profile.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { SettingsModule } from './settings/settings.module';
 
+// serve
+import { HttpClientModule } from '@angular/common/http';
+import { StorylistService } from './homepage/services/storylist.service';
+
 @NgModule({
   declarations: [
     // app
@@ -45,8 +49,11 @@ import { SettingsModule } from './settings/settings.module';
     ProfileModule,
     RegisterModule,
     SettingsModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [
+    StorylistService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

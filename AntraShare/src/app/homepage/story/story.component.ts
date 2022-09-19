@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { StorylistService } from '../services/storylist.service';
+import { Post } from '../../shared/models/post';
 
 @Component({
   selector: 'app-story',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private stroyListService : StorylistService) { }
 
   ngOnInit(): void {
   }
 
+  @Input() post? : Post;
 }
