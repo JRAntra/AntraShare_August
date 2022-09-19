@@ -8,32 +8,33 @@ import { LoginComponent } from './login/login/login.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'login',
     //component: AfterloginComponent
-    loadChildren: () => import('./afterlogin/afterlogin.module').then(m => m.AfterloginModule),
-    pathMatch: 'full'
+    loadChildren: () =>
+      import('./afterlogin/afterlogin.module').then((m) => m.AfterloginModule),
+    pathMatch: 'full',
   },
   {
     path: 'admin',
-    component: AdminComponent
+    component: AdminComponent,
     //loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
   },
   {
     path: 'settings',
-    component: SettingsPageComponent
+    component: SettingsPageComponent,
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
   },
   {
     path: 'login',
-    component: LoginComponent
-  }
+    component: LoginComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
