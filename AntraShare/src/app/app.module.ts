@@ -15,7 +15,8 @@ import { HomepageModule } from './features/home-page/home-page.module';
 import { ProfilePageModule } from './features/profile-page/profile-page.module';
 import { RegisterPageModule } from './features/register-page/register-page.module';
 import { SettingsPageModule } from './features/settings-page/settings-page.module';
-
+import { StorylistService } from './features/home-page/services/storylist.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent
@@ -23,6 +24,7 @@ import { SettingsPageModule } from './features/settings-page/settings-page.modul
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     
     CoreModule,
     LoginPageModule,
@@ -34,7 +36,7 @@ import { SettingsPageModule } from './features/settings-page/settings-page.modul
     SharedModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [StorylistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
