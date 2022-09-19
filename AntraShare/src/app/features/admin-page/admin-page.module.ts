@@ -6,7 +6,6 @@ import { AdminComponent } from './admin/admin.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 import {MatExpansionModule} from '@angular/material/expansion';
-import { RemoveAfterDirective } from './remove-after.directive';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { StorylistComponent } from './admin/storylist/storylist.component';
@@ -22,7 +21,6 @@ import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     AdminComponent,
-    RemoveAfterDirective,
     StorylistComponent,
     StoryComponent,
     // ProfileComponent,
