@@ -7,6 +7,7 @@ import { PostStoryComponent } from './components/post-story/post-story.component
 import { StoryComponent } from './components/list-story/story/story.component';
 import { HomepageComponent } from './homepage.component';
 
+import { AutoHideDirective } from '../shared/directives/auto-hide.directive';
 
 
 @NgModule({
@@ -15,6 +16,8 @@ import { HomepageComponent } from './homepage.component';
     ListStoryComponent,
     PostStoryComponent,
     StoryComponent,
+
+    AutoHideDirective,
   ],
   imports: [
     CommonModule,
