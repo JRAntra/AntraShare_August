@@ -5,6 +5,7 @@ import { AdminComponent } from './admin/admin/admin.component';
 import { SettingsPageComponent } from './setting/settings-page/settings-page.component';
 import { ProfileComponent } from './profile/profile/profile.component';
 import { LoginComponent } from './login/login/login.component';
+import { RegisterPageComponent } from './register/register-page/register-page.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterPageComponent,
   },
 ];
 
