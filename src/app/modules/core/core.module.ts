@@ -2,18 +2,25 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CustomErrorComponent } from './components/custom-error/custom-error.component';
+import { HeaderComponent } from './components/header/header.component';
+import { MaterialModule } from 'src/app/material.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    CustomErrorComponent
+    CustomErrorComponent,
+    HeaderComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MaterialModule,
+    RouterModule
   ],
   exports:[
-    NavbarComponent
+    NavbarComponent,
+    HeaderComponent
   ]
 })
 export class CoreModule { }

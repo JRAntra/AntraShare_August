@@ -1,0 +1,17 @@
+@import "../../../../../assets/styles/_reset"
+@import "../../../../../assets/styles/_mixins"
+@import "../../../../../assets/styles/_variables"
+
+.warning
+    position: absolute
+    top: 0
+    left: 50%
+    transform: translateX(-50%)
+    background-color: $warning
+    border-radius: 5px
+    padding: 1rem
+    font-size: 1rem
+    &_timer
+        text-align: center
+    &_button:nth-child(even)
+        margin-left: 1.3rem
