@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NewsFeedRoutingModule } from './newsfeed-routing.module';
 import { NewsFeedComponent } from './news-feed/news-feed.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -16,6 +17,7 @@ import { NewsFeedComponent } from './news-feed/news-feed.component';
   imports: [
     CommonModule,
     NewsFeedRoutingModule,
+    SharedModule
     
    
   ]

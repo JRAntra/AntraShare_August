@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { RegisterPageComponent } from './register-page/register-page.component';
 
 import { RegisterRoutingModule } from './register.routing-module';
@@ -11,6 +12,7 @@ import { RegisterRoutingModule } from './register.routing-module';
   imports: [
     CommonModule,
     RegisterRoutingModule,
+    SharedModule
     
   ],
   

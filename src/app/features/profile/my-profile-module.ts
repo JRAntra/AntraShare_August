@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { MyProfileRoutingModule } from './my-profile-routing.module';
 import {MatCardModule} from '@angular/material/card';
 import { MyProfileComponent } from './my-profile /my-profile.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { MyProfileComponent } from './my-profile /my-profile.component';
     CommonModule,
     MyProfileRoutingModule,
     MatCardModule,
+    SharedModule
   ],
 
   
