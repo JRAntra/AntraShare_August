@@ -15,22 +15,24 @@
       </form>
     </div>
     <div class="stories-container">
-      <p *ngIf="!storyList.length" [ngClass]="{ red: showWarning }">
+      <p *ngIf="!storyList?.length" [ngClass]="{ red: showWarning }">
         Posts & Stories here..
       </p>
       <div *ngFor="let post of posts" class="posts">
         <div class="story">{{ post }}</div>
       </div>
-      <div *ngFor="let story of storyList.slice(0,16)" class="stories">
-        <div class="story">
-          <div class="story_author">By: {{ story.publisherName }}</div>
-          <div class="story_text">{{ story.content.text }}</div>
-          <div class="story_image" >
-            <img [src]="story.content.image" alt="" />
+      <ng-container *ngIf="storyList?.length > 0">
+        <div *ngFor="let story of storyList?.slice(0, 16)" class="stories">
+          <div class="story">
+            <div class="story_author">By: {{ story.publisherName }}</div>
+            <div class="story_text">{{ story.content.text }}</div>
+            <div class="story_image">
+              <img [src]="story.content.image" alt="" />
+            </div>
+            <div class="story_time">{{ story.publishedTime.slice(0, 10) }}</div>
           </div>
-          <div class="story_time">{{ story.publishedTime.slice(0, 10) }}</div>
         </div>
-      </div>
+      </ng-container>
     </div>
   </section>
   <app-navbar></app-navbar>
