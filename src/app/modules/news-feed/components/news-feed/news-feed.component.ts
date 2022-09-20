@@ -14,7 +14,7 @@ export class NewsFeedComponent implements OnInit {
 
     this.newsFeedService.getNewsFeedStory().subscribe(
       value=>this.storyList = value
-      )      
+      )
     setTimeout(() => {
       this.showWarning = false;
     }, this.showWarningTime);
