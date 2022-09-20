@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { NavbarComponent } from './features/navbar/navbar.component';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -18,17 +18,12 @@ import { NavbarComponent } from './features/navbar/navbar.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
- 
-
-   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule, 
-    
-    
+    BrowserAnimationsModule,
+    SharedModule,
     
   ],
   providers: [],

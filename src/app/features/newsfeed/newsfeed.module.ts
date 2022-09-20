@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { NewsFeedRoutingModule } from './newsfeed-routing.module';
+import { NewsFeedComponent } from './news-feed/news-feed.component';
 
 
 
@@ -9,7 +10,9 @@ import { NewsFeedRoutingModule } from './newsfeed-routing.module';
 
 
 @NgModule({
-  declarations: [ ],
+  declarations: [ 
+    NewsFeedComponent
+  ],
   imports: [
     CommonModule,
     NewsFeedRoutingModule,

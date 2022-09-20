@@ -2,9 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CoreRoutingModule } from './core.routing-module';
-import { NavModule } from '../features/navbar/nav.module';
-
-
 
 
 @NgModule({
@@ -14,7 +11,7 @@ import { NavModule } from '../features/navbar/nav.module';
   imports: [
     CommonModule,
     CoreRoutingModule,
-    NavModule,
+  
    
   ],
   exports:[

@@ -7,10 +7,6 @@ const routes: Routes = [
     loadChildren:() => import('./features/home/home.module').then(m => m.HomeModule)
   },
   {
-    path: '',
-    loadChildren: () => import('./features/navbar/nav.module').then(m => m.NavModule)
-  },
-  {
     path: 'login',
     loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule)
   },
