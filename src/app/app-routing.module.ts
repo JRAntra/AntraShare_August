@@ -27,10 +27,6 @@ const routes: Routes = [
     loadChildren: () => import('./features/settings-panel/settings.module').then(m => m.SettingsModule)
   },
   {
-    path:'',
-    loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule)
-  },
-  {
     path:'register',
     loadChildren: () => import('./features/register/register.module').then(m =>m.RegisterModule)
   },

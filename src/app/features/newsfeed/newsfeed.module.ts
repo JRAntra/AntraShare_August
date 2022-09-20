@@ -6,11 +6,14 @@ import { NewsFeedRoutingModule } from './newsfeed-routing.module';
 
 
 
+
+
 @NgModule({
-  declarations: [],
+  declarations: [ ],
   imports: [
     CommonModule,
-    NewsFeedRoutingModule, 
+    NewsFeedRoutingModule,
+    
    
   ]
 })
