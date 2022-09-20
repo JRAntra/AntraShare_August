@@ -1,0 +1,18 @@
+@import "../../../../../assets/styles/_reset"
+@import "../../../../../assets/styles/_mixins"
+@import "../../../../../assets/styles/_variables"
+h1
+    margin: 2rem
+.register-container
+    @include flex(flex,center,center)
+    flex-direction: column
+    margin-top: 60px
+    background-color: $pale
+    width: calc( (420px/(655px*2 + 420px))*100% )
+    border-radius: 8px
+    padding: 1.5rem 0
+    .button-wrapper
+        @include flex(flex,center,center)
+        width: 100%
+    .mat-form-field, .mat-raised-button
+        width: 80%

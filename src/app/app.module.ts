@@ -1,42 +1,28 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http'
+import { CoreModule } from './modules/core/core.module';
+import { LoginModule } from './modules/login/login.module';
+import { NewsFeedModule } from './modules/news-feed/news-feed.module';
+//
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { NewsFeedComponent } from './news-feed/news-feed.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule } from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import { NavbarComponent } from './navbar/navbar.component';
-import {MatTabsModule} from '@angular/material/tabs';
-import { MyProfileComponent } from './my-profile /my-profile.component';
-import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    NewsFeedComponent,
-    NavbarComponent,
-    MyProfileComponent,
-    SettingsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatTabsModule
+    HttpClientModule,
+    CoreModule,
+    LoginModule,
+    NewsFeedModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

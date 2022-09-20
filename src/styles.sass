@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/_reset"
+@import "./assets/styles/_mixins"
+@import "./assets/styles/_variables"
+
+app-login, app-register, app-news-feed
+    @include flex(flex,center,center)
+
+    button
+        min-height: 2rem
+    input, button
+        border: none
+        outline: none

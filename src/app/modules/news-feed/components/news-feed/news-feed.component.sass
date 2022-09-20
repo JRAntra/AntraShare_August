@@ -1,0 +1,73 @@
+@import "../../../../../assets/styles/_reset"
+@import "../../../../../assets/styles/_mixins"
+@import "../../../../../assets/styles/_variables"
+
+.news-feed-container
+    width: 100vw
+    padding: 1.5rem 3rem
+    background-color: $pale
+    .posts-container
+        @include flex(flex,center,center)
+        flex-direction: column
+        gap: 1rem
+    form
+        background-color: #fff
+        @include flex(flex,center,center)
+        width: 60vw
+        height: 100px
+        border: 1px solid $pale-border
+        border-radius: 10px
+        .avatar
+            width: 70px
+            height: 70px
+            background-color: #EDEEEC
+            margin-right: 5px
+            border-radius: 50%
+            img
+                object-fit: contain
+                width: 100%
+                border-radius: 50%
+        input
+            height: 55px
+            width: 50vw
+            background-color: $pale
+            border-radius: 15px
+        button
+            width: 60px
+            height: 55px
+            margin-left: -50px
+            border-top-right-radius: 15px
+            border-bottom-right-radius: 15px
+            background-color: $primary
+            color: #fff
+        button:active
+            background-color: #6D69A9
+    .stories-container
+        @include flex(flex,flex-start,center)
+        flex-direction: column
+        gap: 1rem
+        font-size: 20px
+        .red
+            color: red
+        .story
+            width: 58vw
+            border: 1px solid $pale-border
+            border-radius: 10px
+            background-color: #fff
+            padding: 1rem
+            &_author
+                color: $primary
+                font-size: 14px
+            &_image
+                width: 100%
+                margin: 1rem 11rem 1rem
+                width: 30vw
+                img
+                    border-radius: 15px
+                    width: 100%
+            &_text
+                text-align: center
+            &_time
+                text-align: right
+                color: $primary
+                font-size: 14px

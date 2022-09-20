@@ -1,0 +1,20 @@
+<div *ngIf="showWarning" class="warning">
+    <p class="warning_timer">Seconds left: {{ leftSeconds / 1000 }}</p>
+    <p class="warning_message">TimeOut warning message</p>
+    <button
+      (click)="showWarning = false"
+      mat-raised-button
+      color="primary"
+      class="warning_button"
+    >
+      Cancel
+    </button>
+    <button
+      (click)="showWarning = false"
+      mat-raised-button
+      color="primary"
+      class="warning_button"
+    >
+      Confirm
+    </button>
+  </div>
