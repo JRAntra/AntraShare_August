@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SharedRoutingModule } from './shared-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
-import { AutohideDirective } from './autohide.directive';
+import { AutohideDirective } from './directives/autohide.directive';
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { AutohideDirective } from './autohide.directive';
     SharedRoutingModule
   ],
   exports: [
-    NavbarComponent
+    NavbarComponent,
+    AutohideDirective
   ]
 })
 export class SharedModule { }

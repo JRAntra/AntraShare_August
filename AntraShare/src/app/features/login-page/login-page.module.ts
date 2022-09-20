@@ -3,17 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { LoginPageRoutingModule } from './login-page-routing.module';
 import { LoginComponent } from './login/login.component';
-import { RegisterNowDirective } from './login/register-now.directive';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    RegisterNowDirective
   ],
   imports: [
     CommonModule,
-    LoginPageRoutingModule
+    LoginPageRoutingModule,
+    SharedModule
   ],
   exports: [
     LoginComponent

@@ -1,4 +1,4 @@
-export interface NewsfeedStory {
+export interface Comment {
     publisherName: string;
     content: {
         text: string;
@@ -6,10 +6,4 @@ export interface NewsfeedStory {
         video: string;
     }
     publishedTime: string;
-    comment: Comment[];
-    likedIdList:[ 
-        {
-            userId: string;
-        }
-    ]
 }
