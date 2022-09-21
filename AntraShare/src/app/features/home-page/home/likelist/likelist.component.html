@@ -16,13 +16,13 @@
         float: right;
     }
 </style>
-<div class="likelist">
+<div class="likelist" >
     <button (click)="toggleList()">Like List</button>
     <ul>
         <li *ngFor="let key of newsFeedList">
             <span *ngIf="showList">
-                {{ key?.publisherName }} :
-                {{ key?.content?.text }}
+                {{ key?.publisherName}} :
+                {{ key?.content?.text! | truncate }}
                 {{ key?.publishedTime }}
             </span>
         </li>

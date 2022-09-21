@@ -4,12 +4,14 @@ import { CommonModule } from '@angular/common';
 import { SharedRoutingModule } from './shared-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { AutohideDirective } from './directives/autohide.directive';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    AutohideDirective
+    AutohideDirective,
+    TruncatePipe
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { AutohideDirective } from './directives/autohide.directive';
   ],
   exports: [
     NavbarComponent,
-    AutohideDirective
+    AutohideDirective,
+    TruncatePipe
   ]
 })
 export class SharedModule { }
