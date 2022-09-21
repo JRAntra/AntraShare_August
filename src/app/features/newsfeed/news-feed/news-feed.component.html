@@ -3,21 +3,21 @@
       <div class="add posts">
         <form>
           <div class="avatar">
-            <img src="../../../../assets/avatar.png" alt="avatar" />
+            <img class="avatar" src="../../../../assets/avatar.png" alt="avatar" />
           </div>
-          <input (input)="handleInput"type="text" />
+          <input (input)="handleInput" type="text" />
           <button (click)="handlePost($event)" class="post-button">Post</button>
         </form>
       </div>
       <div class="stories-container">
-        <p *ngIf="!storyList?.length" >
-          Posts & Stories here..
+        <p *ngIf="storyList" >
+         STORIES:
         </p>
         <div *ngFor="let post of posts" class="posts">
           <div class="story">{{post}}</div>
         </div>
-        <ng-container *ngIf="storyList?.length > 0">
-          <div  *ngFor="let story of storyList?.slice(0, 16)" class="stories">
+        <ng-container *ngIf="storyList">
+          <div  *ngFor="let story of storyList" class="stories">
             <div class="story">
               <div class="story_author">By:{{ story.publisherName }}</div>
               <div class="story_text">{{ story.content.text }}</div>
@@ -31,4 +31,5 @@
       </div>
     </section>
   </div>
+
   <app-navbar></app-navbar>
