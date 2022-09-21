@@ -6,10 +6,6 @@ import { NewsFeedComponent } from './news-feed/news-feed.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 
-
-
-
-
 @NgModule({
   declarations: [ 
     NewsFeedComponent
@@ -20,6 +16,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
     SharedModule
     
    
+  ],
+  exports:[
+    NewsFeedComponent
   ]
 })
 export class NewsFeedModule { }
