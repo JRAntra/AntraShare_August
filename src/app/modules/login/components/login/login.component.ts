@@ -6,11 +6,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.sass'],
 })
 export class LoginComponent implements OnInit {
+  constructor(private router: Router) {}
   handleLogin = () => {
     this.router.navigateByUrl('news-feed');
     console.log('a');
-  }
-  constructor(private router: Router) {}
-
+  };
+  showLoginTime: number = 3000;
   ngOnInit(): void {}
 }

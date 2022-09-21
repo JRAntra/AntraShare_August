@@ -11,25 +11,27 @@ export class NewsFeedComponent implements OnInit {
   }
   storyList:any
   ngOnInit(): void {
-
     this.newsFeedService.getNewsFeedStory().subscribe(
       value=>this.storyList = value
       )
-    setTimeout(() => {
-      this.showWarning = false;
-    }, this.showWarningTime);
 
-    setInterval(() => {
-      this.leftSeconds -= 1000;
-    }, 1000);
+    // setInterval(() => {
+    //   this.leftSeconds -= 1000;
+    // }, 1000);
+    this.interval()
     //clear interval
     
   }
   //warning
   showWarning: boolean = true;
-  showWarningTime = 5000;
+  showWarningTime: number = 5000;
   leftSeconds = this.showWarningTime;
-
+  interval = () => {
+    setInterval(() => {
+      this.leftSeconds -= 1000;
+    }, 1000);
+  }
+  
   //posts
   posts: string[] = [];
   eventData: string = '';

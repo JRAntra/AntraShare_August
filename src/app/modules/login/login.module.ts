@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginRoutingModule } from './login-routing-module';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from 'src/app/material.module';
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { MaterialModule } from 'src/app/material.module';
   imports: [
     CommonModule,
     LoginRoutingModule,
+    SharedModule,
     MaterialModule
   ],
   exports:[

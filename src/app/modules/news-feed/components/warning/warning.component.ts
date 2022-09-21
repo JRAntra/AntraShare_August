@@ -9,8 +9,10 @@ export class WarningComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
+
+
 @Input() showWarning: boolean = true
 @Input() leftSeconds: number = 0
+showWarningTime = 5000;
 }
