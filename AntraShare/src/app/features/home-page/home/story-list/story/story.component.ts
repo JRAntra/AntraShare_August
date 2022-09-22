@@ -11,7 +11,7 @@ export class StoryComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.post?.publisherName)
+   
   }
 
   @Input() post? : NewsfeedStory;
