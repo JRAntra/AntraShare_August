@@ -1,0 +1,76 @@
+<div class="users-container">
+    <div class="users-container-actions products-container-actions" fxLayout="row" fxLayoutAlign="space-between">
+        <div (click)="onFocus()" fxLayout="row" fxLayoutAlign="center center">
+            <div class="input-icon-container" fxLayout="row">
+                <mat-icon class="input-icon" fxFlexAlign="center" matPrefix>search</mat-icon>
+            </div>
+            <input
+                class="input-search"
+                matInput
+                #searchInputFocus
+                name="searchInput"
+                matInput
+                (keyup)="applyFilter($event)"
+                autocomplete="off"
+                placeholder="Search users by name, id" />
+        </div>
+        <button
+            [routerLink]="['/users/create']"
+            fxFlex="140px"
+            fxFlexAlign="center"
+            class="form-button"
+            mat-raised-button
+            color="primary">
+            + ADD USER
+        </button>
+    </div>
+    <mat-spinner class="spinner" *ngIf="isLoading$ | async"></mat-spinner>
+    <div class="users-table-container">
+        <table [dataSource]="dataSource" mat-table class="users-table mat-elevation-z8" matSort>
+            <ng-container matColumnDef="name">
+                <th class="users-header-cell" mat-header-cell *matHeaderCellDef>Users</th>
+                <td class="users-cell-body" mat-cell *matCellDef="let element">
+                    <div>
+                        <img class="img-users" src="../../../../../assets/images/Blue.png" />
+                        <p>{{ element.firstName }} {{ element.lastName }}</p>
+                    </div>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="userId">
+                <th class="users-header-cell" mat-header-cell *matHeaderCellDef>User ID</th>
+                <td class="users-cell-body" mat-cell *matCellDef="let element">{{ element.userId }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="phoneNumber">
+                <th class="users-header-cell" mat-header-cell *matHeaderCellDef>Phone number</th>
+                <td class="users-cell-body" mat-cell *matCellDef="let element">
+                    {{ element.phone | mask: '0-(000)000-0000' }}
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="email">
+                <th class="users-header-cell" mat-header-cell *matHeaderCellDef>Email Adress</th>
+                <td class="users-cell-body" mat-cell *matCellDef="let element">{{ element.email }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="accountCreated">
+                <th class="users-header-cell" mat-header-cell *matHeaderCellDef>Account Created</th>
+                <td class="users-cell-body" mat-cell *matCellDef="let element">{{ element.accountCreated }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="editUser">
+                <th class="users-header-cell" mat-header-cell *matHeaderCellDef>Edit</th>
+                <td class="users-cell-body" mat-cell *matCellDef="let element">
+                    <mat-icon class="edit-user-icon" [routerLink]="['/users/edit', element.id]">edit</mat-icon>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+    </div>
+    <ng-container>
+        <mat-paginator class="users-paginator" [pageSizeOptions]="[5, 10, 25]"> </mat-paginator>
+    </ng-container>
+</div>

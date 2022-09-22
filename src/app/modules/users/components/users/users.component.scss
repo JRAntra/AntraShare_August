@@ -1,0 +1,24 @@
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: transparent;
+}
+
+::ng-deep .mat-paginator-container {
+    height: 56px;
+    min-height: 56px;
+}
+
+:host ::ng-deep.mat-paginator .mat-form-field-underline {
+    display: none;
+}
+
+:host ::ng-deep .mat-select-arrow-wrapper {
+    height: 0;
+}
+
+:host ::ng-deep .mat-select-trigger {
+    width: 80%;
+}
+
+.spinner {
+    margin: 0 auto;
+}
