@@ -1,4 +1,4 @@
-<div class="news-feed-container">
+<!-- <div class="news-feed-container">
     <section class="posts-container">
       <div class="add posts">
         <form>
@@ -24,7 +24,7 @@
               <div class="story_image">
                 <img [src]="story.content.image" alt="" />
               </div>
-              <div class="story_time">{{ story.publishedTime.slice(0, 10) }}</div>
+              <div class="story_time">{{ story.publishedTime}}</div>
             </div>
           </div>
         </ng-container>
@@ -32,4 +32,11 @@
     </section>
   </div>
 
-  <app-navbar></app-navbar>
+  <app-navbar></app-navbar> -->
+
+  <div class="newsfeed">
+    <app-likelist></app-likelist>
+    <app-post-form></app-post-form>
+    <app-storylist></app-storylist>
+    <app-navbar></app-navbar>
+</div>
