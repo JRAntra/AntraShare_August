@@ -12,7 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'newsfeed',
-    loadChildren: () => import('./features/newsfeed/newsfeed.module').then(m => m.NewsFeedModule)
+    loadChildren: () => import('./features/newsfeed/modules/newsfeed.module').then(m => m.NewsFeedModule)
   },
   {
     path: 'profile',
