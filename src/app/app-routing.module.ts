@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule)
+    loadChildren: () => import('./features/login/modules/login.module').then(m => m.LoginModule)
   },
   {
     path: 'newsfeed',
