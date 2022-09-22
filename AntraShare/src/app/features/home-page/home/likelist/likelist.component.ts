@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsfeedStoryService } from '../../services/newsfeed-story.service';
 import { NewsfeedStory } from 'src/app/shared/models/newsfeed';
+import { NgForOf } from '@angular/common';
 
 @Component({
   selector: 'app-likelist',
@@ -9,15 +10,20 @@ import { NewsfeedStory } from 'src/app/shared/models/newsfeed';
 })
 export class LikelistComponent implements OnInit {
   newsFeedList: NewsfeedStory[] = []
-  constructor(private service: NewsfeedStoryService) { }
+  public showList = false
+  constructor(private service: NewsfeedStoryService) { 
+  }
 
   ngOnInit(): void {
     this.service.getNewsFeedStory().subscribe(values => {
       this.newsFeedList = values;
     })
+    
   }
 
-  public showList = false
+  
+
+
 
 
 
