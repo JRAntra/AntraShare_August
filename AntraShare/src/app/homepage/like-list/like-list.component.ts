@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { StorylistService } from '../services/storylist.service';
 import { LikeList } from 'src/app/shared/models/post';
 
@@ -21,6 +21,5 @@ export class LikeListComponent implements OnInit {
 
   removePost(postId: string) {
     this.service.deletePostFromLikeList(postId);
-    this.ngOnInit();
   }
 }
