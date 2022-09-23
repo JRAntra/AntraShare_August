@@ -17,13 +17,11 @@
 
     <div class="interact-info">
         <div class="like info">
-            <div class="icon" >
-            </div>
-            <p>{{ post?.likedIdList?.length }}</p>
+            <mat-icon (click)="likePost()" [ngStyle]="{'color': likeColor}">thumb_up</mat-icon>
+            <p>{{ post?.likedIdList?.length | likePost: likeNumber}}</p>
         </div>
         <div class="comment info">
-            <div class="icon" (click)="likePost()">
-            </div>
+            <mat-icon> comment </mat-icon>
             <p>{{ post?.comment?.length }}</p>
         </div>
     </div>
