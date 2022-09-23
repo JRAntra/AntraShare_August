@@ -1,28 +1,28 @@
 <div class="story-info">
     <div class="user-info">
-        <div id="avatar-img">
+        <div class="avatar-img">
             Avatar Image
         </div>
-        <div id="username">
+        <div class="username">
             {{ post?.publisherName }}
         </div>
-        <div id="published-time">
+        <div class="published-time">
             {{ post?.publishedTime }}
         </div>
     </div>
 
-    <div id="story-content">
+    <div class="story-content">
         {{ post?.content?.text }}
     </div>
 
     <div class="interact-info">
         <div class="like info">
-            <div class="icon">
+            <div class="icon" >
             </div>
             <p>{{ post?.likedIdList?.length }}</p>
         </div>
         <div class="comment info">
-            <div class="icon">
+            <div class="icon" (click)="likePost()">
             </div>
             <p>{{ post?.comment?.length }}</p>
         </div>
