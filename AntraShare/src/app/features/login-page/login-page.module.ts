@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LoginPageRoutingModule } from './login-page-routing.module';
 import { LoginComponent } from './login/login.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     LoginPageRoutingModule,
-    SharedModule
+    SharedModule,
+    MatFormFieldModule
   ],
   exports: [
     LoginComponent

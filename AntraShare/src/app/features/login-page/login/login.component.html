@@ -8,20 +8,26 @@
                  alt="Avatar" class="avatar">
         </div>
         <div class="container">
+            <mat-form-field>
             <label>Username</label>
             <input
             type="text"
             placeholder="Enter Username"
             name="uname"
             required
+            matInput
             >
+            </mat-form-field>
+            <mat-form-field>
             <label>Password</label>
             <input
             type="password"
             placeholder="Enter Password"
             name="psw"
             required
+            matInput
             >
+            </mat-form-field>
             <button type="submit" (click) = "onNavigateTo('home')">Login</button>
             <a id="register" (click) = "onNavigateTo('register')">No Accounts? Register Now!</a>
             <div class="footer">
