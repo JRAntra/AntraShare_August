@@ -1,0 +1,24 @@
+@import "../../../../../assets/styles/_reset"
+@import "../../../../../assets/styles/_mixins"
+@import "../../../../../assets/styles/_variables"
+
+.nav-container
+    position: fixed
+    width: 90vw
+    bottom: 1rem
+    nav
+        ul
+            list-style: none
+            @include flex(flex,space-between,center)
+            gap: 1px
+            li
+                background-color: $primary
+                color: #fff
+                text-align: center
+                padding: 0.5rem
+                width: 100%
+                border-radius: 7px
+                font-size: 1rem
+                cursor: pointer
+            li:active
+                background-color: #6D69A9

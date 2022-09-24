@@ -1,0 +1,19 @@
+<div appTemporaryShow [showTime]="showLoginTime" class="login-container">
+    <img class="antra-logo" src="../../assets/images/antra-logo.png"/>
+    <mat-form-field appearance="outline">
+      <mat-label>User Name*</mat-label>
+      <input matInput placeholder="Placeholder" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput placeholder="Placeholder" />
+    </mat-form-field>
+    <div class="button-wrapper">
+        <button (click)="handleLogin()" mat-raised-button color="primary">Login</button>
+    </div>
+    <a [routerLink]="'register'" >No account? Register now!</a>
+    <div class="agreement">
+        <mat-checkbox>Agreement</mat-checkbox>
+        <a>Need help?</a>
+    </div>
+</div>
