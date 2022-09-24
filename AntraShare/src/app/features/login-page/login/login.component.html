@@ -16,9 +16,10 @@
             placeholder="Enter Username"
             name="uname"
             formControlName="username"
-            matInput    
+            matInput  
             >
             <mat-error *ngIf="username?.errors?.['required']">username is required</mat-error>
+            <mat-error *ngIf="username?.errors?.['isValid']">username does not match our records</mat-error>
             </mat-form-field>
             <mat-form-field class="formField" appearance="outline">
             <mat-label>Password</mat-label>
