@@ -13,10 +13,10 @@ export class profileValidators{
         }
     }
     
-    //TODO
-    static validatePassword(control: FormControl){
-        //maybe use validators.pattern directly? regex
-        return {["invalidPassword"]: "this password is invalid"}
+    //TODO: clean up regex
+    static validatePassword(control: AbstractControl){
+        return /[A-Z]+/.test(control.value) && /[a-z]+/.test(control.value) && /[^A-Za-z0-9]/.test(control.value)?
+            null : {["invalidPassword"]: "this password is invalid"}
     }
 
     //function that returns validatorFn

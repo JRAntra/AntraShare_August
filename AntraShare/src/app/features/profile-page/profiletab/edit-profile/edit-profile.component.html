@@ -13,6 +13,7 @@
             <p>
                 <b>Password:</b>
                 <input matInput (keyup)="onPasswordInput()" type="password" formControlName="password">
+                <mat-error *ngIf = "form.controls['password'].errors && form.controls['password'].touched">{{form.controls['password'].errors["invalidPassword"]}}</mat-error>
             </p>
             <p>
                 <b>Confirm Password: </b>

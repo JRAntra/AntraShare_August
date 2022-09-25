@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValidatenameService } from '../../services/validatename.service';
 import { profileValidators } from '../../validators/profileValidators';
 @Component({
@@ -18,7 +18,7 @@ export class EditProfileComponent implements OnInit{
 
   constructor(private service: ValidatenameService) {}
   ngOnInit(): void {
-    this.form.controls["confirmPassword"].setValidators
+    this.form.controls["password"].setValidators(profileValidators.validatePassword)
   }
   onUserNameInput(){
     this.form.controls["username"].setAsyncValidators(profileValidators.asyncValiddateName(this.service))
