@@ -1,4 +1,4 @@
-<div class="pageOverAll">
+<!-- <div class="pageOverAll">
   <div class="profile">
     <div class="user">
       <img
@@ -14,13 +14,6 @@
       <p><b>Age:</b></p>
       <input placeholder="Age?" type="text" />
     </div>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Input</mat-label>
-      <input matInput />
-    </mat-form-field>
-
-    <mat-slider min="1" max="100" step="1" value="100"></mat-slider>
 
     <div class="count">
       <div class="post">
@@ -40,4 +33,102 @@
       </div>
     </div>
   </div>
+</div> -->
+
+<div class="page">
+  <!-- <div class="leftB">
+    <img
+      class="avatar"
+      src="https://cdn-icons-png.flaticon.com/512/147/147142.png"
+    />
+    <h3>User name</h3>
+  </div> -->
+  <!-- <div class="rightB">
+    <div class="boxRight"> -->
+  <!-- <mat-form-field class="genderInput" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" value="" />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="genderInput" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" value="" type="password" />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="genderInput" appearance="fill">
+        <mat-label>Gender</mat-label>
+        <input matInput placeholder="Gender" value="" />
+      </mat-form-field>
+
+      <br />
+      <mat-form-field class="ageInput" appearance="fill">
+        <mat-label>Age</mat-label>
+        <input matInput placeholder="Age" value="" />
+      </mat-form-field> -->
+
+  <mat-card class="card">
+    <mat-card-header class="header">
+      <mat-card-title>User Name</mat-card-title>
+    </mat-card-header>
+    <img
+      class="avatar"
+      src="https://cdn-icons-png.flaticon.com/512/147/147142.png"
+    />
+    <mat-card-content>
+      <mat-card
+        >Email
+        <mat-card-subtitle> useremail@gmail.com</mat-card-subtitle>
+      </mat-card>
+
+      <mat-form-field class="passwordInput" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="Password"
+          value="Password"
+        />
+      </mat-form-field>
+      <mat-form-field class="genderInput" appearance="fill">
+        <mat-label>Gender</mat-label>
+        <input matInput type="Text" placeholder="Male/Female/Other" value="" />
+      </mat-form-field>
+
+      <mat-form-field class="ageInput" appearance="fill">
+        <mat-label>Age</mat-label>
+        <input matInput type="Text" placeholder="34" value="" />
+      </mat-form-field>
+      <mat-form-field class="phoneInput" appearance="fill">
+        <mat-label>Phone Number</mat-label>
+        <input
+          matInput
+          type="number"
+          placeholder="(123)456-7890"
+          value="text"
+        />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="userActivity">
+      <button
+        mat-raised-button
+        color="primary"
+        matBadge="8"
+        matBadgePosition="before"
+        matBadgeColor="accent"
+      >
+        Likes
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        matBadge="8"
+        matBadgePosition="before"
+        matBadgeColor="accent"
+      >
+        Posts
+      </button>
+    </mat-card-actions>
+  </mat-card>
 </div>
+<!-- </div>
+</div> -->

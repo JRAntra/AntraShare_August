@@ -2,16 +2,22 @@ import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile/profile.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSliderModule } from '@angular/material/slider';
+import { MatInput, MatInputModule } from '@angular/material/input';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCard, MatCardModule } from '@angular/material/card';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [ProfileComponent],
   imports: [
     CommonModule,
     ProfileRoutingModule,
-    MatFormFieldModule,
-    MatSliderModule,
+    MatInputModule,
+    MatExpansionModule,
+    MatCardModule,
+    MatBadgeModule,
+    MatButtonModule,
   ],
   exports: [ProfileComponent],
 })

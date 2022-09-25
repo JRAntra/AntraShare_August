@@ -1,41 +1,87 @@
-.pageOverAll
-  display: flex
-  justify-content: center
-  align-items: center
-
-.profile
-  margin: 0
-  width: 100vh
-  height: 100vh
-  font-size: large
-
-.user
-  padding-top: 10vw
-  display: block
-  margin: auto
-  width: 20vw
 
 .avatar
   position: relative
   display: inline
   width: 10vw
 
-.name
-  display: inline
 
-.count
-  margin: 0
+.page
   display: flex
-  justify-content: space-between
+  flex-direction: row
+  padding-top: 10vh
+  justify-content: center
+  align-items: center
   margin: auto
-  text-align: center
+
+.leftB
+  border: 1px solid black
+  width: 20%
+  height: 60vh
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+
+  img
+    padding-top:  5%
+
+  h3
+    margin-top: 5%
+
+.rightB
+  border: 1px solid black
+  width: 30%
+  height: 60vh
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+
+  input
+    width: 30vh
+
+.boxRight
+  padding-top: 5%
+
+.card
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  width: 50
+
+.header
+  display: flex
+  justify-content: center
+  align-items: center
+
+  mat-card-title
+    display: flex
+    justify-content: center
+    align-items: center
+
+  mat-card-subtitle
+    display: flex
+    justify-content: center
+    align-items: center
+
+mat-card-content
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  width: 50vw
+
+  mat-form-field
+    width: 30vw
+
+  mat-card
+    width: 30vw
+    padding: 0
+    margin: 1em auto
+
+.userActivity
+  display: flex
+  flex-direction: row
+  justify-content: space-between
   width: 30vw
-  font-size: large
-
-.icon
-  width: 4vw
-
-span
-  padding: 2%
-
-
