@@ -7,6 +7,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCard, MatCardModule } from '@angular/material/card';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [ProfileComponent],
@@ -18,6 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatCardModule,
     MatBadgeModule,
     MatButtonModule,
+    MatIconModule,
   ],
   exports: [ProfileComponent],
 })

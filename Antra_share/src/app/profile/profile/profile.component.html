@@ -75,9 +75,11 @@
       src="https://cdn-icons-png.flaticon.com/512/147/147142.png"
     />
     <mat-card-content>
-      <mat-card
-        >Email
-        <mat-card-subtitle> useremail@gmail.com</mat-card-subtitle>
+      <mat-card>
+        <mat-card-subtitle>
+          <mat-icon>alternate_email</mat-icon>
+          : useremail@gmail.com</mat-card-subtitle
+        >
       </mat-card>
 
       <mat-form-field class="passwordInput" appearance="fill">
@@ -116,7 +118,7 @@
         matBadgePosition="before"
         matBadgeColor="accent"
       >
-        Likes
+        <mat-icon>thumb_up</mat-icon>
       </button>
       <button
         mat-raised-button
@@ -125,7 +127,7 @@
         matBadgePosition="before"
         matBadgeColor="accent"
       >
-        Posts
+        <mat-icon> message</mat-icon>
       </button>
     </mat-card-actions>
   </mat-card>
