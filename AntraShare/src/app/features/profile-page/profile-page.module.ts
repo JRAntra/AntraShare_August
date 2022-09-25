@@ -11,6 +11,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { EditProfileComponent } from './profiletab/edit-profile/edit-profile.component'
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatIconModule,
     MatTabsModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule
   ]
 })
 export class ProfilePageModule { }
