@@ -10,41 +10,34 @@
             <mat-card-subtitle class="email"> test@gmail.com </mat-card-subtitle>
         </mat-card-header>
         <mat-card-content class="content">
-            <p>
-                <b>Password:</b>
+            <p class="inputs">
+                <mat-label><b>Password: </b></mat-label>
                 <input matInput (keyup)="onPasswordInput()" type="password" formControlName="password">
                 <mat-error *ngIf = "form.controls['password'].errors && form.controls['password'].touched">{{form.controls['password'].errors["invalidPassword"]}}</mat-error>
             </p>
-            <p>
-                <b>Confirm Password: </b>
+            <p class="inputs">
+                <mat-label><b>Confirm Password: </b></mat-label>
                 <input matInput type="password" formControlName="confirmPassword">
                 <mat-error *ngIf = "form.controls['confirmPassword'].errors">{{form.controls['confirmPassword'].errors["confirmError"]}}</mat-error>
             </p>
-            <mat-label><b>Gender:</b></mat-label>
-            <mat-select class="selectGender">
-                <mat-option value="F">Female</mat-option>
-                <mat-option value="M">Male</mat-option>
-                <mat-option value="M">Other</mat-option>
-                <mat-option value="M">Prefer not to say</mat-option>
-            </mat-select>
-            <p>
-                <b>Age:</b>
+            <p class="inputs">
+                <mat-label><b>Gender:</b></mat-label>
+                <mat-select class="selectGender">
+                    <mat-option>Female</mat-option>
+                    <mat-option>Male</mat-option>
+                    <mat-option>Other</mat-option>
+                    <mat-option>Prefer not to say</mat-option>
+                </mat-select>
+            </p>
+            
+            <p class="inputs">
+                <mat-label><b>Age: </b></mat-label>
                 <input matInput type="number" formControlName="age">
             </p>
-            <p>
-                <b>Phone:</b>
+            <p class="inputs">
+                <mat-label><b>Phone: </b></mat-label>
                 <input matInput type="tel" formControlName="phone">
             </p>
         </mat-card-content>
-        <div class="count">
-            <div class="comment">
-                <mat-icon> comment</mat-icon>
-                <span>3</span>
-            </div>
-            <div class="like">
-                <mat-icon>favorite_border</mat-icon>
-                <span>0</span>
-            </div>
-        </div>
     </mat-card>
 </form>

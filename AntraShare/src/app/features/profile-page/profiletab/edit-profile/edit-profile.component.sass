@@ -1,43 +1,33 @@
 @import "../../../../../styles.sass"
 .profile-form
-    margin-top: 20vh
-    width: 100vw
-    height: 90vh
+    margin-block: 15vh
 
     .profile
         padding: 7vh
         display: block
         margin: auto
-        margin-block-start: auto
         width: 40vw
         background-color: $light
-        
-    input
-        padding-block: 1vh
-        background-color: $white
-        border-width: 0px
-        border-radius: 5px
+
+        input
+            padding-block: 1vh
+            background-color: $white
+            border-width: 0px
+            border-radius: 5px
+            width: 100%
+        .content
+            width: 40vw
+
+            .inputs
+                padding-block: 0.5vh
+                width: auto
+
+                input:focus
+                    outline-color: $dark
     
-    input:focus
-        outline-color: $dark
-    
-    .selectGender
-        padding-block: 1vh
-        background-color: $white
-        width: 36vw
-        border-width: 0px
-        border-radius: 5px
-
-    .count
-        margin: 0
-        display: flex
-        justify-content: space-between
-        margin: auto
-        text-align: center
-
-
-    .icon
-        width: 3vw
-
-    span
-        padding: 2vw
+                .selectGender
+                    padding-block: 1vh
+                    background-color: $white
+                    border-width: 0px
+                    border-radius: 5px
+                    width: 100%
