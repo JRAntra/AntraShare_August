@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class LimitCharPipe implements PipeTransform {
 
-  transform(content: any) {
+  transform(content: string): string {
     if (typeof content === "string") {
       const string = content
       if (string.length > 20) {
