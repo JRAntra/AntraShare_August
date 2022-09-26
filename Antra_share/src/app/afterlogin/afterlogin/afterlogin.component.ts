@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { storyInterface } from 'src/app/shared/interfaces/storyInterface';
 import { NewsfeedService } from 'src/app/shared/services/newsfeed.service';
 
 @Component({
@@ -8,9 +9,21 @@ import { NewsfeedService } from 'src/app/shared/services/newsfeed.service';
 })
 export class AfterloginComponent implements OnInit {
 
-  constructor() { }
+  public storyList: storyInterface[] = [];
+
+  constructor(private newsfeeddata : NewsfeedService) {}
 
   ngOnInit(): void {
+    // grab all the junk from the database
+    this.newsfeeddata.getPosts().subscribe(
+      data => {
+        //console.log(data)
+        this.storyList = data;
+      }
+    )
   }
 
+  like() {
+    // do nothing for now
+  }
 }

@@ -1,7 +1,9 @@
+@import "../../shared/styling/og-steam-ui"
+    
 #al-body
     display: flex
     margin-top: 3rem
-    background-color: black
+    background-color: $inset-color
     justify-content: center
     flex-direction: column
 
@@ -9,24 +11,59 @@
     display: flex
     justify-content: center
     flex-direction: column
+    background-color: $base-ui-color
+    margin-bottom: 1rem
+    border: solid
+    border-top-color: $border-light
+    border-left-color: $border-light
+    border-bottom-color: $border-dark
+    border-right-color: $border-dark
+    border-width: thin
 .post-box
     width: 40%
     position: relative
     left: 30%
     margin-top: 2rem
     height: 10rem
+    background-color: $inset-color
+    border-top-color: $border-dark
+    border-left-color: $border-dark
+    border-bottom-color: $border-light
+    border-right-color: $border-light
+    border: solid inset solid solid
+    border-width: thin
+    color: $default-font-color
+.post-box:focus
+    outline: none
 input[type=submit]
     width: 5%
     position: relative
+    top: 0.5rem
     left: 47.5%
     height: 2rem
     margin-bottom: 2rem
 
+.story-and-comments
+    background-color: $inset-color
+    p
+        color: $default-font-color
+
 .story
-    background-color: #d6d4d4
+    background-color: $base-ui-color
     position: relative
     left: 20%
     width: 60%
+    margin-bottom: 2rem
+    border: solid
+    border-top-color: $border-light
+    border-left-color: $border-light
+    border-bottom-color: $border-dark
+    border-right-color: $border-dark
+    border-width: thin
+
+.comments
+    width: 50%
+    left: 25%
 
 #content-header
     display: flex
@@ -35,8 +72,9 @@ input[type=submit]
 .avatar
     border-radius: 100%
     border-style: solid
-    border-color:#acaaaa
-    background-color: #acaaaa
+    border-color: $border-dark
+    background-color: $inset-color
+    border-width: thin
     width: 5rem
     height: 3rem
     text-align: center
@@ -44,7 +82,7 @@ input[type=submit]
     margin-left: 2.5%
 
 .username
-    background-color: #acaaaa
+    background-color: $base-ui-color
     position: relative
     width: 8rem
     height: 2rem
@@ -52,16 +90,28 @@ input[type=submit]
     text-align: center
     left: 1rem
     top: 1rem
+    border: solid
+    border-top-color: $border-light
+    border-left-color: $border-light
+    border-bottom-color: $border-dark
+    border-right-color: $border-dark
+    border-width: thin
 
 .time
-    background-color: #acaaaa
+    background-color: $base-ui-color
     position: relative
-    width: 8rem
+    width: 15rem
     height: 2rem
     padding-top: 1rem
     text-align: center
     left: 1rem
     top: 1rem
+    border: solid
+    border-top-color: $border-light
+    border-left-color: $border-light
+    border-bottom-color: $border-dark
+    border-right-color: $border-dark
+    border-width: thin
 
 #content-body
     background-color: #c4c4c4
@@ -69,23 +119,32 @@ input[type=submit]
     bottom: 1.5rem
     left: 3%
     width: 94%
-    height: 10rem   
+    margin-top: 1rem
+    margin-bottom: 0.5rem
+    //height: 10rem
+    border: solid
+    background-color: $inset-color
+    border-top-color: $border-dark
+    border-left-color: $border-dark
+    border-bottom-color: $border-light
+    border-right-color: $border-light
+    border-width: thin
 
 .content
     text-align: center
     position: relative
-    top: -2rem
-    font-size: 3rem
-.video-image
-    position: relative
-    left: 2rem
-    top: 2rem
-    width: 5rem
+    font-size: 1rem
+.content-image
+    display: block
+    margin-left: auto
+    margin-right: auto
+    width: 50%
+    margin-bottom: 1rem
 
 #content-bottom
     display: flex
     flex-direction: row
-    background-color: white
+    background-color: $base-ui-color
     position: relative
     bottom: 1.5rem
     width: 94%
@@ -93,7 +152,13 @@ input[type=submit]
     height: 5rem
 
 .comment-stats, .like-stats
-    border-style: solid
+    border: solid
+    border-top-color: $border-dark
+    border-left-color: $border-dark
+    border-bottom-color: $border-light
+    border-right-color: $border-light
+    border-width: thin
+    background-color: $inset-color
     display: flex
     flex-direction: row
     p
@@ -101,18 +166,41 @@ input[type=submit]
         position: relative
         top: 15%
 
+.comment-stats
+    position: absolute
+    left: 0
+
 .like-stats
-    position: relative
-    left: 50.2%
+    position: absolute
+    right: 0
 
 .comment-icon, .like-icon
-    margin-right: 5rem
+    margin-right: 2rem
+    margin-left: 2rem
+.comment-number, .like-number
+    margin-right: 2rem
+
+.like-button
+    position: absolute
+    right: 15%
+    top: 10%
+    height: 50%
+    width: 5%
+    font-weight: bold
+        
+        
 
 .disappear
     position: absolute
-    left: 45%
+    left: 44%
     top: 40%
-    background-color: white
-    border-style: solid
+    background-color: $base-ui-color
+    border: solid
+    border-top-color: $border-light
+    border-left-color: $border-light
+    border-bottom-color: $border-dark
+    border-right-color: $border-dark
+    border-width: 2px
     p
         margin: 2rem
+        color: $default-font-color

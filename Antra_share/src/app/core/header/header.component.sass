@@ -1,10 +1,14 @@
+@import "../../shared/styling/og-steam-ui"
+
 #header
     display: flex
-    background-color: #d6e7e6
+    background-color: $navbar-color
     justify-content: flex-end
     position: fixed
     width: 100%
     top: 0%
+    border-bottom-style: outset
+    z-index: 10
 
 .links
     padding-top: 1rem
@@ -12,7 +16,5 @@
     padding-right: 2rem
     text-decoration: none
     font-weight: bold
-.links:link
-    color: black
-.links:visited
-    color: black
+    position: relative
+    right: 4%

@@ -12,6 +12,7 @@ import { SettingModule } from './setting/setting.module';
 import { RegisterModule } from './register/register.module';
 
 import { HttpClientModule } from '@angular/common/http';
+import { NewsfeedService } from './shared/services/newsfeed.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [NewsfeedService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

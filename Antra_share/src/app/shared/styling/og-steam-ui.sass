@@ -1,0 +1,51 @@
+$default-navfont-color: #e0e0e0
+$default-font-color: #c5ccbc
+$hover-font-color: #f0f0f0 // hover for navbars
+$border-light: #c5ccbc // top for outset, bot for inset
+$border-dark: #333d29 // bot for outset, top for inset
+$active-font-color: white // navbar active color
+$base-ui-color: #4c5945 // self explanatory
+$inset-color: #3f4638 // steam likes to do inset objects, and the color is this darker shade
+$faded-font-color: #87937f // font and icons on base UI
+$scrollbar-color: #5a694e // incase we make a custom scrollbar
+$navbar-color: black // rarely used, but the navigation is black
+
+// global text
+*
+    font-family: "Tahoma"
+    font-smooth: never
+
+// navbar stuff
+.navbar
+    color: $default-navfont-color
+.navbar:link
+    color: $default-navfont-color
+.navbar:visited
+    color: $default-navfont-color
+.navbar:hover
+    color: $hover-font-color
+    text-shadow: 0px 0px 5px $hover-font-color
+.navbar:active
+    color: $active-font-color
+    text-shadow: 0px 0px 10px $active-font-color
+
+.steam-button
+    background-color: $base-ui-color
+    color: $default-font-color
+    // also use the below for outset UI
+    border-top-color: $border-light
+    border-left-color: $border-light
+    border-bottom-color: $border-dark
+    border-right-color: $border-dark
+    border: solid solid solid solid
+    border-width: thin
+.steam-button:active
+    background-color: $inset-color
+    color: $default-font-color
+    // also use the below for inset UI
+    border-top-color: $border-dark
+    border-left-color: $border-dark
+    border-bottom-color: $border-dark
+    border-right-color: $border-dark
+    border: solid inset solid solid
+    border-width: medium
