@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 // import { ValidateLoginService } from 'src/app/shared/service/validate-login.service';
 import { ValidateRegisterService } from 'src/app/shared/service/validate-register.service';
 import { noDuplicate} from 'src/app/shared/validators/register-validators'
-import {noupper, nolower, nospecial, checkValidateEmail, checkPasswords, profileValidators} from 'src/app/shared/validators/register-validators'
+import {noupper, nolower, nospecial, checkValidateEmail, checkPasswords, emailValidator, usernameValidator, confirmPasswordMatch} from 'src/app/shared/validators/register-validators'
 
 @Component({
   selector: 'app-register',
@@ -30,13 +30,14 @@ export class RegisterComponent implements OnInit {
   userPanel = this.fb.group({
     username: new FormControl('',[
     Validators.required,
-    noDuplicate,
-    noupper,
+    // noDuplicate,
+    // noupper,
     // checkValidateUser(this.validateServiceUser)
     ]),
+    // email: new FormControl(''),
     email: new FormControl('', [
       Validators.required,
-      checkValidateEmail(this.validateServiceEmail)
+      // checkValidateEmail(this.validateServiceEmail)
     ]),
     password: new FormControl('',[
       Validators.required,
@@ -55,15 +56,24 @@ export class RegisterComponent implements OnInit {
   }
 
   onInput() {
+    this.userPanel.controls["email"].setAsyncValidators(emailValidator.asyncValidateEmail(this.validateServiceEmail))
+    console.log(this.email?.errors);
+
+    this.userPanel.controls["username"].setAsyncValidators(usernameValidator.asyncValiddateUsername(this.validateServiceEmail))
+
+    this.userPanel.controls["passwordConfirm"].setValidators(
+      confirmPasswordMatch.confirmPassword(this.userPanel.controls["password"] as FormControl)
+    )
+
+    
     if (this.userPanel.errors?.['confirmFail']) {
       this.confirmFail = true;
     } else {
       this.confirmFail = false;
     }
-    console.log(this.confirmFail)
+    // console.log(this.confirmFail)
     // this.userPanel.controls["username"].setAsyncValidators(profileValidators.asyncValiddateName(this.validateServiceEmail))
     // console.log(this.userPanel.controls["username"].errors)
-    console.log(this.email?.errors);
     // console.log(this.username?.errors);
   }
 

@@ -1,16 +1,44 @@
-import { AbstractControl, ValidationErrors } from "@angular/forms";
+import { AbstractControl, FormControl, ValidationErrors, ValidatorFn } from "@angular/forms";
 import { map, Observable, of } from "rxjs";
 // import { ValidateLoginService } from "../service/validate-login.service";
 import { ValidateRegisterService } from "../service/validate-register.service";
-export class profileValidators {
+
+export class emailValidator {
      //function that returns an asyncvalidatorFn
-     static asyncValiddateName(service: ValidateRegisterService){
+     static asyncValidateEmail(service: ValidateRegisterService){
         return function checkEmailValid(control: AbstractControl): Observable<ValidationErrors | null>{
             return service.checkEmailValid(control.value)
                 .pipe(
-                    map((bool) => {return bool? {["invalidEmail"]: "this username isn't valid"}: null})
+                    map((bool) => {return bool? {["invalidEmail"]: "this email isn't valid"}: null})
                 )
         }
+    }
+}
+
+export class usernameValidator {
+    //function that returns an asyncvalidatorFn
+    static asyncValiddateUsername(service: ValidateRegisterService){
+        return function checkUsernameValid(control: AbstractControl): Observable<ValidationErrors | null>{
+            return service.checkUsernameValid(control.value)
+                .pipe(
+                    map((bool) => {return bool? {["invalidUsername"]: "this username isn't valid"}: null})
+                )
+        }
+    }
+}
+
+export class confirmPasswordMatch{
+    static confirmPassword(password: FormControl): ValidatorFn{
+        function confirm(passwordConfirm: AbstractControl): ValidationErrors | null{
+            if(password.value === passwordConfirm.value){
+                return null
+            }else{
+                console.log(password.value)
+                console.log(passwordConfirm.value)
+                return {["confirmError"]: "Passwords do not match"}
+            }
+        }
+        return confirm
     }
 }
 export function noDuplicate (control: AbstractControl) : ValidationErrors | null {
@@ -68,9 +96,6 @@ export function checkPasswords (group: AbstractControl):  ValidationErrors | nul
 }
 
 export function checkValidateEmail(service: ValidateRegisterService) {
-    // constructor(private service : ValidateRegisterService) {
-
-    // }
     return (control: AbstractControl): Observable<ValidationErrors| null> =>{
         let emailStr = control.value;
         let res;
@@ -87,6 +112,7 @@ export function checkValidateEmail(service: ValidateRegisterService) {
     }
 
 }
+
 
 // export function checkValidateUser(service: ValidateLoginService) {
 //     return (control: AbstractControl): Observable<ValidationErrors | null> => {

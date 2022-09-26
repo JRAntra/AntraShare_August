@@ -10,7 +10,12 @@ export class ValidateRegisterService {
   constructor(private http: HttpClient) { }
 
   checkEmailValid(email: string) : Observable<boolean>{
-    const url = ("localhost:4231/api/register/checkExistByEmail/" + email);
+    const url = ("http://localhost:4231/api/register/checkExistByEmail/" + email);
+    return this.http.get<boolean>(url);
+  }
+
+  checkUsernameValid(username: string) : Observable<boolean>{
+    const url = ("http://localhost:4231/api/register/checkExistByUsername/" + username);
     return this.http.get<boolean>(url);
   }
 }
