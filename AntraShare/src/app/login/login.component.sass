@@ -1,36 +1,65 @@
-@import "../../styles"
 
-#login
-    margin: 0 auto
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    gap: 3vh
-    border: 1px solid black
+              @import "../../styles"
 
-    width: 50vw
-    height: 60vh
-
-#login-logo
-    width: 40%
-    height: 40%
-    //background: url()
-    background-color: $primary-color
-
-#login-form
-    display: flex
-    flex-direction: column
+.container
+    display: block
+    margin-top: 4em
+    margin-left: auto
+    margin-right: auto
+   
     gap: 2vh
+    border: 1px solid lightgrey
+    width: 50vw
+    height: 80vh
+    
+.formField
+    display: flex
+    flex-direction: column
+    gap: 1vh
     width: 80%
 
-    input
-        height: 4vh
-        border: none
-        border: solid 1px black
-        border-radius: 5px
+    padding: 1rem
 
-    #login-button
-        background-color: $primary-color
-        color: $secondary-color
-        border: none
+.logo
+    padding: 1rem
+    border-radius: 20px
+    display: block
+    margin-left: auto
+    margin-right: auto
+    width: 20vw
+    
+    width: 40%
+    height: 40%
+   
+
+
+#login-button
+     display: block
+     margin-left: auto
+     margin-right: auto
+     background-color: $primary-color
+     color: white
+     padding: 1rem
+     width: 20vw
+
+
+
+
+.footer 
+    margin: 4rem 4rem
+
+#register
+    padding-left: 11em
+
+.chk-box
+    display: flex
+    margin-top: .1rem
+    padding: 1rem
+    
+.a-help a
+    padding-left: 20em
+    text-decoration: none
+    color: red
+
+
+
