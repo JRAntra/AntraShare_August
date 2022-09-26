@@ -1,30 +1,49 @@
 <div class="container">
-    <div class="imgContainer" appAutohide>
-        <img class="avatar" src="https://hips.hearstapps.com/ghk.h-cdn.co/assets/17/30/2560x1280/landscape-1500925839-golden-retriever-puppy.jpg?resize=480:*">
+    <div class="imgContainer">
+        <img class="avatar"
+            src="https://hips.hearstapps.com/ghk.h-cdn.co/assets/17/30/2560x1280/landscape-1500925839-golden-retriever-puppy.jpg?resize=480:*">
     </div>
-    <form>
+    <form [formGroup]="userProfilePanel">
         <mat-form-field appearance="fill" class="longField">
             <mat-label>User name</mat-label>
-            <input matInput #userName>
+            <input matInput formControlName="userName">
+            <!-- <mat-error *ngIf="userName?.errors?.['isInvalid']">Username already been used</mat-error> -->
+            <mat-error *ngIf="userName?.errors?.['required']">User name is required</mat-error>
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill" class="longField">
             <mat-label>Email</mat-label>
-            <input matInput #email>
+            <input matInput formControlName="userEmail">
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill" class="shortField">
             <mat-label>Age</mat-label>
-            <input matInput #Age>
+            <input matInput formControlName="userAge">
         </mat-form-field>
         <mat-form-field appearance="fill" class="shortField">
             <mat-label>Gender</mat-label>
-            <input matInput #Gender>
+            <input matInput formControlName="userGender">
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill" class="longField">
             <mat-label>Password</mat-label>
-            <input matInput #last type="password">
+            <input matInput [type]="passwordHide ? 'password' : 'text'" formControlName="userPassword">
+            <button mat-icon-button matSuffix (click)="passwordHide = !passwordHide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="passwordHide">
+                <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf='userPassword?.errors?.["isInvalid"]'>Password must have at least 1 uppercase, 1 lowercase,
+                1 special character</mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill" class="longField">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput [type]="confirmPasswordHide ? 'password' : 'text'" formControlName="userConfirmPassword">
+            <button mat-icon-button matSuffix (click)="confirmPasswordHide = !confirmPasswordHide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="confirmPasswordHide">
+                <mat-icon>{{confirmPasswordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf='userConfirmPassword?.errors?.["isInvalid"]'>Password and Confirm Password don't match</mat-error>
         </mat-form-field>
     </form>
     <div class="iconContainer">
@@ -35,5 +54,5 @@
         <img class="icon" src="https://cdn-icons-png.flaticon.com/512/196/196586.png">
         <span>Amount of Likes</span>
     </div>
-    
+
 </div>

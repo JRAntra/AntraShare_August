@@ -1,17 +1,16 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ValidateService } from './validate.service';
+import { ValidateDataService } from './validate-data.service';
 
-describe('ValidateService', () => {
-  let service: ValidateService;
+describe('ValidateDataService', () => {
+  let service: ValidateDataService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(ValidateService);
+    service = TestBed.inject(ValidateDataService);
   });
 
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-
 });

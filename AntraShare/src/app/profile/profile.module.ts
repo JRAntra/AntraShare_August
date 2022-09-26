@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
+import { ReactiveFormsModule } from '@angular/forms';
 // materiel
 import { MaterialModule } from '../material.module';
 // core
@@ -19,6 +20,7 @@ import { AutohideDirective } from '../shared/directive/autohide.directive';
     CommonModule,
     ProfileRoutingModule,
     MaterialModule,
+    ReactiveFormsModule,
   ],
   exports: [
     ProfileComponent
