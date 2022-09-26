@@ -41,7 +41,7 @@ export class ProfileComponent implements OnInit {
       Validators.minLength(3),
       Validators.required,
     ]),
-    gender: new FormControl('', [Validators.minLength(1), Validators.required]),
+    gender: new FormControl('', [Validators.minLength(4), Validators.required]),
     age: new FormControl('', [Validators.minLength(1), Validators.required]),
     phone: new FormControl('', [Validators.maxLength(10), Validators.required]),
   });
