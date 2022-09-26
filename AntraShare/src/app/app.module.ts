@@ -15,6 +15,8 @@ import { HomepageModule } from './features/home-page/home-page.module';
 import { ProfilePageModule } from './features/profile-page/profile-page.module';
 import { RegisterPageModule } from './features/register-page/register-page.module';
 import { SettingsPageModule } from './features/settings-page/settings-page.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { StorylistService } from './features/home-page/services/storylist.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -36,7 +38,9 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterPageModule,
     SettingsPageModule,
     SharedModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [StorylistService],
   bootstrap: [AppComponent]
