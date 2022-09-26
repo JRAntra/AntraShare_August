@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ValidateService } from '../shared/service/validate.service';
+import { checkPasswordValid, checkUserNameValid } from '../shared/validators/validators';
 
 @Component({
   selector: 'app-login',
@@ -19,16 +20,20 @@ export class LoginComponent implements OnInit {
 
   ) {}
   
-  userPanel = this.fb.group({
+  userLoginPanel = this.fb.group({
     username: new FormControl('',[
       Validators.required,
+      checkUserNameValid(this.service),
       
     ]),
-    
+
     password: new FormControl('',[
       Validators.minLength(8),
       Validators.required,
-    ])
+      checkPasswordValid,
+    ]),
+
+
   })
 
   ngOnInit(): void {
@@ -40,11 +45,11 @@ export class LoginComponent implements OnInit {
   }
 
   get password(): FormControl {
-    return this.userPanel.get("password") as FormControl
+    return this.userLoginPanel.get("password") as FormControl
   }
 
   get username(): FormControl {
-    return this.userPanel.get("username") as FormControl
+    return this.userLoginPanel.get("username") as FormControl
   }
 
 }

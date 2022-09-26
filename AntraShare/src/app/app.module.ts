@@ -46,7 +46,7 @@ import { StorylistService } from './homepage/services/storylist.service';
     AdminModule,
     HomepageModule,
     LoginModule,
-    // ProfileModule,
+    ProfileModule,
     RegisterModule,
     SettingsModule,
     HttpClientModule,
