@@ -32,9 +32,9 @@ export class RegisterComponent implements OnInit {
         //More Validators will be needed!
         Validators.required, 
         RegisterValidators.patternValidator(/\d/, {hasnumber: true}),
-        RegisterValidators.patternValidator(/\[A-Z]/, {hasuppercase: true}),
-        RegisterValidators.patternValidator(/\[a-z]/, {haslowercase: true}),
-        RegisterValidators.patternValidator(/\[!@#$%^&*()]/, {hasspecialchar: true}),
+        RegisterValidators.patternValidator(/[A-Z]/, {hasuppercase: true}),
+        RegisterValidators.patternValidator(/[a-z]/, {haslowercase: true}),
+        RegisterValidators.patternValidator(/[!@#$%^&*()]/, {hasspecialchar: true}),
         Validators.minLength(8),
       ]],
       confirmPassword: [null, [
@@ -60,7 +60,6 @@ export class RegisterComponent implements OnInit {
   get confirmPassword(): FormControl {
     return this.registerForm.get("confirmPassword") as FormControl
   }
-  
 
   onInput() {
     console.log(this.username)

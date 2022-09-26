@@ -21,13 +21,15 @@ export class RegisterValidators {
 
     static patternValidator(regex: RegExp, error: ValidationErrors): ValidatorFn {
         return (control: AbstractControl) => {
+
             if (!control.value) {
                 return null;
             }
             
             const valid = regex.test(control.value)
-            console.log(typeof regex)
-            console.log(regex,"compared to ",control.value," is ",valid)
+            //console.log(typeof regex)
+            //console.log(regex,"compared to ",control.value," is ",valid)
+            
             return valid ? null : error;
         }
     }
