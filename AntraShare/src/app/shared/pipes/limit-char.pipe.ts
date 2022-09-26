@@ -19,4 +19,3 @@ export class LimitCharPipe implements PipeTransform {
     }
  
   }
-}
