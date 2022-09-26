@@ -1,31 +1,31 @@
-<style>
-    .likelist{
-        margin:0;
-        height:8vh;
-        
-    }
-    button{
-        height:3vh;
-        display:block;
-        margin-left: auto;
-        background-color: black;
-        color:white;
-    }
-    ul{
-        list-style: none;
-        float: right;
-    }
-</style>
-<div class="likelist" >
-    <button (click)="toggleList()">Like List</button>
-    <ul>
-        <li *ngFor="let key of newsFeedList">
-            <span *ngIf="showList">
-                {{ key?.publisherName}} :
-                {{ key?.content?.text! | truncate }}
-                {{ key?.publishedTime }}
-            </span>
-        </li>
-    </ul>
+ 
+<button (click)="toggleList()">Like List</button>
+<div class="storylist">
+        <div *ngIf="showList">
+        <mat-card class="story" *ngFor="let key of newsFeedList">
+            <mat-card-header class="user">
+                <img mat-card-avatar class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Single.jpg/1200px-Banana-Single.jpg">
+                <mat-card-title class="name">{{key?.publisherName}}</mat-card-title>
+                <mat-card-subtitle class="time">{{key?.publishedTime | date:"short" }}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="post">
+                <p class="content" >{{key?.content?.text | limitChar }}</p>
+            </mat-card-content>
+            <mat-card-actions class="action-container">
+                <div class="action">
+                    <button mat-icon-button class = "button">
+                        <mat-icon> comment</mat-icon>
+                    </button>
+                    <span>{{key?.comment?.length}}</span>
+                </div>
+                <div class="action">
+                    <button mat-icon-button class = "button">
+                        <mat-icon>favorite_border</mat-icon>
+                    </button>
+                    <span>{{key?.likedIdList?.length}}</span>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </div>
 </div>
 
