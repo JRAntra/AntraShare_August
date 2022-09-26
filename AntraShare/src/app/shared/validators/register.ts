@@ -12,7 +12,9 @@ Password must have at least 1 uppercase, 1 lowercase, 1 special character
 Password confirm should have exact the same input as Password Field, if not, display message : password confirm should be the same as password
 */
 
-import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
+import { AbstractControl, FormGroup, ValidationErrors, ValidatorFn } from "@angular/forms";
+import { map, Observable } from "rxjs";
+import { ValidateDataService } from "../services/validate-data.service";
 
 export class RegisterValidators {
     constructor () {}
@@ -23,10 +25,42 @@ export class RegisterValidators {
                 return null;
             }
             
-            let valid = regex.test(control.value)
+            const valid = regex.test(control.value)
             console.log(typeof regex)
             console.log(regex,"compared to ",control.value," is ",valid)
             return valid ? null : error;
+        }
+    }
+
+    static usernameValidator(service: ValidateDataService) {
+        return (control: AbstractControl): Observable<ValidationErrors | null> => {
+            const username = control.value
+            return service.checkUserName(username).pipe(
+                map( (response) => {
+                    if (response) return { "hasusername" : true}
+                    else return null
+                    //return response ? {"hasusername" : true} : null
+                })
+            )
+        }
+    }
+
+    static emailValidator(service: ValidateDataService) {
+        return (control: AbstractControl): Observable<ValidationErrors | null> => {
+            const email = control.value
+            return service.checkEmail(email).pipe(
+                map( response => {
+                    return response ? {"hasemail" : true} : null
+                })
+            )
+        }
+    }
+
+    static matchValidator(controlName: string, matchingControlName: string) {
+        return(formGroup: FormGroup) => {
+            const control = formGroup.controls[controlName]
+            const matchingControl = formGroup.controls[matchingControlName]
+            control.value !== matchingControl.value ? matchingControl.setErrors({"hasmatch" : true}) : matchingControl.setErrors(null)
         }
     }
 

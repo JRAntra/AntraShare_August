@@ -2,11 +2,19 @@
     <div id="register-logo"></div>
 
     <h2>Sign up to join our social media! </h2>
-    <form [formGroup]="registerForm">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <mat-form-field appearance="fill">
             <mat-label>Enter your email</mat-label>
             <input matInput id="email" formControlName="email" type="email" class="form-control">
-            <mat-error *ngIf="true"></mat-error>
+            <mat-error *ngIf="email?.errors?.['hasemail']">Email is already in use.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input (keyup)="onInput()" matInput id="username" formControlName="username" type="text"
+                class="form-control">
+            <mat-error *ngIf="username?.errors?.['required']">Username cannot be empty.</mat-error>
+            <mat-error *ngIf="username?.errors?.['hasusername']">Username is already in use.</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
@@ -18,10 +26,14 @@
             <mat-error *ngIf="password?.errors?.['hasspecialchar']">Password must have 1 special character.</mat-error>
             <mat-error *ngIf="password?.errors?.['minlength']">Password must be 8 characters long.</mat-error>
         </mat-form-field>
-        <input type="text" id="username" name="username" placeholder="Username" required>
-        <input type="password" id="password-confirm" name="password-confirm" placeholder="Confirm Password" required>
 
-        <button type="submit" id="register-button">Register</button>
+        <mat-form-field appearance="fill">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput id="confirmPassword" formControlName="confirmPassword" type="password" class="form-control">
+            <mat-error *ngIf="confirmPassword?.errors?.['hasmatch']">Passwords must match.</mat-error>
+        </mat-form-field>
+
+        <button type="submit" class="btn btn-primary">Register</button>
     </form>
 
 </div>
