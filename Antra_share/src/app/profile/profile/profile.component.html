@@ -82,34 +82,84 @@
         >
       </mat-card>
 
-      <mat-form-field class="passwordInput" appearance="fill">
-        <mat-label>Password</mat-label>
-        <input
-          matInput
-          type="password"
-          placeholder="Password"
-          value="Password"
-        />
-      </mat-form-field>
-      <mat-form-field class="genderInput" appearance="fill">
-        <mat-label>Gender</mat-label>
-        <input matInput type="Text" placeholder="Male/Female/Other" value="" />
-      </mat-form-field>
+      <div class="userForm" [formGroup]="userPanel">
+        <mat-form-field class="formField" appearance="fill">
+          <mat-label>User Name</mat-label>
+          <input
+            class="inputField"
+            matInput
+            formControlName="username"
+            type="text"
+            placeholder="User Name"
+          />
+          <div *ngIf="username?.errors">
+            <div *ngFor="let item of errorsMsgUser">
+              <div>
+                {{ showErrorUsername(item) }}
+              </div>
+            </div>
+          </div>
+        </mat-form-field>
 
-      <mat-form-field class="ageInput" appearance="fill">
-        <mat-label>Age</mat-label>
-        <input matInput type="Text" placeholder="34" value="" />
-      </mat-form-field>
-      <mat-form-field class="phoneInput" appearance="fill">
-        <mat-label>Phone Number</mat-label>
-        <input
-          matInput
-          type="number"
-          placeholder="(123)456-7890"
-          value="text"
-        />
-      </mat-form-field>
+        <mat-form-field class="formField" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            class="inputField"
+            formControlName="password"
+            placeholder="Password"
+          />
+          <div *ngIf="password?.errors">
+            <div *ngFor="let item of errorsMsgPassword">
+              <div>
+                {{ showErrorPassword(item) }}
+              </div>
+            </div>
+          </div>
+        </mat-form-field>
+        <mat-form-field class="formField" appearance="fill">
+          <mat-label>Gender</mat-label>
+          <input
+            class="inputField"
+            matInput
+            formControlName="gender"
+            placeholder="Male/Female/Other"
+          />
+          <div *ngIf="gender?.errors">
+            <div *ngFor="let item of errorsMsgGender">
+              <div>
+                {{ showErrorPassword(item) }}
+              </div>
+            </div>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field class="formField" appearance="fill">
+          <mat-label>Age</mat-label>
+          <input
+            class="inputField"
+            matInput
+            type="number"
+            placeholder="Age"
+            formControlName="age"
+          />
+
+          <!-- <button (click)="changeThis(age.value)">Modify</button> -->
+        </mat-form-field>
+        <mat-form-field class="formField" appearance="fill">
+          <mat-label>Phone Number</mat-label>
+          <input
+            class="inputField"
+            matInput
+            placeholder="(123)456-7890"
+            formaction="phone"
+            formControlName="phone"
+          />
+          <!-- <button (click)="changeThis(phone.value)">Modify</button> -->
+        </mat-form-field>
+      </div>
     </mat-card-content>
+
     <mat-card-actions class="userActivity">
       <button
         mat-raised-button
