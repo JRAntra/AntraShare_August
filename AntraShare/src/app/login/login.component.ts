@@ -21,17 +21,17 @@ export class LoginComponent implements OnInit {
   ) {}
   
   userLoginPanel = this.fb.group({
-    username: new FormControl('',[
+    username: ['',[
       Validators.required,
       checkUserNameValid(this.service),
       
-    ]),
+    ]],
 
-    password: new FormControl('',[
+    password: ['',[
       Validators.minLength(8),
       Validators.required,
       checkPasswordValid,
-    ]),
+    ]],
 
 
   })
