@@ -8,7 +8,7 @@ export class profileValidators{
         return function validateName(control: AbstractControl): Observable<ValidationErrors | null>{
             return service.validateName(control.value)
                 .pipe(
-                    map((bool) => {return bool? {["invalidName"]: "this username isn't valid"}: null})
+                    map((bool) => {return bool? {["invalidName"]: "Username already been used"}: null})
                 )
         }
     }

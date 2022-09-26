@@ -9,11 +9,11 @@ import { profileValidators } from '../../validators/profileValidators';
 })
 export class EditProfileComponent implements OnInit{
   form: FormGroup = new FormGroup({
-    ["username"]: new FormControl("Britney Spears"),
-    ["password"]: new FormControl(""),
+    ["username"]: new FormControl("Britney Spears", Validators.required),
+    ["password"]: new FormControl("", Validators.required),
     ["confirmPassword"]: new FormControl(""),
     ["age"]: new FormControl(37),
-    ["phone"]: new FormControl(8888888888),
+    ["phone"]: new FormControl(8888888888, Validators.required),
   })
 
   constructor(private service: ValidatenameService) {}
@@ -22,7 +22,6 @@ export class EditProfileComponent implements OnInit{
   }
   onUserNameInput(){
     this.form.controls["username"].setAsyncValidators(profileValidators.asyncValiddateName(this.service))
-    console.log(this.form.controls["username"].errors)
   }
   onPasswordInput(){
     this.form.controls["confirmPassword"].setValidators(
