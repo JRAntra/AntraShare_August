@@ -1,19 +1,61 @@
-<div id="login">
-    <div id="login-logo"></div>
-
-    <form id="login-form">
-
-        <input type="text" id="username" name="username" placeholder="Username" required>
-        <input type="password" id="password" name="password" placeholder="Password" required>
-        <input type="submit" id="login-button" value="Login">
-    </form>
-
-    <div id="login-info">
-        <div id="register-info">
-            <a href="#">New Account? Register Now!</a>
-        </div>
-        <div id="site-info">
-
-        </div>
+<div class="container">
+  <form [formGroup]="userLoginPanel">
+    <div class="imgcontainer">
+      <img src="../../assets/AntraShare.png" alt="antrashare" class="logo" />
     </div>
+    <div class="formField-container" [formGroup]="userLoginPanel">
+      <mat-form-field class="formField" appearance="outline">
+        <mat-label>Username</mat-label>
+        <input
+          class="inputField"
+          type="text"
+          placeholder="Enter Username"
+          name="uname"
+          formControlName="username"
+          matInput
+        />
+        <mat-error *ngIf="username?.errors?.['required']">
+            username is required
+        </mat-error>
+        <mat-error *ngIf="username?.errors?.['isValid']">
+            username does not match our records
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="formField" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          class="inputField"
+          type="password"
+          placeholder="Enter Password"
+          name="psw"
+          formControlName="password"
+          matInput
+        />
+        <mat-error *ngIf="password?.errors?.['required']">
+            password is required
+        </mat-error>
+        <mat-error *ngIf="password?.errors?.['minlength']">
+            the password should contain at least 8 characthers
+        </mat-error>
+      </mat-form-field>
+      <button id="login-button" type="submit" (click)="onNavigateTo('')">
+        Login
+      </button>
+      <div class="footer">
+        <a id="register" (click)="onNavigateTo('register')">
+            No Accounts? Register Now!
+        </a>
+        <div class="chk-box">
+          <input id="checkbox" type="checkbox" /> Agreement
+
+          <div class="a-help">
+            <a id="help" href="#">Need Help?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>
+
+
+

@@ -18,4 +18,7 @@ export class ValidateService {
     // http://localhost:4231/api/register/checkExistByUsername/:username
     return this.httpClient.get<boolean>(url);
   }
+
 }
+
+

@@ -14,7 +14,7 @@ import { AutohideDirective } from '../shared/directive/autohide.directive';
 @NgModule({
   declarations: [
     ProfileComponent,
-    AutohideDirective,
+    // AutohideDirective,
   ],
   imports: [
     CommonModule,
