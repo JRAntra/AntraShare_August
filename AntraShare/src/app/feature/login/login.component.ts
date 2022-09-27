@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormControl, FormGroup} from '@angular/forms';
+import { AbstractControlOptions, FormBuilder, Validators, FormControl, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
-import { ValidateService } from '../../shared/service/validate.service';
-import { checkPasswordValid, checkUserNameValid } from '../../shared/validators/validators';
+import { ValidateDataService } from '../../shared/services/validate-data.service';
+import { InputValidators } from '../../shared/validators/input-validator';
 
 @Component({
   selector: 'app-login',
@@ -16,24 +16,24 @@ export class LoginComponent implements OnInit {
 
     private router : Router, 
     private fb: FormBuilder, 
-    private service: ValidateService
+    private validateService: ValidateDataService
 
   ) {}
   
   userLoginPanel = this.fb.group({
-    username: ['',[
+    username: [
+      null,
       Validators.required,
-      checkUserNameValid(this.service),
-      
-    ]],
+      InputValidators.usernameValidator(this.validateService)
+    ],
 
-    password: ['',[
-      Validators.minLength(8),
-      Validators.required,
-      checkPasswordValid,
-    ]],
-
-
+    password: [
+      null,
+      [
+        Validators.required,
+        Validators.minLength(8),
+      ] 
+    ],
   })
 
   ngOnInit(): void {

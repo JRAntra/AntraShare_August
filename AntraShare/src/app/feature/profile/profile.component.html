@@ -7,13 +7,15 @@
         <mat-form-field appearance="fill" class="longField">
             <mat-label>User name</mat-label>
             <input matInput formControlName="userName">
-            <!-- <mat-error *ngIf="userName?.errors?.['isInvalid']">Username already been used</mat-error> -->
-            <mat-error *ngIf="userName?.errors?.['required']">User name is required</mat-error>
+            <mat-error *ngIf="userName?.errors?.['required']">Username cannot be empty.</mat-error>
+            <mat-error *ngIf="userName?.errors?.['hasusername']">Username is already in use.</mat-error>
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill" class="longField">
             <mat-label>Email</mat-label>
             <input matInput formControlName="userEmail">
+            <mat-error *ngIf="userEmail?.errors?.['required']">Email cannot be empty.</mat-error>
+            <mat-error *ngIf="userEmail?.errors?.['hasemail']">Email is already in use.</mat-error>
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill" class="shortField">
@@ -32,8 +34,11 @@
                 [attr.aria-pressed]="passwordHide">
                 <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
-            <mat-error *ngIf='userPassword?.errors?.["isInvalid"]'>Password must have at least 1 uppercase, 1 lowercase,
-                1 special character</mat-error>
+            <mat-error *ngIf="userPassword?.errors?.['required']">Password cannot be empty.</mat-error>
+            <mat-error *ngIf="userPassword?.errors?.['hasuppercase']">Password must have 1 uppercase letter.</mat-error>
+            <mat-error *ngIf="userPassword?.errors?.['haslowercase']">Password must have 1 lowercase letter.</mat-error>
+            <mat-error *ngIf="userPassword?.errors?.['hasspecialchar']">Password must have 1 special character.</mat-error>
+            <mat-error *ngIf="userPassword?.errors?.['minlength']">Password must be 8 characters long.</mat-error>
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill" class="longField">
@@ -43,7 +48,8 @@
                 [attr.aria-pressed]="confirmPasswordHide">
                 <mat-icon>{{confirmPasswordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
-            <mat-error *ngIf='userConfirmPassword?.errors?.["isInvalid"]'>Password and Confirm Password don't match</mat-error>
+            <mat-error *ngIf="userConfirmPassword?.errors?.['required']">Password cannot be empty.</mat-error>
+            <mat-error *ngIf="userConfirmPassword?.errors?.['hasmatch']">Passwords must match.</mat-error>
         </mat-form-field>
     </form>
     <div class="iconContainer">

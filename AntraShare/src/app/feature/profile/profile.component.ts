@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControlOptions, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ValidateService } from '../../shared/service/validate.service';
-import { CheckValuesMatch, checkPasswordValid, checkUserNameValid } from '../../shared/validators/validtors';
+import { ValidateDataService } from '../../shared/services/validate-data.service';
+import { InputValidators } from '../../shared/validators/input-validator';
 
 @Component({
   selector: 'app-profile',
@@ -10,24 +10,46 @@ import { CheckValuesMatch, checkPasswordValid, checkUserNameValid } from '../../
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private service: ValidateService) { 
-    
+  constructor(
+    private fb: FormBuilder,
+    private validateService: ValidateDataService
+  ) {
   }
 
   userProfilePanel = this.fb.group({
-    userName: new FormControl('', [
+    userName: [
+      null,
       Validators.required,
-      checkUserNameValid(this.service),
-    ]),
-    userEmail: new FormControl(''),
-    userAge: new FormControl(''),
-    userGender: new FormControl(''),
-    userPassword: new FormControl('', [
-      checkPasswordValid,
-    ]),
-    userConfirmPassword: new FormControl('')
+      InputValidators.usernameValidator(this.validateService)
+    ],
+    userEmail: [
+      null,
+      Validators.required,
+      InputValidators.emailValidator(this.validateService)
+    ],
+    userAge: [
+      null,
+    ],
+    userGender: [
+      null,
+    ],
+    userPassword: [
+      null,
+      [
+        Validators.required,
+        InputValidators.patternValidator(/\d/, { hasnumber: true }),
+        InputValidators.patternValidator(/[A-Z]/, { hasuppercase: true }),
+        InputValidators.patternValidator(/[a-z]/, { haslowercase: true }),
+        InputValidators.patternValidator(/[!@#$%^&*()]/, { hasspecialchar: true }),
+        Validators.minLength(8),
+      ]
+    ],
+    userConfirmPassword: [
+      null, 
+      Validators.required,
+    ]
   }, {
-    validators: CheckValuesMatch('userPassword', 'userConfirmPassword')
+    validators: InputValidators.matchValidator('userPassword', 'userConfirmPassword')
   } as AbstractControlOptions)
 
   passwordHide = true;
@@ -38,6 +60,10 @@ export class ProfileComponent implements OnInit {
 
   get userName(): FormControl {
     return this.userProfilePanel.get("userName") as FormControl
+  }
+
+  get userEmail(): FormControl {
+    return this.userProfilePanel.get("userEmail") as FormControl
   }
 
   get userPassword(): FormControl {
