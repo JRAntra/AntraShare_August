@@ -22,7 +22,7 @@ export class PostformComponent implements OnInit {
   onPostButtonClick(){
     const story : NewsfeedStory = {
       //TODO: get username from local storage for now
-      publisherName: "hardCodeUserName",
+      publisherName: "90DegreesHardCodeName",
       content: {text: this.postForm.controls['text'].value}
     }
     this.service.postStory(story).subscribe(
