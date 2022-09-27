@@ -25,7 +25,8 @@ import { TruncatePipe } from 'src/app/shared/pipes/truncate.pipe';
   imports: [
     CommonModule,
     HomepageRoutingModule,
-    MaterialModule
+    MaterialModule,
+    
   ],
   exports: [
     HomepageComponent

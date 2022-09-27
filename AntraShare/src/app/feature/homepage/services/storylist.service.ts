@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of, Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Post, LikeList } from 'src/app/shared/models/post';
+import { TitleStrategy } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,7 @@ export class StorylistService {
   
   subjectLikeList: Subject<LikeList[]> = new Subject<LikeList[]>();
   likedList: LikeList[] = [];
+  
 
   getStoryListsFromServer(): Observable<Post[]> {
     return this.httpClient.get<Post[]>("http://localhost:4231/api/news");
