@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { checkValidate } from 'src/app/shared/validators/checkUsername';
 import { ValidateLoginService } from 'src/app/shared/service/validate-login.service';
 
@@ -13,14 +13,14 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router : Router,
-    private fb: FormBuilder,
     private service: ValidateLoginService,
   ) { }
 
-  userPanel = this.fb.group({
+  form: FormGroup = new FormGroup({
     username: new FormControl('',[
-      Validators.required,
-      checkValidate(this.service),
+      Validators.required
+    ],[
+      checkValidate(this.service)
     ]),
     password: new FormControl('',[
       Validators.minLength(8),
@@ -29,23 +29,28 @@ export class LoginComponent implements OnInit {
   })
 
   ngOnInit(): void {
+    
+    this.form.controls["username"].setAsyncValidators(checkValidate(this.service))
+    console.log(this.form.controls["username"].errors)
+  
 
   }
-
-
-
 
   onNavigateTo(dest: string) {
     this.router.navigateByUrl(dest)
   }
 
   get password(): FormControl {
-    return this.userPanel.get("password") as FormControl
+    return this.form.get("password") as FormControl
   }
 
   get username(): FormControl {
-    return this.userPanel.get("username") as FormControl
+    return this.form.get("username") as FormControl
   }
 
+ 
+
+
+  
 
 }
