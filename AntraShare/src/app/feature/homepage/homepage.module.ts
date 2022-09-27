@@ -11,7 +11,6 @@ import { HomepageComponent } from './homepage.component';
 import { LikeListComponent } from './like-list/like-list.component';
 
 import { TruncatePipe } from 'src/app/shared/pipes/truncate.pipe';
-import { LikePostPipe } from '../../shared/pipes/like-post.pipe';
 
 
 @NgModule({
@@ -22,7 +21,6 @@ import { LikePostPipe } from '../../shared/pipes/like-post.pipe';
     StoryComponent,
     LikeListComponent,
     TruncatePipe,
-    LikePostPipe,
   ],
   imports: [
     CommonModule,
