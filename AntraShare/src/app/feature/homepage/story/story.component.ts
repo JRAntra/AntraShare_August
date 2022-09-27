@@ -13,7 +13,6 @@ export class StoryComponent implements OnInit {
 
   @Input() post? : Post;
   isLiked: Boolean = false;
-  likeNumber: number = 0;
   likeColor: string = "black";
 
   ngOnInit(): void {
@@ -29,11 +28,11 @@ export class StoryComponent implements OnInit {
         content: this.post?.content as Content,
         _id: this.post?._id as string
       };
+      // TODO: Update the likes on the post
       this.stroyListService.addPostToLikeList(_post);
     } else {
       this.stroyListService.deletePostFromLikeList(this.post?._id as string);
     }
-    this.likeNumber = this.isLiked ? 1 : 0;
     this.likeColor = this.isLiked ? "blue" : "black";
   }
 }
