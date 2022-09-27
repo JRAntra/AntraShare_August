@@ -7,7 +7,7 @@ import { UserListsComponent } from './user-lists/user-lists.component';
 import { UserDetailedInfoPanelComponent } from './user-detailed-info-panel/user-detailed-info-panel.component';
 
 // material
-import { MaterialModule } from '../material.module';
+import { MaterialModule } from '../../material.module';
 
 @NgModule({
   declarations: [

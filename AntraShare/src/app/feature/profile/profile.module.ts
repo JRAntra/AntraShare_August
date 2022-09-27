@@ -5,11 +5,11 @@ import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
 // materiel
-import { MaterialModule } from '../material.module';
+import { MaterialModule } from '../../material.module';
 // core
 
 // shared
-import { AutohideDirective } from '../shared/directive/autohide.directive';
+import { AutohideDirective } from '../../shared/directive/autohide.directive';
 
 @NgModule({
   declarations: [

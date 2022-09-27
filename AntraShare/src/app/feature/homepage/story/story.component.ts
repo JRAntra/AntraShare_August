@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { StorylistService } from '../services/storylist.service';
-import { LikeList, Post, Content } from '../../shared/models/post';
+import { LikeList, Post, Content } from '../../../shared/models/post';
 
 @Component({
   selector: 'app-story',

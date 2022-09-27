@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SettingsRoutingModule } from './settings-routing.module';
 import { SettingsComponent } from './settings.component';
 
-import { MaterialModule } from '../material.module';
+import { MaterialModule } from '../../material.module';
 
 @NgModule({
   declarations: [

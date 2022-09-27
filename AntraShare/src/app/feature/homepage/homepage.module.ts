@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MaterialModule } from '../material.module';
+import { MaterialModule } from '../../material.module';
 
 import { HomepageRoutingModule } from './homepage-routing.module';
 import { ListStoryComponent } from './list-story/list-story.component';
@@ -11,7 +11,7 @@ import { HomepageComponent } from './homepage.component';
 import { LikeListComponent } from './like-list/like-list.component';
 
 import { TruncatePipe } from 'src/app/shared/pipes/truncate.pipe';
-import { LikePostPipe } from '../shared/pipes/like-post.pipe';
+import { LikePostPipe } from '../../shared/pipes/like-post.pipe';
 
 
 @NgModule({

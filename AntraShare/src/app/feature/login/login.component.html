@@ -17,7 +17,7 @@
         <mat-error *ngIf="username?.errors?.['required']">
             username is required
         </mat-error>
-        <mat-error *ngIf="username?.errors?.['isValid']">
+        <mat-error *ngIf="username?.errors?.['hasusername']">
             username does not match our records
         </mat-error>
       </mat-form-field>

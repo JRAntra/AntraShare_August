@@ -24,7 +24,7 @@ export class ValidateDataService {
   checkEmail(email: string): Observable<boolean> {
     const checkEmailUrl = `register/checkExistByEmail`
     const apiUrl = `${this.baseUrl}/${checkEmailUrl}/${email}`
-    console.log(apiUrl)
+    // console.log(apiUrl)
     return this.httpClient.get<boolean>(apiUrl)
   }
 }
