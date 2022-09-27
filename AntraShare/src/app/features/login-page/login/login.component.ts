@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { checkValidate } from 'src/app/shared/validators/checkUsername';
 import { ValidateLoginService } from 'src/app/shared/service/validate-login.service';
+import { debounceTime } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -18,20 +19,25 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup = new FormGroup({
     username: new FormControl('',[
-      Validators.required
+      Validators.required,
+      Validators.minLength(3),
+      Validators.maxLength(50),
     ],[
       checkValidate(this.service)
     ]),
     password: new FormControl('',[
-      Validators.minLength(8),
+      Validators.minLength(3),
+      Validators.maxLength(50),
       Validators.required,
     ])
   })
 
   ngOnInit(): void {
     
+    this.setLimitForChange()
+
     this.form.controls["username"].setAsyncValidators(checkValidate(this.service))
-    console.log(this.form.controls["username"].errors)
+  
   
 
   }
@@ -48,7 +54,13 @@ export class LoginComponent implements OnInit {
     return this.form.get("username") as FormControl
   }
 
- 
+
+
+ setLimitForChange(){
+  this.username.valueChanges.pipe(
+    debounceTime(1000)
+  ).subscribe(res => console.log(res))
+ }
 
 
   
