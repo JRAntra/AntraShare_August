@@ -12,9 +12,21 @@ export class PostStoryComponent implements OnInit{
 removePost(arg0: any) {
 throw new Error('Method not implemented.');
 }
-  // newItems: Post[] = [];
-  item: any;
-  newPosts: any;
+
+// export interface Post {
+//   publisherName: string;
+//   publishedTime: string;
+//   content?: Content;
+//   comment?: Comment[];
+//   likedIdList?: LikedIdList[];
+//   _id: string;
+// }
+ 
+  newPost: Post ={
+    publisherName: "",
+    publishedTime:"",
+    _id: " ",
+  }
  
   
   constructor(private postService: PostServiceService) { }
@@ -24,12 +36,7 @@ throw new Error('Method not implemented.');
  
   
 onPost(){
-  this.postService.addPost(this.item).subscribe(data => console.log(data))
+  this.postService.addPost(this.newPost).subscribe(data => console.log(data))
 }
-
-  // addToPost(item: Post){
-  //   this.postService.addToPost(item);
-  //   window.alert("your post added");
-  // }
 
 }
