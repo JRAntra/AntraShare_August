@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { checkValidate } from 'src/app/shared/validators/checkUsername';
 import { ValidateLoginService } from 'src/app/shared/service/validate-login.service';
-import { BehaviorSubject, debounceTime, ReplaySubject, Subject } from 'rxjs';
 import { PostLoginService } from 'src/app/shared/service/post-login.service';
 import { Login } from 'src/app/shared/models/login';
 
@@ -56,7 +55,7 @@ export class LoginComponent implements OnInit {
 
  OnLoginClick() {
   const userInfo : Login = {
-    userEmail: 'adminmeow@gmail.com',
+    userEmail: 'richard@gmail.com',
     // userEmail: this.form.controls['username'].value,
     password: this.form.controls['password'].value
     // how do you find out correct password?
