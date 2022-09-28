@@ -1,0 +1,46 @@
+<form class="profile-form" [formGroup]="form">
+    <mat-card class="profile">
+        <mat-card-header class="header">
+            <img mat-card-avatar class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg">
+            <mat-card-title class="name">
+                <input matInput (keyup)="onUserNameInput()" formControlName="username">
+                
+            </mat-card-title>
+            <mat-error *ngIf = "form.controls['username'].errors?.['required']">Username is required</mat-error>
+            <mat-error *ngIf = "form.controls['username'].errors?.['invalidName']">{{form.controls['username'].errors?.['invalidName']}}</mat-error>
+            <mat-card-subtitle class="email"> test@gmail.com </mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="content">
+            <p class="inputs">
+                <mat-label><b>Password: </b></mat-label>
+                <input matInput (keyup)="onPasswordInput()" type="password" formControlName="password">
+                <mat-error *ngIf = "form.controls['password'].errors?.['invalidPassword'] && form.controls['password'].touched">{{form.controls['password'].errors?.["invalidPassword"]}}</mat-error>
+            </p>
+            <p class="inputs">
+                <mat-label><b>Confirm Password: </b></mat-label>
+                <input matInput type="password" formControlName="confirmPassword">
+                <mat-error *ngIf = "form.controls['confirmPassword'].errors">{{form.controls['confirmPassword'].errors["confirmError"]}}</mat-error>
+            </p>
+            <p class="inputs">
+                <mat-label><b>Gender:</b></mat-label>
+                <mat-select class="selectGender">
+                    <mat-option>Female</mat-option>
+                    <mat-option>Male</mat-option>
+                    <mat-option>Other</mat-option>
+                    <mat-option>Prefer not to say</mat-option>
+                </mat-select>
+            </p>
+            
+            <p class="inputs">
+                <mat-label><b>Age: </b></mat-label>
+                <input matInput type="number" formControlName="age">
+            </p>
+            <p class="inputs">
+                <mat-label><b>Phone: </b></mat-label>
+                <input matInput type="tel" formControlName="phone">
+            </p>
+
+        </mat-card-content>
+        <button class="save" mat-raised-button><b>Save</b></button>
+    </mat-card>
+</form>

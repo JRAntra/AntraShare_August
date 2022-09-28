@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { StorylistService } from '../../services/storylist.service';
+import { NewsfeedStoryService } from '../../services/newsfeed-story.service';
 import { NewsfeedStory } from 'src/app/shared/models/newsfeed';
 
 @Component({
@@ -9,11 +9,11 @@ import { NewsfeedStory } from 'src/app/shared/models/newsfeed';
 })
 export class StoryListComponent implements OnInit {
   postlist: NewsfeedStory[] = [];
-  constructor(private service: StorylistService) {}
+  constructor(private service: NewsfeedStoryService) {}
 
   ngOnInit(): void {
-    this.service.getPosts().subscribe(values => {
-      this.postlist = values;
+    this.service.getNewsFeedStory().subscribe(values => {
+      this.postlist = values.reverse();
     })
   }
 

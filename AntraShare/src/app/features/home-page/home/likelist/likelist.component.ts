@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsfeedStoryService } from '../../services/newsfeed-story.service';
-import { NewsfeedStory } from 'src/app/shared/models/newsfeed';
-import { NgForOf } from '@angular/common';
+import { LikeList } from 'src/app/shared/models/newsfeed';
+
 
 @Component({
   selector: 'app-likelist',
@@ -9,22 +9,23 @@ import { NgForOf } from '@angular/common';
   styleUrls: ['./likelist.component.sass']
 })
 export class LikelistComponent implements OnInit {
-  newsFeedList: NewsfeedStory[] = []
+  likeList: LikeList[] = []
   public showList = false
   constructor(private service: NewsfeedStoryService) { 
   }
 
   ngOnInit(): void {
-    this.service.getNewsFeedStory().subscribe(values => {
-      this.newsFeedList = values;
+    this.service.getLikeList().subscribe(values => {
+      this.likeList = values;
     })
     
   }
 
-  
 
-
-
+  deleteLike(postId: string) {
+    this.service.deleteFromLikeList(postId);
+    this.ngOnInit();
+  }
 
 
   toggleList() {
