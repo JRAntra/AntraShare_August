@@ -7,7 +7,7 @@
 "http://www.claudiobernasconi.ch/wp-content/uploads/2013/02/twitter.png"
                  alt="Avatar" class="avatar">
         </div>
-        <div class="container" [formGroup]="userPanel">
+        <div class="container" [formGroup]="form">
             <mat-form-field class="formField" appearance="outline">
             <mat-label>Username</mat-label>
             <input
@@ -18,6 +18,8 @@
             formControlName="username"
             matInput  
             >
+            <mat-error *ngIf="username?.errors?.['minlength']">the password should contain at least 3 characthers</mat-error>
+            <mat-error *ngIf="username?.errors?.['maxlength']">the password should contain no more than 50 characthers</mat-error>
             <mat-error *ngIf="username?.errors?.['required']">username is required</mat-error>
             <mat-error *ngIf="username?.errors?.['isValid']">username does not match our records</mat-error>
             </mat-form-field>
@@ -32,9 +34,10 @@
             matInput
             >
             <mat-error *ngIf="password?.errors?.['required']">password is required</mat-error>
-            <mat-error *ngIf="password?.errors?.['minlength']">the password should contain at least 8 characthers</mat-error>
+            <mat-error *ngIf="password?.errors?.['minlength']">the password should contain at least 3 characthers</mat-error>
+            <mat-error *ngIf="password?.errors?.['maxlength']">the password should contain no more than 50 characthers</mat-error>
             </mat-form-field>
-            <button type="submit" (click) = "onNavigateTo('home')">Login</button>
+            <button [disabled]="!formgroup.valid" type="submit" (click) = "[onNavigateTo('home'), OnLoginClick()]">Login</button>
             <a id="register" (click) = "onNavigateTo('register')">No Accounts? Register Now!</a>
             <div class="footer">
             <input id="checkbox" type="checkbox"> Agreement
