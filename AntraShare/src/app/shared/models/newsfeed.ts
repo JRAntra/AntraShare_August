@@ -1,16 +1,16 @@
 export interface NewsfeedStory {
     publisherName: string;
-    publishedTime: string;
+    publishedTime?: string;
     content: Content;
-    comment: Comment[];
-    likedIdList: LikedIdList[];
-    _id: string;
+    comment?: Comment[];
+    likedIdList?: LikedIdList[];
+    _id?: string;
 }
 
 export interface Content {
-    image: string;
-    text: string;
-    video: string;
+    image?: string;
+    text?: string;
+    video?: string;
 }
 
 export interface LikedIdList {
