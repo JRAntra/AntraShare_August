@@ -5,24 +5,81 @@
             <img src="http://www.claudiobernasconi.ch/wp-content/uploads/2013/02/twitter.png" alt="Avatar"
                 class="avatar">
         </div>
-        <div class="container">
+        <div class="container" [formGroup]="userPanel ">
             <div class="user-details">
+<!--                 
              <div class="input-box">   
             <label>Username</label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
-            </div>
-            <div class="input-box"> 
-            <label>Email</label>
-            <input type="email" placeholder="Enter Email" name="email" required>
-            </div>
-            <div class="input-box"> 
-            <label>Password</label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-            </div>
-            <div class="input-box"> 
-            <label>Password Confirm</label>
-            <input type="password" placeholder="Confirm Password" name="psw" required>
-            </div>
+            <input type="text" placeholder="Enter Username" name="uname" formControlName="username" (keyup)="onInput()"required> -->
+            <mat-form-field class="formField" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input
+                class="inputField"
+                type="text"
+                placeholder="Enter Username"
+                name="uname"
+                formControlName="username"
+                (keyup)="onInput()"
+                matInput  
+                >
+                <mat-error *ngIf="username?.errors?.['required']">username is required</mat-error>
+                <mat-error *ngIf="username?.errors?.['invalidUsername']">Username already been used</mat-error>
+                <!-- <mat-error *ngIf = "form.controls['username'].errors">{{form.controls['username'].errors["invalidEmail"]}}</mat-error> -->
+
+
+                </mat-form-field>
+                <mat-form-field class="formField" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input
+                class="inputField"
+                type="text"
+                placeholder="Enter Email"
+                name="email"
+                formControlName="email"
+                (keyup)="onInput()"
+                matInput  
+                >
+                <mat-error *ngIf="email?.errors?.['required']">email is required</mat-error>
+                <mat-error *ngIf="email?.errors?.['invalidEmail']">Email already been used</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="formField" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input
+                class="inputField"
+                type="password"
+                placeholder="Enter Password"
+                name="psw"
+                formControlName="password"
+                (keyup)="onInput()"
+                matInput
+                >
+                <mat-error *ngIf="password?.errors?.['required']">password is required</mat-error>
+                <mat-error *ngIf="password?.errors?.['noupper']">uppercase character required</mat-error>
+                <mat-error *ngIf="password?.errors?.['nolower']">lowercase character required</mat-error>
+                <mat-error *ngIf="password?.errors?.['nospecial']">special character required</mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="formField" appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput [errorStateMatcher]="matcher"
+                class="inputField"
+                type="password"
+                placeholder="Enter Password"
+                name="pswConfirm"
+                formControlName="passwordConfirm"
+                (keyup)="onInput()"
+                matInput
+                >
+                <!-- <div *ngIf="userPanel?.errors?.['confirmFail']"> raEROIWANFEOIU)</div> -->
+                <!-- <div *ngIf=confirmFail> passwords don't match</div> -->
+                <!-- <mat-error *ngIf=yes> this error should aways show up, its condition is alwats true</mat-error> -->
+                <!-- <mat-error> egg</mat-error> -->
+                <!-- <mat-error *ngIf="password?.errors?.['nospecial']">special character required</mat-error> -->
+                <!-- <mat-error *ngIf=confirmFail> password confirm should be the same as password</mat-error> -->
+                <mat-error *ngIf="passwordConfirm?.errors?.['confirmError']">password confirm should be the same as password</mat-error>
+                <!-- <mat-error *ngIf=yes> password confirm should be the same as password</mat-error> -->
+                </mat-form-field>
             </div>
             <button type="submit" (click) = "onNavigateTo('')">Register</button>
             <div class="footer">
