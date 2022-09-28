@@ -33,13 +33,13 @@
         <div class="story comments" *ngFor="let comment of story.comment">
             <div id="content-header">
                 <p class="avatar">Avatar</p>
-                <p class="username">{{story.publisherName}}</p>
-                <p class="time">{{story.publishedTime}}</p>
+                <p class="username">{{comment.publisher}}</p>
+                <p class="time">{{comment.publishedTime}}</p>
             </div>
 
             <div id="content-body">
-                <p class="content">{{story.content.text}}</p>
-                <img class="content-image" *ngIf="story.content.image != null" src={{story.content.image}}>
+                <p class="content">{{comment.content.text}}</p>
+                <img class="content-image" *ngIf="comment.content.image != null" src={{comment.content.image}}>
             </div>
         </div>
     </div>

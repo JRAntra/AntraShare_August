@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 import { storyInterface } from 'src/app/shared/interfaces/storyInterface';
 import { NewsfeedService } from 'src/app/shared/services/newsfeed.service';
 
@@ -7,7 +7,7 @@ import { NewsfeedService } from 'src/app/shared/services/newsfeed.service';
   templateUrl: './likelist.component.html',
   styleUrls: ['./likelist.component.sass']
 })
-export class LikelistComponent implements AfterViewInit, OnDestroy {
+export class LikelistComponent implements OnDestroy {
   @ViewChild('likelist') box! : ElementRef<HTMLDivElement>;
 
   constructor() {}
@@ -40,16 +40,13 @@ export class LikelistComponent implements AfterViewInit, OnDestroy {
   }
 
   // functions for handling storing stories
-  addStory(story : storyInterface) {
+  onAddStory(story : storyInterface) {
     this.likedStories.push(story);
   }
-  removeStory(el: ElementRef) {
+  onRemoveStory(el: ElementRef) {
     el.nativeElement.remove();
   }
 
-  ngAfterViewInit(): void {
-    
-  }
   ngOnDestroy(): void {
     this.likedStories.length = 0; // completely clear the array, just in case
   }

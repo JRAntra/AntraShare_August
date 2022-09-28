@@ -1,3 +1,4 @@
+// do not name these Interface
 export interface storyInterface {
     _id : string, // will not be used
     publisherName : string,
@@ -7,16 +8,17 @@ export interface storyInterface {
     likedIdList : likeInterface[]
 }
 
+// ? for optional
 export interface contentInterface {
-    image: string,
-    video: string,
-    text: string,
+    image?: string,
+    video?: string,
+    text?: string,
     _id: string // will not be used
 }
 
 export interface commentInterface {
     publisher : string,
-    content : contentInterface[],
+    content : contentInterface,
     _id: string, // will not be used
     publishedTime : string
 }
