@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { checkValidate } from 'src/app/shared/validators/checkUsername';
 import { ValidateLoginService } from 'src/app/shared/service/validate-login.service';
-import { debounceTime } from 'rxjs';
+import { BehaviorSubject, debounceTime, ReplaySubject, Subject } from 'rxjs';
+import { PostLoginService } from 'src/app/shared/service/post-login.service';
+import { Login } from 'src/app/shared/models/login';
 
 @Component({
   selector: 'app-login',
@@ -15,6 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private router : Router,
     private service: ValidateLoginService,
+    private postService: PostLoginService,
   ) { }
 
   form: FormGroup = new FormGroup({
@@ -33,17 +36,13 @@ export class LoginComponent implements OnInit {
   })
 
   ngOnInit(): void {
-    
-    this.setLimitForChange()
-
     this.form.controls["username"].setAsyncValidators(checkValidate(this.service))
-  
-  
-
   }
+
 
   onNavigateTo(dest: string) {
     this.router.navigateByUrl(dest)
+
   }
 
   get password(): FormControl {
@@ -55,14 +54,17 @@ export class LoginComponent implements OnInit {
   }
 
 
-
- setLimitForChange(){
-  this.username.valueChanges.pipe(
-    debounceTime(1000)
-  ).subscribe(res => console.log(res))
+ OnLoginClick() {
+  const userInfo : Login = {
+    userEmail: 'adminmeow@gmail.com',
+    // userEmail: this.form.controls['username'].value,
+    password: this.form.controls['password'].value
+    // how do you find out correct password?
+  }
+  this.postService.postLogin(userInfo).subscribe(res => {
+    console.log(res)
+  })
  }
-
-
   
 
 }
