@@ -1,7 +1,7 @@
 export interface Content {
-    image: string;
-    text: string;
-    video: string;
+    text?: string;
+    image?: string;
+    video?: string;
 }
 
 export interface LikedIdList {
@@ -19,8 +19,8 @@ export interface Post {
     publisherName: string;
     publishedTime: string;
     content: Content;
-    comment: Comment[];
-    likedIdList: LikedIdList[];
+    comment?: Comment[];
+    likedIdList?: LikedIdList[];
     _id: string;
 }
 
