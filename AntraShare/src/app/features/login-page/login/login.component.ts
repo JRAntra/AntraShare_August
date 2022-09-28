@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { checkValidate } from 'src/app/shared/validators/checkUsername';
 import { ValidateLoginService } from 'src/app/shared/service/validate-login.service';
+import { PostLoginService } from 'src/app/shared/service/post-login.service';
+import { Login } from 'src/app/shared/models/login';
 
 @Component({
   selector: 'app-login',
@@ -13,39 +15,61 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router : Router,
-    private fb: FormBuilder,
     private service: ValidateLoginService,
+    private postService: PostLoginService,
   ) { }
 
-  userPanel = this.fb.group({
+
+
+  form: FormGroup = new FormGroup({
     username: new FormControl('',[
       Validators.required,
-      checkValidate(this.service),
+      Validators.minLength(3),
+      Validators.maxLength(50),
+    ],[
+      checkValidate(this.service)
     ]),
     password: new FormControl('',[
-      Validators.minLength(8),
+      Validators.minLength(3),
+      Validators.maxLength(50),
       Validators.required,
     ])
   })
 
   ngOnInit(): void {
-
+    this.form.controls["username"].setAsyncValidators(checkValidate(this.service))
   }
-
-
 
 
   onNavigateTo(dest: string) {
     this.router.navigateByUrl(dest)
+
   }
 
   get password(): FormControl {
-    return this.userPanel.get("password") as FormControl
+    return this.form.get("password") as FormControl
   }
 
   get username(): FormControl {
-    return this.userPanel.get("username") as FormControl
+    return this.form.get("username") as FormControl
   }
 
+  get formgroup(): FormGroup {
+    return this.form
+  }
+
+
+ OnLoginClick() {
+  const userInfo : Login = {
+    userEmail: 'richard@gmail.com',
+    // userEmail: this.form.controls['username'].value,
+    password: this.form.controls['password'].value
+    // how do you find out correct password?
+  }
+  this.postService.postLogin(userInfo).subscribe(res => {
+    console.log(res)
+  })
+ }
+  
 
 }
