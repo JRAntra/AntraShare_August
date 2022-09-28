@@ -19,6 +19,8 @@ export class LoginComponent implements OnInit {
     private postService: PostLoginService,
   ) { }
 
+
+
   form: FormGroup = new FormGroup({
     username: new FormControl('',[
       Validators.required,
@@ -50,6 +52,10 @@ export class LoginComponent implements OnInit {
 
   get username(): FormControl {
     return this.form.get("username") as FormControl
+  }
+
+  get formgroup(): FormGroup {
+    return this.form
   }
 
 

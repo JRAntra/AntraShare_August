@@ -37,7 +37,7 @@
             <mat-error *ngIf="password?.errors?.['minlength']">the password should contain at least 3 characthers</mat-error>
             <mat-error *ngIf="password?.errors?.['maxlength']">the password should contain no more than 50 characthers</mat-error>
             </mat-form-field>
-            <button type="submit" (click) = "[onNavigateTo('home'), OnLoginClick()]">Login</button>
+            <button [disabled]="!formgroup.valid" type="submit" (click) = "[onNavigateTo('home'), OnLoginClick()]">Login</button>
             <a id="register" (click) = "onNavigateTo('register')">No Accounts? Register Now!</a>
             <div class="footer">
             <input id="checkbox" type="checkbox"> Agreement
