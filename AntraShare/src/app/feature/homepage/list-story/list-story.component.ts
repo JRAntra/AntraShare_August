@@ -15,7 +15,7 @@ export class ListStoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.stroyListService.getStoryListsFromServer().subscribe(values => {
-      this.storyList = values;
+      this.storyList = values.reverse();
     })
   }
 

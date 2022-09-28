@@ -1,4 +1,4 @@
-<div id="post-story-form">
-    <div id="post-story-content">Content</div>
-    <button id="post-story-button">Post</button>
-</div>
+<form class="post-story-form" [formGroup]="userPost">
+    <textarea matInput id="textArea" placeholder="What are you thinking?" formControlName="postText"></textarea>
+    <button mat-raised-button color="primary" id="postButton" (click)="postNewStory()">Post</button>
+</form>
