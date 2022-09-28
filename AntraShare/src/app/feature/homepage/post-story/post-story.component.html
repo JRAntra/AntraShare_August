@@ -1,15 +1,17 @@
 <div id="post-story-form">
-    <!-- <div id="post-story-content" >
+    <div id="post-story-content" [(ngModel)]="newPost.publisherName">
         
-    </div> -->
-    <form [(ngModel)]="newPost.publisherName"name="publisherName">
+    </div>
+    <button mat-raised-button (click)='onPost()'>Post</button>
+    <!-- <form [(ngModel)]="newPost.publisherName" name="first">
             <mat-form-field appearance="outline">
               <mat-label>Content</mat-label>
               <input
                 matInput
                 placeholder="New Story Content"
+                class="first"
               />
             </mat-form-field>
             <button mat-raised-button (click)='onPost()'>Post</button>
-    </form>
+    </form> -->
 </div>
