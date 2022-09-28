@@ -11,20 +11,13 @@ export class PostServiceService {
   
   url ="http://localhost:4231/api/news";
 
-  newPosts: Post[]= [];
-
   constructor(private http: HttpClient) { }
  
  
-  addPost(newpost : Post):Observable<Post>{
-    return this.http.post<Post>(this.url, newpost)
+  addPost(newpost : Post ):Observable<Post>{
+    return this.http.post<any>(this.url,newpost)
   }
 
-//  addToPost(item: Post){
-//   this.newPosts.push(item);
-//  }
   
-  
-
 }
 

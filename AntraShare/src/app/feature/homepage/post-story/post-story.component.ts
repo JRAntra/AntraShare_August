@@ -23,9 +23,9 @@ throw new Error('Method not implemented.');
 // }
  
   newPost: Post ={
-    publisherName: "",
-    publishedTime:"",
-    _id: " ",
+    publisherName: "Eg",
+    publishedTime:"123",
+   
   }
  
   

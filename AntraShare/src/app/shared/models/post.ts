@@ -17,11 +17,11 @@ export interface Comment {
 
 export interface Post {
     publisherName: string;
-    publishedTime: string;
+    publishedTime?: string;
     content?: Content;
     comment?: Comment[];
     likedIdList?: LikedIdList[];
-    _id: string;
+    _id?: string;
 }
 
 export interface LikeList {

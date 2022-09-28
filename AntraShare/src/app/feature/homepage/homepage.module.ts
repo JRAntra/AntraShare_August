@@ -11,6 +11,7 @@ import { HomepageComponent } from './homepage.component';
 import { LikeListComponent } from './like-list/like-list.component';
 
 import { TruncatePipe } from 'src/app/shared/pipes/truncate.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -26,10 +27,11 @@ import { TruncatePipe } from 'src/app/shared/pipes/truncate.pipe';
     CommonModule,
     HomepageRoutingModule,
     MaterialModule,
-    
+    FormsModule,
   ],
   exports: [
-    HomepageComponent
+    HomepageComponent,
+    
   ]
 })
 export class HomepageModule { }

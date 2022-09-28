@@ -1,6 +1,14 @@
 <div id="post-story-form">
     <div id="post-story-content" >
-
+        <form [(ngModel)]="newPost.publisherName"name="publisherName">
+            <mat-form-field appearance="outline">
+              <mat-label>Content</mat-label>
+              <input
+                matInput
+                placeholder="New Story Content"
+              />
+            </mat-form-field>
+            <button mat-raised-button (click)='onPost()'>Post</button>
+          </form>
     </div>
-    <button id="post-story-button" (click)="onPost()">Post</button>
 </div>
