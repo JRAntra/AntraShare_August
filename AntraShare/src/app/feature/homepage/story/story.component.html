@@ -1,28 +1,23 @@
-<div class="story-info">
-    <div class="user-info">
-        <div class="avatar-img">
-            Avatar Image
-        </div>
-        <div class="username">
-            {{ post?.publisherName }}
-        </div>
-        <div class="published-time">
-            {{ post?.publishedTime }}
-        </div>
-    </div>
-
-    <div class="story-content">
-        {{ post?.content?.text }}
-    </div>
-
-    <div class="interact-info">
-        <div class="like info">
+<mat-card class="story-info">
+    <mat-card-header>
+        <div mat-card-avatar class="avatar-img"></div>
+        <mat-card-title>{{ post?.publisherName }}</mat-card-title>
+        <mat-card-subtitle>{{ post?.publishedTime | date:'short' }}</mat-card-subtitle>
+    </mat-card-header>
+    <ng-container *ngIf="post?.content?.image">
+        <img mat-card-xl-image class="imgContent" src='{{ post?.content?.image }}'>
+    </ng-container>
+    <mat-card-content>
+        <p>{{ post?.content?.text }}</p>
+    </mat-card-content>
+    <mat-card-actions class="actionButton">
+        <div>
             <mat-icon (click)="likePost()" [ngStyle]="{'color': likeColor}">thumb_up</mat-icon>
-            <p>{{ post?.likedIdList?.length }}</p>
+            <span>{{ post?.likedIdList?.length }}</span>
         </div>
-        <div class="comment info">
+        <div>
             <mat-icon>comment</mat-icon>
-            <p>{{ post?.comment?.length }}</p>
+            <span>{{ post?.comment?.length }}</span>
         </div>
-    </div>
-</div>
+    </mat-card-actions>
+</mat-card>
