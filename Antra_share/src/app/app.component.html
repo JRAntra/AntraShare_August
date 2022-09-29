@@ -1,4 +1,5 @@
-<app-header></app-header>
+<app-header (buttonClicked)="applikelist.toggleHide()"></app-header>
+<app-likelist #applikelist></app-likelist>
 <router-outlet></router-outlet>
 
 <app-footer></app-footer>

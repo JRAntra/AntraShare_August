@@ -11,8 +11,11 @@ import { ProfileModule } from './profile/profile.module';
 import { SettingModule } from './setting/setting.module';
 import { RegisterModule } from './register/register.module';
 import { HttpClientModule } from '@angular/common/http';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
+import { NewsfeedService } from './shared/services/newsfeed.service';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,7 +33,7 @@ import { MatSliderModule } from '@angular/material/slider';
     BrowserAnimationsModule,
     MatSliderModule,
   ],
-  providers: [],
+  providers: [NewsfeedService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

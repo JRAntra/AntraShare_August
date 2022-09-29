@@ -6,12 +6,16 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { RouterModule } from '@angular/router';
+import { LikelistComponent } from './likelist/likelist.component';
+import { Limit20Pipe } from './likelist/limit20.pipe';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LikelistComponent,
+    Limit20Pipe
   ],
   imports: [
     CommonModule,
@@ -21,6 +25,8 @@ import { RouterModule } from '@angular/router';
   exports: [
     FooterComponent,
     HeaderComponent,
+    LikelistComponent,
+    Limit20Pipe
   ]
 })
 export class CoreModule { }

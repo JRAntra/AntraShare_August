@@ -1,0 +1,15 @@
+<div id="like-list" ngModel #likelist>
+    <ul class="inner-box">
+        <!--<p *ngIf="likedStories.length === 0">Stories list is empty!</p>-->
+        <div class="liked-story"> <!-- *ngFor="let story of likedStories" -->
+            <div class="publish-info">
+                <p>{{testPublisherName}}</p>
+                <p>{{testPublisherTime}}</p>
+            </div>
+            <div class="content">
+                <p>{{testContent | limit20}}</p>
+            </div>
+            <button class="remove-button steam-button">Remove</button>
+        </div>
+    </ul>
+</div>

@@ -1,8 +1,9 @@
+@import "../../shared/styling/og-steam-ui"
+
 #admin-body
     margin-top: 3rem
     display: flex
     width: 100%
-    background-color: black
     height: 40rem
 
 #admin-body-left
@@ -10,32 +11,57 @@
     flex-direction: column
     height: 100%
     width: 20%
-    background-color: green
+    background-color: $base-ui-color
+    border: solid
+    border-top-color: $border-light
+    border-left-color: $border-light
+    border-bottom-color: $border-dark
+    border-right-color: $border-dark
+    border-width: thin
 
 .user-tag
     display: flex
     flex-direction: row
-    width: 100%
+    width: 95%
+    position: relative
+    left: 2.5%
     height: 3rem
     margin-top: 1rem
-    background-color: #8b8b8b
+    background-color: $inset-color
+    border: solid
+    border-top-color: $border-dark
+    border-left-color: $border-dark
+    border-bottom-color: $border-light
+    border-right-color: $border-light
+    border-width: thin
     p
-        color: white
+        color: $default-font-color
         position: relative
         left: 30%
 
 .delete-button
     position: relative
     left: 60%
+    top: 15%
+    height: 70%
 
 #add-user
-    width: 100%
+    width: 90%
     height: 3rem
     position: relative
+    left: 5%
     top: 80%
 
 #admin-body-right
+    background-color: $inset-color
+    width: 80%
+    border: solid
+    border-top-color: $border-dark
+    border-left-color: $border-dark
+    border-bottom-color: $border-light
+    border-right-color: $border-light
+    border-width: thin
     p
         position: relative
-        left: 25%
-        color: white
+        left: 1%
+        color: $default-font-color

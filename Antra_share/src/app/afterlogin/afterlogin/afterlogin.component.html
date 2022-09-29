@@ -1,32 +1,49 @@
 <div id="al-body">
     <div class="post-form">
         <textarea class="post-box" name="post-box"></textarea>
-        <input type="submit" value="Post">
+        <input type="submit" value="Post" class="steam-button">
     </div>
 
-    <div class="story">
-        <div id="content-header">
-            <p class="avatar">Avatar</p>
-            <p class="username">User Name</p>
-            <p class="time">Published Time</p>
-        </div>
-
-        <div id="content-body">
-            <p class="video-image">Video Image</p>
-            <p class="content">Content</p>
-        </div>
-
-        <div id="content-bottom">
-            <div class="comment-stats">
-                <p class="comment-icon">Comment Icon</p>
-                <p class="comment-number">Comment Number</p>
+    <div class="story-and-comments" *ngFor="let story of storyList">
+        <div class="story">
+            <div id="content-header">
+                <p class="avatar">Avatar</p>
+                <p class="username">{{story.publisherName}}</p>
+                <p class="time">{{story.publishedTime}}</p>
             </div>
-            <div class="like-stats">
-                <p class="like-icon">Like Icon</p>
-                <p class="like-number">Like Number</p>
+    
+            <div id="content-body">
+                <p class="content">{{story.content.text}}</p>
+                <img class="content-image" *ngIf="story.content.image != null" src={{story.content.image}}>
+            </div>
+    
+            <div id="content-bottom">
+                <div class="comment-stats">
+                    <p class="comment-icon">Comments</p>
+                    <p class="comment-number">{{story.comment.length}}</p>
+                </div>
+                <div class="like-stats">
+                    <p class="like-icon">Likes</p>
+                    <p class="like-number">{{story.likedIdList.length}}</p>
+                </div>
+                <button class="like-button steam-button" (click)="like()">Like</button>
+            </div>
+        </div>
+
+        <div class="story comments" *ngFor="let comment of story.comment">
+            <div id="content-header">
+                <p class="avatar">Avatar</p>
+                <p class="username">{{comment.publisher}}</p>
+                <p class="time">{{comment.publishedTime}}</p>
+            </div>
+
+            <div id="content-body">
+                <p class="content">{{comment.content.text}}</p>
+                <img class="content-image" *ngIf="comment.content.image != null" src={{comment.content.image}}>
             </div>
         </div>
     </div>
+    
 </div>
 
 <div class="disappear" appHidein5>
