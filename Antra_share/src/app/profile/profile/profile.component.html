@@ -1,35 +1,187 @@
-<div class="pageOverAll">
-    <div class="profile">
-      <div class="user">
+<!-- <div class="pageOverAll">
+  <div class="profile">
+    <div class="user">
+      <img
+        class="avatar"
+        src="https://cdn-icons-png.flaticon.com/512/147/147142.png"
+      />
+      <h3 class="name"></h3>
+      <p class="email"><b>Email:</b></p>
+      <input placeholder="Enter mail" type="text" />
+      <input type="password" placeholder="Enter Password" />
+      <p><b>Gender:</b></p>
+      <input placeholder="Enter Gender" type="text" />
+      <p><b>Age:</b></p>
+      <input placeholder="Age?" type="text" />
+    </div>
+
+    <div class="count">
+      <div class="post">
         <img
-          class="avatar"
-          src="https://cdn-icons-png.flaticon.com/512/147/147142.png"
+          class="icon"
+          src="https://cdn-icons-png.flaticon.com/512/1999/1999310.png"
         />
-        <h3 class="name"></h3>
-        <p class="email"><b>Email:</b></p>
-        <input placeholder="Enter mail" type="text" />
-        <input type="password" placeholder="Enter Password" />
-        <p><b>Gender:</b></p>
-        <input placeholder="Enter Gender" type="text" />
-        <p><b>Age:</b></p>
-        <input placeholder="Age?" type="text" />
+        <span>13</span>
       </div>
-      <div class="count">
-        <div class="post">
-          <img
-            class="icon"
-            src="https://cdn-icons-png.flaticon.com/512/1999/1999310.png"
-          />
-          <span>13</span>
-        </div>
-        <div class="likes">
-          <img
-            class="icon"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Facebook_Thumb_icon.svg/1200px-Facebook_Thumb_icon.svg.png"
-          />
-          <span>22</span>
-        </div>
+
+      <div class="likes">
+        <img
+          class="icon"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Facebook_Thumb_icon.svg/1200px-Facebook_Thumb_icon.svg.png"
+        />
+        <span>22</span>
       </div>
     </div>
   </div>
-  
+</div> -->
+
+<div class="page">
+  <!-- <div class="leftB">
+    <img
+      class="avatar"
+      src="https://cdn-icons-png.flaticon.com/512/147/147142.png"
+    />
+    <h3>User name</h3>
+  </div> -->
+  <!-- <div class="rightB">
+    <div class="boxRight"> -->
+  <!-- <mat-form-field class="genderInput" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" value="" />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="genderInput" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" value="" type="password" />
+      </mat-form-field>
+      <br />
+      <mat-form-field class="genderInput" appearance="fill">
+        <mat-label>Gender</mat-label>
+        <input matInput placeholder="Gender" value="" />
+      </mat-form-field>
+
+      <br />
+      <mat-form-field class="ageInput" appearance="fill">
+        <mat-label>Age</mat-label>
+        <input matInput placeholder="Age" value="" />
+      </mat-form-field> -->
+
+  <mat-card class="card">
+    <mat-card-header class="header">
+      <mat-card-title>User Name</mat-card-title>
+    </mat-card-header>
+    <img
+      class="avatar"
+      src="https://cdn-icons-png.flaticon.com/512/147/147142.png"
+    />
+    <mat-card-content>
+      <mat-card>
+        <mat-card-subtitle>
+          <mat-icon>alternate_email</mat-icon>
+          : useremail@gmail.com</mat-card-subtitle
+        >
+      </mat-card>
+
+      <div class="userForm" [formGroup]="userPanel">
+        <mat-form-field class="formField" appearance="fill">
+          <mat-label>User Name</mat-label>
+          <input
+            class="inputField"
+            matInput
+            formControlName="username"
+            type="text"
+            placeholder="User Name"
+          />
+          <div *ngIf="username?.errors">
+            <div *ngFor="let item of errorsMsgUser">
+              <div>
+                {{ showErrorUsername(item) }}
+              </div>
+            </div>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field class="formField" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            class="inputField"
+            formControlName="password"
+            placeholder="Password"
+            type="password"
+          />
+          <div *ngIf="password?.errors">
+            <div *ngFor="let item of errorsMsgPassword">
+              <div>
+                {{ showErrorPassword(item) }}
+              </div>
+            </div>
+          </div>
+        </mat-form-field>
+        <mat-form-field class="formField" appearance="fill">
+          <mat-label>Gender</mat-label>
+          <input
+            class="inputField"
+            matInput
+            formControlName="gender"
+            placeholder="Male/Female/Other"
+          />
+          <div *ngIf="gender?.errors">
+            <div *ngFor="let item of errorsMsgGender">
+              <div>
+                {{ showErrorPassword(item) }}
+              </div>
+            </div>
+          </div>
+        </mat-form-field>
+
+        <mat-form-field class="formField" appearance="fill">
+          <mat-label>Age</mat-label>
+          <input
+            class="inputField"
+            matInput
+            type="number"
+            placeholder="Age"
+            formControlName="age"
+          />
+
+          <!-- <button (click)="changeThis(age.value)">Modify</button> -->
+        </mat-form-field>
+        <mat-form-field class="formField" appearance="fill">
+          <mat-label>Phone Number</mat-label>
+          <input
+            class="inputField"
+            matInput
+            placeholder="(123)456-7890"
+            formaction="phone"
+            formControlName="phone"
+          />
+          <!-- <button (click)="changeThis(phone.value)">Modify</button> -->
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+
+    <mat-card-actions class="userActivity">
+      <button
+        mat-raised-button
+        color="primary"
+        matBadge="8"
+        matBadgePosition="before"
+        matBadgeColor="accent"
+      >
+        <mat-icon>thumb_up</mat-icon>
+      </button>
+      <button
+        mat-raised-button
+        color="primary"
+        matBadge="8"
+        matBadgePosition="before"
+        matBadgeColor="accent"
+      >
+        <mat-icon> message</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<!-- </div>
+</div> -->

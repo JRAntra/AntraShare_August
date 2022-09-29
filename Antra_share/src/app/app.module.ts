@@ -10,9 +10,12 @@ import { LoginModule } from './login/login.module';
 import { ProfileModule } from './profile/profile.module';
 import { SettingModule } from './setting/setting.module';
 import { RegisterModule } from './register/register.module';
-
 import { HttpClientModule } from '@angular/common/http';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
 import { NewsfeedService } from './shared/services/newsfeed.service';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,7 +29,9 @@ import { NewsfeedService } from './shared/services/newsfeed.service';
     ProfileModule,
     SettingModule,
     RegisterModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
   ],
   providers: [NewsfeedService],
   bootstrap: [AppComponent],
