@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Post } from 'src/app/shared/models/post';
 import { PostServiceService } from '../services/post-service.service';
 import { StorylistService } from '../services/storylist.service';
@@ -9,9 +10,6 @@ import { StorylistService } from '../services/storylist.service';
   styleUrls: ['./post-story.component.sass']
 })
 export class PostStoryComponent implements OnInit{
-removePost(arg0: any) {
-throw new Error('Method not implemented.');
-}
 
 // export interface Post {
 //   publisherName: string;
@@ -22,13 +20,16 @@ throw new Error('Method not implemented.');
 //   _id: string;
 // }
  
-  newPost: Post ={
-    publisherName: "Eg",
-    publishedTime:"123",
-   
-  }
- 
   
+//  postForm: FormGroup = new FormGroup({
+//   ["publisherName"]: new FormControl(),
+//   ["publishertime"]: new FormControl()
+//  })
+  
+ newPost: Post ={
+  publisherName: "Eg",
+  publishedTime:"123",
+}
   constructor(private postService: PostServiceService) { }
   
   ngOnInit(): void {
@@ -36,7 +37,7 @@ throw new Error('Method not implemented.');
  
   
 onPost(){
+  
   this.postService.addPost(this.newPost).subscribe(data => console.log(data))
-}
-
-}
+  }
+} 
