@@ -19,7 +19,8 @@
 
         <mat-form-field appearance="fill">
             <mat-label>Password</mat-label>
-            <input matInput id="password" formControlName="password" [type]="passwordHide ? 'password' : 'text'" class="form-control">
+            <input matInput id="password" formControlName="password" [type]="passwordHide ? 'password' : 'text'"
+                class="form-control">
             <button mat-icon-button matSuffix (click)="passwordHide = !passwordHide" [attr.aria-label]="'Hide password'"
                 [attr.aria-pressed]="passwordHide">
                 <mat-icon>{{passwordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -33,16 +34,17 @@
 
         <mat-form-field appearance="fill">
             <mat-label>Confirm Password</mat-label>
-            <input matInput id="confirmPassword" formControlName="confirmPassword" type="confirmPasswordHide ? 'password' : 'text'" class="form-control">
-            <button mat-icon-button matSuffix (click)="confirmPasswordHide = !confirmPasswordHide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="confirmPasswordHide">
+            <input matInput id="confirmPassword" formControlName="confirmPassword"
+                type="confirmPasswordHide ? 'password' : 'text'" class="form-control">
+            <button mat-icon-button matSuffix (click)="confirmPasswordHide = !confirmPasswordHide"
+                [attr.aria-label]="'Hide password'" [attr.aria-pressed]="confirmPasswordHide">
                 <mat-icon>{{confirmPasswordHide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
             <mat-error *ngIf="confirmPassword?.errors?.['required']">Password cannot be empty.</mat-error>
             <mat-error *ngIf="confirmPassword?.errors?.['hasmatch']">Passwords must match.</mat-error>
         </mat-form-field>
 
-        <button type="submit" class="btn btn-primary">Register</button>
+        <button type="submit" [disabled]="registerForm?.invalid" class="btn btn-primary">Register</button>
     </form>
 
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
-import { StorylistService } from '../services/storylist.service';
+import { StorylistService } from '../../services/storylist.service';
 import { LikeList } from 'src/app/shared/models/post';
 
 @Component({

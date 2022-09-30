@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomepageComponent } from './feature/homepage/homepage.component';
+import { HomepageComponent } from './features/homepage/homepage.component';
 
 const routes: Routes = [
   {
@@ -8,23 +8,23 @@ const routes: Routes = [
   },
   {
     path: "login",
-    loadChildren: () => import('./feature/login/login.module').then(m => m.LoginModule)
+    loadChildren: () => import('./features/login/login.module').then(m => m.LoginModule)
   },
   {
     path: "register",
-    loadChildren: () => import('./feature/register/register.module').then(m => m.RegisterModule)
+    loadChildren: () => import('./features/register/register.module').then(m => m.RegisterModule)
   },
   {
     path: "profile",
-    loadChildren: () => import('./feature/profile/profile.module').then(m => m.ProfileModule)
+    loadChildren: () => import('./features/profile/profile.module').then(m => m.ProfileModule)
   },
   {
     path: "settings",
-    loadChildren: () => import('./feature/settings/settings.module').then(m => m.SettingsModule)
+    loadChildren: () => import('./features/settings/settings.module').then(m => m.SettingsModule)
   },
   {
     path: "admin",
-    loadChildren: () => import('./feature/admin/admin.module').then(m => m.AdminModule)
+    loadChildren: () => import('./features/admin/admin.module').then(m => m.AdminModule)
   },
   { path: "**", redirectTo: "redirectTo"}
 ];

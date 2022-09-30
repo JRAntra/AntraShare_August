@@ -5,11 +5,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../../material.module';
 
 import { HomepageRoutingModule } from './homepage-routing.module';
-import { ListStoryComponent } from './list-story/list-story.component';
-import { PostStoryComponent } from './post-story/post-story.component';
-import { StoryComponent } from './story/story.component';
+import { ListStoryComponent } from './components/list-story/list-story.component';
+import { PostStoryComponent } from './components/post-story/post-story.component';
+import { StoryComponent } from './components/story/story.component';
 import { HomepageComponent } from './homepage.component';
-import { LikeListComponent } from './like-list/like-list.component';
+import { LikeListComponent } from './components/like-list/like-list.component';
 
 import { TruncatePipe } from 'src/app/shared/pipes/truncate.pipe';
 

@@ -14,16 +14,16 @@ import { CoreModule } from './core/core.module'
 // shared
 
 // module
-import { AdminModule } from './feature/admin/admin.module';
-import { LoginModule } from './feature/login/login.module';
-import { RegisterModule } from './feature/register/register.module';
-import { ProfileModule } from './feature/profile/profile.module';
-import { HomepageModule } from './feature/homepage/homepage.module';
-import { SettingsModule } from './feature/settings/settings.module';
+import { AdminModule } from './features/admin/admin.module';
+import { LoginModule } from './features/login/login.module';
+import { RegisterModule } from './features/register/register.module';
+import { ProfileModule } from './features/profile/profile.module';
+import { HomepageModule } from './features/homepage/homepage.module';
+import { SettingsModule } from './features/settings/settings.module';
 
 // serve
 import { HttpClientModule } from '@angular/common/http';
-import { StorylistService } from './feature/homepage/services/storylist.service';
+import { StorylistService } from './features/homepage/services/storylist.service';
 
 @NgModule({
   declarations: [
