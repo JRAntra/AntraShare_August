@@ -1,7 +1,7 @@
 export interface Content {
-    image: string;
-    text: string;
-    video: string;
+    image?: string;
+    text?: string;
+    video?: string;
 }
 
 export interface LikedIdList {

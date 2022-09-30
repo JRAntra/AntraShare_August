@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControlOptions, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { User } from 'src/app/shared/models/user';
 import { ValidateDataService } from '../../shared/services/validate-data.service';
 import { InputValidators } from '../../shared/validators/input-validator';
+import { RegisterService } from './services/register.service';
 
 @Component({
   selector: 'app-register',
@@ -16,6 +18,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private validateService: ValidateDataService,
+    private registerService: RegisterService
   ) {
   }
 
@@ -79,7 +82,21 @@ export class RegisterComponent implements OnInit {
 
     if (this.registerForm.invalid) return
 
-    this.success = JSON.stringify(this.registerForm.value)
+    //this.success = JSON.stringify(this.registerForm.value)
+
+    console.log(this.registerForm.value)
+    const newUser: User = {
+      username: JSON.stringify(this.registerForm?.get('username')?.value),
+      password: JSON.stringify(this.registerForm?.get('password')?.value),
+      email: JSON.stringify(this.registerForm?.get('email')?.value),
+    }
+    this.addUser(newUser)
+  }
+
+  addUser(user: User) {
+    this.registerService.addUser(user).subscribe(data => {
+      console.log(data)
+    })
   }
 
 }
