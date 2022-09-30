@@ -6,6 +6,7 @@ import { ValidateLoginService } from 'src/app/shared/service/validate-login.serv
 import { PostLoginService } from 'src/app/shared/service/post-login.service';
 import { Login } from 'src/app/shared/models/login';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +15,7 @@ import { Login } from 'src/app/shared/models/login';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private router : Router,
+    private router: Router,
     private service: ValidateLoginService,
     private postService: PostLoginService,
   ) { }
@@ -22,14 +23,14 @@ export class LoginComponent implements OnInit {
 
 
   form: FormGroup = new FormGroup({
-    username: new FormControl('',[
+    userEmail: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(50),
-    ],[
+    ], [
       checkValidate(this.service)
     ]),
-    password: new FormControl('',[
+    password: new FormControl('', [
       Validators.minLength(3),
       Validators.maxLength(50),
       Validators.required,
@@ -37,7 +38,8 @@ export class LoginComponent implements OnInit {
   })
 
   ngOnInit(): void {
-    this.form.controls["username"].setAsyncValidators(checkValidate(this.service))
+    this.form.controls["userEmail"].setAsyncValidators(checkValidate(this.service))
+
   }
 
 
@@ -50,8 +52,8 @@ export class LoginComponent implements OnInit {
     return this.form.get("password") as FormControl
   }
 
-  get username(): FormControl {
-    return this.form.get("username") as FormControl
+  get userEmail(): FormControl {
+    return this.form.get("userEmail") as FormControl
   }
 
   get formgroup(): FormGroup {
@@ -59,17 +61,18 @@ export class LoginComponent implements OnInit {
   }
 
 
- OnLoginClick() {
-  const userInfo : Login = {
-    userEmail: 'richard@gmail.com',
-    // userEmail: this.form.controls['username'].value,
-    password: this.form.controls['password'].value
-    // how do you find out correct password?
-  }
-  this.postService.postLogin(userInfo).subscribe(res => {
-    console.log(res)
-  })
- }
+ 
+
+  OnLoginClick() {
+    const userInfo: Login = {
+      userEmail: this.form.controls['userEmail'].value,
+      password: this.form.controls['password'].value
   
+    }
+    this.postService.postLogin(userInfo).subscribe(res => {
+      console.log(res)
+    })
+  }
+
 
 }

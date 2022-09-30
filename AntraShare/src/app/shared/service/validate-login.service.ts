@@ -11,8 +11,8 @@ export class ValidateLoginService {
 
   constructor(private http: HttpClient) { }
 
-  checkUsernameValid(username : string) : Observable<boolean> {
-    const url = `http://localhost:4231/api/register/checkExistByUsername/${username}`
+  checkUsernameValid(email : string) : Observable<boolean> {
+    const url = `http://localhost:4231/api/register/checkExistByEmail/${email}`
     return this.http.get<boolean>(url)
   }
 
