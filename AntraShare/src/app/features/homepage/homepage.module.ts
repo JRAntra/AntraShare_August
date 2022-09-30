@@ -12,6 +12,7 @@ import { HomepageComponent } from './homepage.component';
 import { LikeListComponent } from './components/like-list/like-list.component';
 
 import { TruncatePipe } from 'src/app/shared/pipes/truncate.pipe';
+import { ListCommentComponent } from './components/story/components/list-comment/list-comment/list-comment.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { TruncatePipe } from 'src/app/shared/pipes/truncate.pipe';
     StoryComponent,
     LikeListComponent,
     TruncatePipe,
+    ListCommentComponent,
   ],
   imports: [
     CommonModule,

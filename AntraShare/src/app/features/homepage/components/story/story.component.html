@@ -16,7 +16,7 @@
             <span>{{ post?.likedIdList?.length }}</span>
         </div>
         <div>
-            <mat-icon>comment</mat-icon>
+            <mat-icon (click)="openDialog()">comment</mat-icon>
             <span>{{ post?.comment?.length }}</span>
         </div>
     </mat-card-actions>
