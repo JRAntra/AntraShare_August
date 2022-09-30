@@ -1,0 +1,16 @@
+<div class="dialog-container">
+    <h1 mat-dialog-title>Comments</h1>
+    <div class="comment-container" *ngFor="let comment of this.data">
+        <mat-card class="comment">
+            <mat-card-header class="user">
+                <img mat-card-avatar class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Single.jpg/1200px-Banana-Single.jpg">
+                <mat-card-title class="name">{{comment.publisherName}}</mat-card-title>
+                <mat-card-subtitle class="time">{{comment.publishedTime}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content class="text">
+                <p class="content" >{{comment.content.text}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+

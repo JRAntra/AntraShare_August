@@ -13,14 +13,17 @@ import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommentListComponent } from './home/story-list/story/comment-list/comment-list.component';
 @NgModule({
   declarations: [
     HomeComponent,
     LikelistComponent,
     StoryListComponent,
     PostformComponent,
-    StoryComponent
+    StoryComponent,
+    CommentListComponent
   ],
   imports: [
     CommonModule,
@@ -30,6 +33,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
+    MatDialogModule,
     ReactiveFormsModule,
   ]
 })
