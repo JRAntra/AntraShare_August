@@ -81,7 +81,13 @@
                 <!-- <mat-error *ngIf=yes> password confirm should be the same as password</mat-error> -->
                 </mat-form-field>
             </div>
-            <button type="submit" (click) = "onNavigateTo('')">Register</button>
+            <input 
+            placeholder="type in here to trigger because wtf even are buttons"
+            (keyup)="onSubmitButtonClick()"
+            [disabled]="hasErrors">
+            <button> egg</button>
+            <button [disabled]="hasErrors" (click) = "onSubmitButtonClick()">Register</button>
+            <!-- <button type="submit" (click) = "onNavigateTo('')">Register</button> -->
             <div class="footer">
                 <input id="checkbox" type="checkbox"> Agreement
                 <a id="help" href="#">Need Help?</a>
