@@ -6,7 +6,7 @@
         <p> {{ item.publisherName }} </p>
         <p> {{ item.publishedTime }} </p>
         <div class="content">
-            {{ item.content.text | truncate: 20 }}
+            {{ item?.content?.text | truncate: 20 }}
             <button class="remove" (click)="removePost(item._id)" mat-raised-button color="warn">Remove</button>
         </div>
     </div>
