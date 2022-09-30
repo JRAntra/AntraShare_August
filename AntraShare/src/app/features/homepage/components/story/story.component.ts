@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { StorylistService } from '../../services/storylist.service';
 import { LikeList, Post, Content } from '../../../../shared/models/post';
-
+import { MatDialog } from '@angular/material/dialog';
+import { CommentListComponent } from '../comment-list/comment-list.component';
 @Component({
   selector: 'app-story',
   templateUrl: './story.component.html',
@@ -9,7 +10,7 @@ import { LikeList, Post, Content } from '../../../../shared/models/post';
 })
 export class StoryComponent implements OnInit {
 
-  constructor(private stroyListService : StorylistService) { }
+  constructor(private stroyListService : StorylistService, public dialog: MatDialog) { }
 
   @Input() post? : Post;
   isLiked: Boolean = false;
@@ -34,5 +35,12 @@ export class StoryComponent implements OnInit {
       this.stroyListService.deletePostFromLikeList(this.post?._id as string);
     }
     this.likeColor = this.isLiked ? "blue" : "black";
+  }
+  openDialog(){
+    this.dialog.open(CommentListComponent, {
+      data:{
+        comments: this.post?.comment,
+      }
+    })
   }
 }

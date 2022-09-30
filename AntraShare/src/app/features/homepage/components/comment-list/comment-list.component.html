@@ -1,0 +1,12 @@
+<p>comment-list works!</p>
+<p>list-comment works!</p>
+<div *ngFor="let comment of commentList">
+    <p> {{ comment?.publisherName }}</p>
+    <p> {{ comment?.publishedTime | date:"short" }} </p>
+    <ng-container *ngIf="comment?.content?.image">
+        <img mat-card-xl-image class="imgContent" src='{{ comment?.content?.image }}'>
+    </ng-container>
+    <mat-card-content>
+        <p>{{ comment?.content?.text }}</p>
+    </mat-card-content>
+</div>
