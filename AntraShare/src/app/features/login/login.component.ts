@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControlOptions, FormBuilder, Validators, FormControl, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
+import { Login } from 'src/app/shared/models/Login';
 import { ValidateDataService } from '../../shared/services/validate-data.service';
 import { InputValidators } from '../../shared/validators/input-validator';
+import { LoginService } from './login-service/login.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +18,9 @@ export class LoginComponent implements OnInit {
 
     private router : Router, 
     private fb: FormBuilder, 
-    private validateService: ValidateDataService
+    private validateService: ValidateDataService,
+    private loginService: LoginService
+
 
   ) {}
   
@@ -37,6 +41,7 @@ export class LoginComponent implements OnInit {
   })
 
   ngOnInit(): void {
+   this.userLoginPanel.controls["username"].setAsyncValidators( InputValidators.usernameValidator(this.validateService))
   }
 
 
@@ -50,6 +55,16 @@ export class LoginComponent implements OnInit {
 
   get username(): FormControl {
     return this.userLoginPanel.get("username") as FormControl
+  }
+
+  onLogin(){
+    const user: Login = {
+      userName: 'EegiiUnur',
+      password: this.password.value
+    }
+  
+    this.loginService.letlogin(user).subscribe(res => {console.log(res)})
+    // console.log( this.loginService.letlogin(user).subscribe(res => {console.log(res)}))
   }
 
 }

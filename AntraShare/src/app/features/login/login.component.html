@@ -38,7 +38,7 @@
             the password should contain at least 8 characthers
         </mat-error>
       </mat-form-field>
-      <button id="login-button" type="submit" (click)="onNavigateTo('')">
+      <button [disabled]="!userLoginPanel.controls.username" id="login-button" type="submit" (click)="[onNavigateTo(''),onLogin()]">
         Login
       </button>
       <div class="footer">
