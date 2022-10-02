@@ -18,7 +18,6 @@ export class NewsfeedStoryService {
   }
 
   addToLikeList(likedPost: NewsfeedStory) {
-    console.log(likedPost)
     this.likedList.push(likedPost)
     this.likeListSubject.next(this.likedList)
   }
