@@ -14,13 +14,16 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ListDialogComponent } from './home/likelist/list-dialog/list-dialog.component';
 @NgModule({
   declarations: [
     HomeComponent,
     LikelistComponent,
     StoryListComponent,
     PostformComponent,
-    StoryComponent
+    StoryComponent,
+    ListDialogComponent
   ],
   imports: [
     CommonModule,
@@ -30,6 +33,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
+    MatDialogModule,
     ReactiveFormsModule,
   ]
 })
