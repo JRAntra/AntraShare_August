@@ -15,6 +15,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { ListDialogComponent } from './home/likelist/list-dialog/list-dialog.component';
 import { CommentListComponent } from './home/story-list/story/comment-list/comment-list.component';
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { CommentListComponent } from './home/story-list/story/comment-list/comme
     StoryListComponent,
     PostformComponent,
     StoryComponent,
+    ListDialogComponent,
     CommentListComponent
   ],
   imports: [
