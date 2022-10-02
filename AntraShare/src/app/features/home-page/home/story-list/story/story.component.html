@@ -9,7 +9,7 @@
     </mat-card-content>
     <mat-card-actions class="action-container">
         <div class="action">
-            <button mat-icon-button class = "button">
+            <button (click)="onCommentClick()" mat-icon-button class = "button">
                 <mat-icon> comment</mat-icon>
             </button>
             <span>{{post?.comment?.length}}</span>
