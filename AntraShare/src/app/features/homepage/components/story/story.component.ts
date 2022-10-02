@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { StorylistService } from '../../services/storylist.service';
 import { LikeList, Post, Content } from '../../../../shared/models/post';
+import { MatDialog } from '@angular/material/dialog';
+import { ListCommentComponent } from './components/list-comment/list-comment/list-comment.component';
 
 @Component({
   selector: 'app-story',
@@ -9,13 +11,25 @@ import { LikeList, Post, Content } from '../../../../shared/models/post';
 })
 export class StoryComponent implements OnInit {
 
-  constructor(private stroyListService : StorylistService) { }
+  constructor(private storyListService : StorylistService,
+    public dialog: MatDialog) { }
 
   @Input() post? : Post;
   isLiked: Boolean = false;
   likeColor: string = "black";
 
   ngOnInit(): void {
+  }
+
+  openDialog() {
+    this.dialog.open(ListCommentComponent, {
+      width: '50vw',
+      height: '75vh',
+      data: {
+        comments: this.post?.comment,
+      }
+    })
+
   }
 
   likePost() {
@@ -29,9 +43,9 @@ export class StoryComponent implements OnInit {
         _id: this.post?._id as string
       };
       // TODO: Update the likes on the post
-      this.stroyListService.addPostToLikeList(_post);
+      this.storyListService.addPostToLikeList(_post);
     } else {
-      this.stroyListService.deletePostFromLikeList(this.post?._id as string);
+      this.storyListService.deletePostFromLikeList(this.post?._id as string);
     }
     this.likeColor = this.isLiked ? "blue" : "black";
   }
