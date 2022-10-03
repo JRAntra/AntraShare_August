@@ -19,6 +19,7 @@ export class StoryComponent implements OnInit {
   likeColor: string = "black";
 
   ngOnInit(): void {
+    this.post?.comment?.reverse();
   }
 
   openDialog() {
@@ -27,6 +28,7 @@ export class StoryComponent implements OnInit {
       height: '75vh',
       data: {
         comments: this.post?.comment,
+        postId: this.post?._id,
       }
     })
 
