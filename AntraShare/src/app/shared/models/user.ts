@@ -3,7 +3,7 @@ import { FormGroup, AbstractControl } from "@angular/forms";
 export interface User {
     username: string,
     password: string,
-    email: string,
+    email?: string,
 }
 
 export interface UserFormGroup extends FormGroup {
