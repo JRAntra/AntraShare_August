@@ -12,9 +12,12 @@ export class StoryListComponent implements OnInit {
   constructor(private service: NewsfeedStoryService) {}
 
   ngOnInit(): void {
-    this.service.getNewsFeedStory().subscribe(values => {
-      this.postlist = values.reverse();
+    
+    this.service.storySubject.subscribe(values => {
+      console.log(values)
+      this.postlist = values;
     })
+    this.service.updateStoryList()
   }
 
 }

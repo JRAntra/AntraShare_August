@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { NewsfeedStory } from 'src/app/shared/models/newsfeed';
+import { NewsfeedStoryService } from '../../services/newsfeed-story.service';
 import { PostStoryService } from '../../services/post-story.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class PostformComponent implements OnInit {
     //TODO: 1. image and video upload 
     //      2. validate user input
   })
-  constructor(private service: PostStoryService ) {}
+  constructor(private service: NewsfeedStoryService) {}
 
   ngOnInit(): void {
   }
@@ -27,7 +28,11 @@ export class PostformComponent implements OnInit {
     }
     this.service.postStory(story).subscribe(
       //TODO: handle response
-      res => {console.log(res)}
+      res => {
+        console.log(res)
+        this.service.updateStoryList()
+      }
+
     )
   }
 }
