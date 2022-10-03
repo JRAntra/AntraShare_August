@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NewsfeedStoryService } from '../../services/newsfeed-story.service';
-import { LikeList } from 'src/app/shared/models/newsfeed';
+import { MatDialog } from '@angular/material/dialog';
+import { ListDialogComponent } from './list-dialog/list-dialog.component';
 
 
 @Component({
@@ -9,27 +9,19 @@ import { LikeList } from 'src/app/shared/models/newsfeed';
   styleUrls: ['./likelist.component.sass']
 })
 export class LikelistComponent implements OnInit {
-  likeList: LikeList[] = []
-  public showList = false
-  constructor(private service: NewsfeedStoryService) { 
+
+  constructor(private dialog: MatDialog) { 
   }
 
   ngOnInit(): void {
-    this.service.getLikeList().subscribe(values => {
-      this.likeList = values;
-    })
     
   }
 
-
-  deleteLike(postId: string) {
-    this.service.deleteFromLikeList(postId);
-    this.ngOnInit();
-  }
-
-
   toggleList() {
-    this.showList = !this.showList
+    const diaglogRef = this.dialog.open(ListDialogComponent)
+    diaglogRef.afterClosed().subscribe(res => {
+      console.log(res)
+    })
   }
 
 }
