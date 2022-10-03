@@ -21,7 +21,7 @@ export interface LikedIdList {
 export interface Comment {
     content: Content;
     publisherName: string;
-    publishedTime: string;
+    publishedTime?: string;
 }
 
 

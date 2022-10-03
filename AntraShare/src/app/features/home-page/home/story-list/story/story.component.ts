@@ -27,8 +27,8 @@ export class StoryComponent implements OnInit {
     this.newsFeedService.addToLikeList(_post)
   }
   onCommentClick(){
-    console.log(this.post?.comment)
-    this.dialog.open(CommentListComponent, {data: this.post?.comment})
+    console.log(this.post)
+    this.dialog.open(CommentListComponent, {data: this.post})
   }
 
 }

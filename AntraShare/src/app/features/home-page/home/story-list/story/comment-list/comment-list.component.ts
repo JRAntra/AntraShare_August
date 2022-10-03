@@ -1,6 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Comment } from 'src/app/shared/models/newsfeed';
+import { NewsfeedStory } from 'src/app/shared/models/newsfeed';
+import { PostCommentService } from 'src/app/features/home-page/services/post-comment.service';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-comment-list',
   templateUrl: './comment-list.component.html',
@@ -8,11 +11,23 @@ import { Comment } from 'src/app/shared/models/newsfeed';
 })
 export class CommentListComponent implements OnInit {
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: Comment[]) {}
-
+  comments: Comment[] | undefined = this.data.comment;
+  contentText: FormControl<string> = new FormControl()
+  constructor(@Inject(MAT_DIALOG_DATA) public data: NewsfeedStory, private service: PostCommentService) {}
+  
   ngOnInit(): void {
-    console.log(typeof this.data)
-    console.log(this.data)
   }
 
+  onPostComment(){
+    const comment : Comment = {
+      publisherName: "90DegreesHardCodeName",
+      content: {text: this.contentText.value}
+    }
+    console.log(typeof this.data._id)
+    this.service.postComment(this.data._id, comment).subscribe(
+      res => {
+        console.log(res)
+      }
+    )
+  }
 }

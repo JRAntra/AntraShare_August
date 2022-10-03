@@ -1,6 +1,12 @@
 <div class="dialog-container">
     <h1 mat-dialog-title>Comments</h1>
-    <div class="comment-container" *ngFor="let comment of this.data">
+    <form class="postform" >
+        <div class="input">
+            <textarea matInput [formControl]="contentText" class="text_input" placeholder="It makes me feel..."></textarea>
+        </div>
+    </form>
+    <button mat-raised-button class="postComment_button" (click)="onPostComment()" ><b>Comment</b></button>
+    <div class="comment-container" *ngFor="let comment of this.comments">
         <mat-card class="comment">
             <mat-card-header class="user">
                 <img mat-card-avatar class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Banana-Single.jpg/1200px-Banana-Single.jpg">
