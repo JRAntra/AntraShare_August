@@ -3,7 +3,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Comment } from 'src/app/shared/models/newsfeed';
 import { NewsfeedStory } from 'src/app/shared/models/newsfeed';
 import { PostCommentService } from 'src/app/features/home-page/services/comment.service';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-comment-list',
   templateUrl: './comment-list.component.html',
@@ -27,14 +27,31 @@ export class CommentListComponent implements OnInit {
     this.service.postComment(this.data._id, comment).subscribe(
       res => {
         console.log(res)
+        this.data.comment?.push(res)
       }
     )
+    
   }
+
   onDeleteComment(id: string | undefined){
     console.log(this.data._id)
     console.log(id)
     this.service.deleteComment(this.data._id, id).subscribe(
-      res => {console.log(res)}
+      res => {
+        console.log(res)
+        if(this.data.comment){
+          const temp : Comment[]= [...this.data.comment]
+          
+          this.data.comment?.splice(0)
+          this.data.comment?.push(...temp.filter(
+            comment => 
+              comment._id !== id
+          ))
+        }
+        
+        
+      }
     )
+    
   }
 }

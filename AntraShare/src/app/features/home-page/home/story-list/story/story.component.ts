@@ -28,7 +28,10 @@ export class StoryComponent implements OnInit {
   }
   onCommentClick(){
     console.log(this.post)
-    this.dialog.open(CommentListComponent, {data: this.post})
+    const dialogRef = this.dialog.open(CommentListComponent, {data: this.post})
+    dialogRef.afterClosed().subscribe(
+      res => {console.log(res)}
+    )
   }
 
 }
