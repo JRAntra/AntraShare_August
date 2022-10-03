@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginModel } from 'src/app/shared/models/LoginModel';
+import { Observable } from 'rxjs';
+import { User } from 'src/app/shared/models/user';
+
 
 
 
@@ -11,9 +13,9 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
   
-  letlogin(loginModel: LoginModel)  {
+  letlogin(user: User): Observable<User> {
 
-    return this.http.post('http://localhost:4231/api/login/',loginModel)
+    return this.http.post<User>('http://localhost:4231/api/login/',user)
     
   } 
   

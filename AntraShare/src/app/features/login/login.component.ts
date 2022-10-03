@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControlOptions, FormBuilder, Validators, FormControl, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginModel } from 'src/app/shared/models/LoginModel';
+import { User } from 'src/app/shared/models/user';
 import { InputValidators } from 'src/app/shared/validators/input-validator';
 import { ValidateDataService } from '../../shared/services/validate-data.service';
 import { LoginService } from './login-service/login.service';
@@ -60,11 +60,12 @@ export class LoginComponent implements OnInit {
     return this.userLoginPanel.get("username") as FormControl
   }
 
+
   onLogin(){
-    const user: LoginModel = {
-      username: 'EegiiUnur',
-      password: this.password.value,
-      // userEmail: ''
+    const user: User = {
+      userEmail:this.userLoginPanel.get("userName")?.value,
+      password: this.userLoginPanel.get("password")?.value!,
+      
     }
   
     this.loginService.letlogin(user).subscribe(res => {console.log(res)})
