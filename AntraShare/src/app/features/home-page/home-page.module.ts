@@ -14,6 +14,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ListDialogComponent } from './home/likelist/list-dialog/list-dialog.component';
 import { CommentListComponent } from './home/story-list/story/comment-list/comment-list.component';
@@ -37,6 +38,7 @@ import { CommentListComponent } from './home/story-list/story/comment-list/comme
     MatIconModule,
     MatDialogModule,
     ReactiveFormsModule,
+    MatPaginatorModule
   ]
 })
 export class HomepageModule { }
