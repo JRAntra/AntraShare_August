@@ -4,6 +4,7 @@ export interface User {
     username: string,
     password: string,
     email: string,
+    userRole?: string,
 }
 
 export interface UserFormGroup extends FormGroup {
