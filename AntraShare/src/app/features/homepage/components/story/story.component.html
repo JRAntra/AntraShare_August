@@ -4,7 +4,7 @@
         <mat-card-title>{{ post?.publisherName }}</mat-card-title>
         <mat-card-subtitle>{{ post?.publishedTime | date:'short' }}</mat-card-subtitle>
     </mat-card-header>
-    <ng-container *ngIf="post?.content?.image">
+    <ng-container *ngIf="post?.content?.image && post?.content?.image !== ' '">
         <img mat-card-xl-image class="imgContent" src='{{ post?.content?.image }}'>
     </ng-container>
     <mat-card-content>
