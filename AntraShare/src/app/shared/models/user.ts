@@ -1,9 +1,9 @@
 import { FormGroup, AbstractControl } from "@angular/forms";
 
 export interface User {
-    username: string,
+    userName: string,
     password: string,
-    email: string,
+    userEmail: string,
     userRole?: string,
 }
 

@@ -86,9 +86,9 @@ export class RegisterComponent implements OnInit {
 
     console.log(this.registerForm.value)
     const newUser: User = {
-      username: JSON.stringify(this.registerForm?.get('username')?.value),
+      userName: JSON.stringify(this.registerForm?.get('username')?.value),
       password: JSON.stringify(this.registerForm?.get('password')?.value),
-      email: JSON.stringify(this.registerForm?.get('email')?.value),
+      userEmail: JSON.stringify(this.registerForm?.get('email')?.value),
     }
     this.addUser(newUser)
   }
