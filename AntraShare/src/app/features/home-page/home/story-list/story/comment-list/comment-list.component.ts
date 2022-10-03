@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Comment } from 'src/app/shared/models/newsfeed';
 import { NewsfeedStory } from 'src/app/shared/models/newsfeed';
-import { PostCommentService } from 'src/app/features/home-page/services/post-comment.service';
+import { PostCommentService } from 'src/app/features/home-page/services/comment.service';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-comment-list',
@@ -28,6 +28,13 @@ export class CommentListComponent implements OnInit {
       res => {
         console.log(res)
       }
+    )
+  }
+  onDeleteComment(id: string | undefined){
+    console.log(this.data._id)
+    console.log(id)
+    this.service.deleteComment(this.data._id, id).subscribe(
+      res => {console.log(res)}
     )
   }
 }

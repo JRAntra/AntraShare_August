@@ -10,4 +10,7 @@ export class PostCommentService {
   postComment(id: string | undefined, body: Comment){
     return this.http.patch<Comment>("http://localhost:4231/api/news/addComment/" + id, body)
   }
+  deleteComment(id: string | undefined, commentId: string | undefined){
+    return this.http.delete("http://localhost:4231/api/news/deleteComment/" + id + '/' + commentId)
+  }
 }

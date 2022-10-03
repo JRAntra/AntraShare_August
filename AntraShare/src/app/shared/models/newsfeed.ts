@@ -22,6 +22,7 @@ export interface Comment {
     content: Content;
     publisherName: string;
     publishedTime?: string;
+    _id?: string;
 }
 
 

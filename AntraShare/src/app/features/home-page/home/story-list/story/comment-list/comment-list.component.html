@@ -16,6 +16,13 @@
             <mat-card-content class="text">
                 <p class="content" >{{comment.content.text}}</p>
             </mat-card-content>
+            <mat-card-actions class="action-container">
+                <div class="action">
+                    <button (click)="onDeleteComment(comment._id)" mat-icon-button class = "button">
+                        <mat-icon>delete icon</mat-icon>
+                    </button>
+                </div>
+            </mat-card-actions>
         </mat-card>
     </div>
 </div>
