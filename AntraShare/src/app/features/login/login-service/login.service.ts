@@ -15,8 +15,7 @@ export class LoginService {
 
     return this.http.post('http://localhost:4231/api/login/',loginModel)
     
-  }
-
-  
+  } 
   
 }
+
