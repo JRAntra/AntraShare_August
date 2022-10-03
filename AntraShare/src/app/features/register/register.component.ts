@@ -91,6 +91,8 @@ export class RegisterComponent implements OnInit {
       userEmail: JSON.stringify(this.registerForm?.get('email')?.value),
     }
     this.addUser(newUser)
+
+    this.submitted = false
   }
 
   addUser(user: User) {
