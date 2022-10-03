@@ -33,7 +33,7 @@ export class RegisterService {
     const registerUrl = "http://localhost:4231/api/register/createNewAccount"
 
     const headers = { 'content-type': 'application/json'}  
-    const body=JSON.stringify(user);
+    const body = JSON.stringify(user);
     console.log(body)
 
     return this.http.post<User>(registerUrl, user, {"headers": headers})

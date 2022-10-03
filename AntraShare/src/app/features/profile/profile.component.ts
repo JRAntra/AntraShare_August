@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControlOptions, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { ValidateDataService } from '../../shared/services/validate-data.service';
+
 import { InputValidators } from '../../shared/validators/input-validator';
 
 @Component({
@@ -12,6 +14,7 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private ar: ActivatedRoute,
     private validateService: ValidateDataService
   ) {
   }
@@ -56,6 +59,8 @@ export class ProfileComponent implements OnInit {
   confirmPasswordHide = true;
 
   ngOnInit(): void {
+    //this.ar.paramMap.subscribe( res => console.log(res.get('username')))
+    this.ar.snapshot.paramMap.get('username')
   }
 
   get userName(): FormControl {

@@ -47,6 +47,7 @@ export class InputValidators {
             const matchingControl = formGroup.controls[matchingControlName]
             if (control.value !== matchingControl.value)
                 matchingControl.setErrors({ "hasmatch": true });
+            else matchingControl.setErrors(null)
         }
     }
 
