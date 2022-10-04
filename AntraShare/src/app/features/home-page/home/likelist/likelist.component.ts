@@ -10,11 +10,13 @@ import { ListDialogComponent } from './list-dialog/list-dialog.component';
   styleUrls: ['./likelist.component.sass']
 })
 export class LikelistComponent implements OnInit {
+  
+  //public showList = false
+  
   constructor(private dialog: MatDialog) {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
+  
 
   toggleList() {
     const dialogRef = this.dialog.open(ListDialogComponent);

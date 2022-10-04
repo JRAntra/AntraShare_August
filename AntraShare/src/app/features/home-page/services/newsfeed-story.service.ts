@@ -10,20 +10,10 @@ export class NewsfeedStoryService {
 
   likedList : NewsfeedStory[] = []
   likeListSubject =  new BehaviorSubject<NewsfeedStory[]>([]);
+  storyList : NewsfeedStory[] = []
+  storySubject =  new BehaviorSubject<NewsfeedStory[]>([]);
 
   constructor(private http: HttpClient) { }
-
-  getNewsFeedStory(): Observable<NewsfeedStory[]> {
-   return this.http.get<NewsfeedStory[]>("http://localhost:4231/api/news")
+  postStory(story: NewsfeedStory) : Observable<NewsfeedStory>{
+    return this.http.post<NewsfeedStory>("http://localhost:4231/api/news", story)
   }
-
-  addToLikeList(likedPost: NewsfeedStory) {
-    this.likedList.push(likedPost)
-    this.likeListSubject.next(this.likedList)
-  }
-
-  deleteFromLikeList(postId: string | undefined) {
-    this.likedList = this.likedList.filter(post => post._id !== postId)
-    this.likeListSubject.next(this.likedList)
-  }
-}

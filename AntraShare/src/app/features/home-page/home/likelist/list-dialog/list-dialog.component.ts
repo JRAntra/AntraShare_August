@@ -14,9 +14,11 @@ export class ListDialogComponent implements OnInit {
     this.service.likeListSubject.subscribe(
       res => {this.likeList = res}
     )
+    console.log(this.likeList)
   }
   deleteLike(postId: string | undefined) {
     this.service.deleteFromLikeList(postId);
+    console.log(postId)
     this.ngOnInit();
   }
 

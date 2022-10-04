@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NewsfeedStoryService } from '../../../services/newsfeed-story.service';
 import { LikeList, Content, NewsfeedStory } from 'src/app/shared/models/newsfeed';
+import { MatDialog } from '@angular/material/dialog';
+import { CommentListComponent } from './comment-list/comment-list.component';
 
 @Component({
   selector: 'app-story',
@@ -9,11 +11,9 @@ import { LikeList, Content, NewsfeedStory } from 'src/app/shared/models/newsfeed
 })
 export class StoryComponent implements OnInit {
 
-  constructor(private newsFeedService : NewsfeedStoryService) { }
+  constructor(private newsFeedService : NewsfeedStoryService, private dialog: MatDialog) { }
 
-  ngOnInit(): void {
-   
-  }
+  ngOnInit(): void {}
 
   @Input() post? : NewsfeedStory;
 
@@ -25,6 +25,13 @@ export class StoryComponent implements OnInit {
       _id: this.post?._id as string
     };
     this.newsFeedService.addToLikeList(_post)
+  }
+  onCommentClick(){
+    console.log(this.post)
+    const dialogRef = this.dialog.open(CommentListComponent, {data: this.post})
+    dialogRef.afterClosed().subscribe(
+      res => {console.log(res)}
+    )
   }
 
 }
