@@ -89,18 +89,5 @@ export class LoginComponent implements OnInit {
   })
  }
 
- 
-
-  OnLoginClick() {
-    const userInfo: Login = {
-      userEmail: this.form.controls['userEmail'].value,
-      password: this.form.controls['password'].value
-  
-    }
-    this.postService.postLogin(userInfo).subscribe(res => {
-      console.log(res) 
-    }) 
-  }
-
 
 }

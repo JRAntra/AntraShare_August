@@ -13,11 +13,9 @@ import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
-import {MatDialogModule} from '@angular/material/dialog';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { ListDialogComponent } from './home/likelist/list-dialog/list-dialog.component';
 import { ListDialogComponent } from './home/likelist/list-dialog/list-dialog.component';
 import { CommentListComponent } from './home/story-list/story/comment-list/comment-list.component';
 @NgModule({
@@ -27,9 +25,8 @@ import { CommentListComponent } from './home/story-list/story/comment-list/comme
     StoryListComponent,
     PostformComponent,
     StoryComponent,
-    ListDialogComponent
-
     ListDialogComponent,
+
     CommentListComponent
   ],
   imports: [

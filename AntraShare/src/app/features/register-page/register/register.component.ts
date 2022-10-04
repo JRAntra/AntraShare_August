@@ -88,12 +88,12 @@ export class RegisterComponent implements OnInit {
   }
 
   onInput() {
-    this.userPanel.controls["email"].setAsyncValidators(emailValidator.asyncValidateEmail(this.validateServiceEmail))
+    this.email?.setAsyncValidators(emailValidator.asyncValidateEmail(this.validateServiceEmail))
     // console.log(this.email?.errors);
 
-    this.userPanel.controls["username"].setAsyncValidators(usernameValidator.asyncValiddateUsername(this.validateServiceEmail))
+    this.username?.setAsyncValidators(usernameValidator.asyncValiddateUsername(this.validateServiceEmail))
 
-    this.userPanel.controls["passwordConfirm"].setValidators(
+    this.passwordConfirm?.setValidators(
       confirmPasswordMatch.confirmPassword(this.userPanel.controls["password"] as FormControl)
     )
 
@@ -133,11 +133,11 @@ export class RegisterComponent implements OnInit {
     const profile : UserProfile = {
       name: "hardCodedName",
       // userName: {text : this.userPanel.controls["username"].value},
-      userName: this.username?.value!,
-      userEmail: this.email?.value!,
-      password: this.password?.value!,
+      userName: this.username?.value,
+      userEmail: this.email?.value,
+      password: this.password?.value,
 
-      userRole: "hardCodedUserRole",
+      userRole: "admin",
       age: 123,
       gender: "hardCodedGender",
       phone: 911
