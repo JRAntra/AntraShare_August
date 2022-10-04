@@ -5,6 +5,7 @@ import { checkValidate } from 'src/app/shared/validators/checkUsername';
 import { ValidateLoginService } from 'src/app/shared/service/validate-login.service';
 import { PostLoginService } from 'src/app/shared/service/post-login.service';
 import { Login } from 'src/app/shared/models/login';
+import { UserProfile } from 'src/app/shared/models/userprofile';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ import { Login } from 'src/app/shared/models/login';
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent implements OnInit {
+
 
   constructor(
     private router : Router,
@@ -58,16 +60,30 @@ export class LoginComponent implements OnInit {
     return this.form
   }
 
+  sleep(ms : number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
  OnLoginClick() {
   const userInfo : Login = {
-    userEmail: 'richard@gmail.com',
-    // userEmail: this.form.controls['username'].value,
+    // userEmail: 'richard@gmail.com',
+    userEmail: this.form.controls['username'].value,
     password: this.form.controls['password'].value
     // how do you find out correct password?
+    // You don't need to, it compares the encrypted version submitted with the login page and compares it to a given user.
   }
-  this.postService.postLogin(userInfo).subscribe(res => {
-    console.log(res)
+  var profile: UserProfile;
+  // read data from observable into profile
+  this.postService.postLogin(userInfo).subscribe(data => {
+    profile=data
+    // updates role of user
+    this.postService.updateRole(profile.userRole);
+    // After the post request confirms valid login info and that there is indeed a role in local storage...
+    if (this.postService.getRole()) {
+      // ... go on to the home page!
+      this.onNavigateTo('home');
+    }
+
   })
  }
   
