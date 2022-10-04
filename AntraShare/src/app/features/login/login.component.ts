@@ -63,11 +63,13 @@ export class LoginComponent implements OnInit {
 
   onLogin(){
     const user: User = {
-      userEmail:this.userLoginPanel.get("userName")?.value,
-      password: this.userLoginPanel.get("password")?.value!,
+      userEmail: this.username.value,
+      password: this.password.value
+      // userEmail:this.userLoginPanel.get("username")!.value,
+      // password: this.userLoginPanel.get("password")!.value,
       
     }
-  
+    // console.log(user)
     this.loginService.letlogin(user).subscribe(res => {console.log(res)})
     // console.log( this.loginService.letlogin(user).subscribe(res => {console.log(res)}))
 

@@ -14,8 +14,8 @@ export class LoginService {
   constructor(private http: HttpClient) { }
   
   letlogin(user: User): Observable<User> {
-
-    return this.http.post<User>('http://localhost:4231/api/login/',user)
+    console.log(user)
+    return this.http.post<User>('http://localhost:4231/api/login',user)
     
   } 
   
