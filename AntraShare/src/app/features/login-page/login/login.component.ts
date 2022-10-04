@@ -69,7 +69,7 @@ export class LoginComponent implements OnInit {
  OnLoginClick() {
   const userInfo : Login = {
     // userEmail: 'richard@gmail.com',
-    userEmail: this.form.controls['username'].value,
+    userEmail: this.form.controls['userEmail'].value,
     password: this.form.controls['password'].value
     // how do you find out correct password?
     // You don't need to, it compares the encrypted version submitted with the login page and compares it to a given user.
