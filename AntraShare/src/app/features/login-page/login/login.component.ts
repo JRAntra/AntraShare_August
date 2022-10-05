@@ -5,6 +5,7 @@ import { checkValidate } from 'src/app/shared/validators/checkUsername';
 import { ValidateLoginService } from 'src/app/shared/service/validate-login.service';
 import { PostLoginService } from 'src/app/shared/service/post-login.service';
 import { Login } from 'src/app/shared/models/login';
+import { UserProfile } from 'src/app/shared/models/userprofile';
 
 
 @Component({
@@ -69,8 +70,11 @@ export class LoginComponent implements OnInit {
       password: this.form.controls['password'].value
   
     }
+    var profile : UserProfile
     this.postService.postLogin(userInfo).subscribe(res => {
-      console.log(res) 
+      profile = res 
+      console.log(profile)
+      this.postService.updateRole(profile.userRole)
     }) 
   }
 
