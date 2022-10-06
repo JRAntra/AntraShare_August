@@ -14,7 +14,6 @@ export class StoryListComponent implements OnInit {
   ngOnInit(): void {
     
     this.service.storySubject.subscribe(values => {
-      console.log(values)
       this.postlist = values;
     })
     this.service.updateStoryList()
