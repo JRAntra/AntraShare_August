@@ -16,8 +16,8 @@ export class ValidateDataService {
   checkUserName(username: string): Observable<boolean> {
     const checkUsernameUrl = "register/checkExistByUsername"
     const apiUrl = `${this.baseUrl}/${checkUsernameUrl}/${username}`
-    //console.log(apiUrl)
-    //console.log(this.httpClient.get<boolean>(apiUrl))
+    // console.log(apiUrl)
+    // console.log(this.httpClient.get<boolean>(apiUrl))
     return this.httpClient.get<boolean>(apiUrl)
   }
 

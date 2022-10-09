@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControlOptions, FormBuilder, Validators, FormControl, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'src/app/shared/models/user';
+import { InputValidators } from 'src/app/shared/validators/input-validator';
 import { ValidateDataService } from '../../shared/services/validate-data.service';
-import { InputValidators } from '../../shared/validators/input-validator';
+import { LoginService } from './login-service/login.service';
+
 
 @Component({
   selector: 'app-login',
@@ -16,7 +19,10 @@ export class LoginComponent implements OnInit {
 
     private router : Router, 
     private fb: FormBuilder, 
-    private validateService: ValidateDataService
+    private validateService: ValidateDataService,
+    private loginService: LoginService,
+  
+
 
   ) {}
   
@@ -25,6 +31,7 @@ export class LoginComponent implements OnInit {
       null,
       Validators.required,
       InputValidators.usernameValidator(this.validateService)
+      
     ],
 
     password: [
@@ -37,6 +44,7 @@ export class LoginComponent implements OnInit {
   })
 
   ngOnInit(): void {
+   this.userLoginPanel.controls["username"].setAsyncValidators(InputValidators.usernameValidator(this.validateService))
   }
 
 
@@ -50,6 +58,23 @@ export class LoginComponent implements OnInit {
 
   get username(): FormControl {
     return this.userLoginPanel.get("username") as FormControl
+  }
+
+
+  onLogin(){
+    const user: User = {
+      userEmail: this.username.value,
+      password: this.password.value
+      // userEmail:this.userLoginPanel.get("username")!.value,
+      // password: this.userLoginPanel.get("password")!.value,
+      ,
+      userName: ''
+    }
+    // console.log(user)
+    this.loginService.letlogin(user).subscribe(res => {console.log(res)})
+    // console.log( this.loginService.letlogin(user).subscribe(res => {console.log(res)}))
+
+   
   }
 
 }

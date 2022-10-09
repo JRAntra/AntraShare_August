@@ -23,7 +23,7 @@ export class InputValidators {
             const username = control.value
             return service.checkUserName(username).pipe(
                 map((response) => {
-                    if (response) return { "hasusername": true }
+                    if (response == username) return { "hasusername": true }
                     else return null
                 })
             )
