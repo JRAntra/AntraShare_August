@@ -4,8 +4,9 @@ import { ProfileComponent } from './profile.component';
 
 const routes: Routes = [
   {
-    path: '', component: ProfileComponent
+    path:':username', component: ProfileComponent
   },
+  { path: "**", redirectTo: "redirectTo"},
 ];
 
 @NgModule({

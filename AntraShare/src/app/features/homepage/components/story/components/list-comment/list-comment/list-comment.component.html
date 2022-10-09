@@ -1,0 +1,22 @@
+<mat-paginator (page)="onPageChange($event)" [length]="listComments.length" [pageSize]="pageSize" [pageSizeOptions]="pageSzieOption">
+</mat-paginator>
+<div class="commentContainer">
+    <div *ngFor="let comment of currentCommentsToShow">
+        <mat-card-header class="header">
+            <div mat-card-avatar class="avatar-img"></div>
+            <mat-card-title>{{ comment?.publisherName }}</mat-card-title>
+            <mat-card-subtitle>{{ comment?.publishedTime | date:'short' }}</mat-card-subtitle>
+            <button class="remove" (click)="removeComment(comment._id)" mat-raised-button color="warn">Remove</button>
+        </mat-card-header>
+        <ng-container *ngIf="comment?.content?.image && comment?.content?.image !== ' '">
+            <img mat-card-xl-image class="imgContent" src='{{ comment?.content?.image }}'>
+        </ng-container>
+        <mat-card-content>
+            <p>{{ comment?.content?.text }}</p>
+        </mat-card-content>
+    </div>
+</div>
+<form class="comment-form" [formGroup]="userComment">
+    <textarea matInput id="textArea" placeholder="What are you thinking?" formControlName="commentText"></textarea>
+    <button mat-raised-button color="primary" id="postButton" (click)="postNewComment()">Comment</button>
+</form>

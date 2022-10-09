@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { User } from '../models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,12 @@ export class ValidateDataService {
     const apiUrl = `${this.baseUrl}/${checkEmailUrl}/${email}`
     // console.log(apiUrl)
     return this.httpClient.get<boolean>(apiUrl)
+  }
+
+  getUserProfile(username: string): Observable<User> {
+
+    const getUserUrl = `users/getProfile`
+    const apiUrl = `${this.baseUrl}/${getUserUrl}/${username}`
+    return this.httpClient.get<User>(apiUrl)
   }
 }
