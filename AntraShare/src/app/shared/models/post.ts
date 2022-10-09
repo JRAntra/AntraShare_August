@@ -29,6 +29,6 @@ export interface Post {
 export interface LikeList {
     publisherName: string;
     publishedTime: string;
-    content: Content;
+    content?: Content;
     _id: string;
 }

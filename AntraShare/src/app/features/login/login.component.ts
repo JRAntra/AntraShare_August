@@ -67,7 +67,8 @@ export class LoginComponent implements OnInit {
       password: this.password.value
       // userEmail:this.userLoginPanel.get("username")!.value,
       // password: this.userLoginPanel.get("password")!.value,
-      
+      ,
+      userName: ''
     }
     // console.log(user)
     this.loginService.letlogin(user).subscribe(res => {console.log(res)})
