@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StorylistService } from '../../services/storylist.service';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { Content } from 'src/app/shared/models/post';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -35,7 +36,7 @@ export class PostStoryComponent implements OnInit {
     const _text = this.userPost.get('postText')?.value as string;
     const _image = this.userPost.get('postImage')?.value as string;
     const _video = this.userPost.get('postVideo')?.value as string;
-    const _content: Content = {};
+    const _content: Content = {text: _text,image: _image,video: _video };
     // Some attributes are optional
     if (_text !== '') _content.text = _text;
     if (_image !== '') _content.image = _image;
