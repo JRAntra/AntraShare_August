@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AfterloginRoutingModule } from './afterlogin-routing.module';
 import { AfterloginComponent } from './afterlogin/afterlogin.component';
@@ -14,7 +15,9 @@ import { Hidein5Directive } from '../shared/directives/hidein5.directive';
   ],
   imports: [
     CommonModule,
-    AfterloginRoutingModule
+    AfterloginRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     AfterloginComponent,

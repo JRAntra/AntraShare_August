@@ -1,10 +1,30 @@
-<div id="login-box">
+<!-- typical use is property binding the fromGroup here -->
+<mat-form-field id="login-box" [formGroup]="userPanel">
     <div class="logo">
         logo
     </div>
 
-    <input type="text" class="username" placeholder="Username">
-    <input type="text" class="password" placeholder="Password">
-    <button [routerLink]="['../newsfeed']" class="login-button">Login</button>
+    <!-- formControlName allows us to grab the formGroup's members once we property bind it -->
+    <input matInput type="text" class="username" placeholder="Username" formControlName="username" (keyup)="consolelog()">
+    <div *ngIf="username?.errors">
+        <div *ngFor="let item of errorMessageUsername">
+            <p class="error-message">
+                {{showError(item)}}
+            </p>
+        </div>
+    </div>
+    <p class="error-message" *ngIf="tempValidator">{{tempMessage}}</p>
+
+    <input type="text" class="password" placeholder="Password" formControlName="password">
+    <div *ngIf="password?.errors">
+        <div *ngFor="let item of errorMessagePassword">
+            <p class="error-message">
+                {{showError(item)}}
+            </p>
+        </div>
+    </div>
+    
+    <!-- [routerLink]="['../newsfeed']" -->
+    <button (click)="onLogin()" class="login-button">Login</button>
     <a [routerLink]="['../register']">No Accounts? Register Now!</a>
-</div>
+</mat-form-field>

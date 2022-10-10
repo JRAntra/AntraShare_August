@@ -10,9 +10,7 @@ export class NewsfeedService {
 
   private _url : string = "http://localhost:4231/api/news"
   
-  constructor(private http: HttpClient) {
-    
-  }
+  constructor(private http: HttpClient) {}
 
   getPosts() : Observable<storyInterface[]> {
     return this.http.get<storyInterface[]>(this._url);

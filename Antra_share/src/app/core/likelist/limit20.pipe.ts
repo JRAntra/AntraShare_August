@@ -5,13 +5,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class Limit20Pipe implements PipeTransform {
 
-  transform(value: string, ...args: unknown[]): string {
+  transform(value: string | undefined, ...args: unknown[]): string {
     let tempArr : Array<string> = this.stringToArray(value); // convert
     return this.arrayToString(tempArr.splice(0, 20)) + "...";
   }
 
-  stringToArray(content: string) : Array<string> {
-    return content.split(' ');
+  stringToArray(content: string | undefined) : Array<string> {
+    return content!.split(' ');
   }
 
   arrayToString(array : Array<string>) : string {

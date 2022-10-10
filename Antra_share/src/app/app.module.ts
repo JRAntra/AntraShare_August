@@ -13,6 +13,10 @@ import { RegisterModule } from './register/register.module';
 
 import { HttpClientModule } from '@angular/common/http';
 import { NewsfeedService } from './shared/services/newsfeed.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { AdminguardService } from './shared/services/adminguard.service';
+import { LocalService } from './shared/services/local.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -26,9 +30,11 @@ import { NewsfeedService } from './shared/services/newsfeed.service';
     ProfileModule,
     SettingModule,
     RegisterModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule
   ],
-  providers: [NewsfeedService],
+  providers: [NewsfeedService, AdminguardService, LocalService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

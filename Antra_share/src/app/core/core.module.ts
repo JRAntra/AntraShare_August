@@ -9,7 +9,6 @@ import { RouterModule } from '@angular/router';
 import { LikelistComponent } from './likelist/likelist.component';
 import { Limit20Pipe } from './likelist/limit20.pipe';
 
-
 @NgModule({
   declarations: [
     HeaderComponent,

@@ -17,7 +17,7 @@ export interface contentInterface {
 }
 
 export interface commentInterface {
-    publisher : string,
+    publisherName : string,
     content : contentInterface,
     _id: string, // will not be used
     publishedTime : string
