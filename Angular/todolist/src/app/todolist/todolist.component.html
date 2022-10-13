@@ -10,7 +10,7 @@
   
   <ul id="todolist__container">
     <app-todoitem
-      *ngFor="let todoitem of todolist"
+      *ngFor="let todoitem of todolist$ | async"
       [item]="todoitem"
       (triggerDelete)="deleteTodo($event)"
     ></app-todoitem>
