@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { HttpClient } from '@angular/common/http';
-import { map, catchError, switchMap } from 'rxjs/operators';
+import { map, catchError, switchMap, mergeMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 import { Todo } from '../interfaces/todo.interface';
@@ -15,7 +15,7 @@ export class TodoEffects {
   loadTodos$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(TodoActions.loadTodos),
-      switchMap(() => {
+      mergeMap(() => {
         return this.http.get<Todo[]>([this.baseUrl, this.path].join('/')).pipe(
           map((todolist: Todo[]) => {
             return TodoActions.loadTodosSuccess({ todolist });
@@ -31,7 +31,7 @@ export class TodoEffects {
   addTodo$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(TodoActions.addTodo),
-      switchMap((newtodo) => {
+      mergeMap((newtodo) => {
         return this.http
           .post<Todo>([this.baseUrl, this.path].join('/'), newtodo.todo)
           .pipe(

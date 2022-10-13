@@ -28,7 +28,7 @@ export class TodolistComponent implements OnInit {
   }
 
   onChange() {
-    this.store.dispatch(TodoActions.addTodo({ todo: this.todo }));
+    this.store.dispatch(TodoActions.addTodo({ todo: { ...this.todo } }));
   }
 
   deleteTodo(id: string) {}
