@@ -1,0 +1,18 @@
+<section class="todolist">
+  <header class="todolist__header">todo list</header>
+  <input
+    class="todolist__input"
+    placeholder="input your todo here..."
+    [(ngModel)]="todo.title"
+    #inputTodo
+    (change)="onChange()"
+  />
+  
+  <ul id="todolist__container">
+    <app-todoitem
+      *ngFor="let todoitem of todolist"
+      [item]="todoitem"
+      (triggerDelete)="deleteTodo($event)"
+    ></app-todoitem>
+  </ul>
+  </section>
