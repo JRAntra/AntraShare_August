@@ -15,14 +15,21 @@ export class NewsfeedStoryService {
 
   constructor(private http: HttpClient) { }
   postStory(story: NewsfeedStory) : Observable<NewsfeedStory>{
-    return this.http.post<NewsfeedStory>("http://localhost:4231/api/news", story)
+    // return this.http.post<NewsfeedStory>("http://localhost:4231/api/news", story)
+    return this.http.post<NewsfeedStory>("http://localhost:3000/news/", story)
   }
 
   updateStoryList() {
-    this.http.get<NewsfeedStory[]>("http://localhost:4231/api/news").subscribe(values => {
+    // this.http.get<NewsfeedStory[]>("http://localhost:4231/api/news").subscribe(values => {
+      this.http.get<NewsfeedStory[]>("http://localhost:3000/news/").subscribe(values => {
       this.storyList = values
       this.storySubject.next(this.storyList.reverse())
     })
+  }
+
+  deletePost(id: string | undefined) {
+    // console.log(`http://localhost:3000/news/deletePost/${id}`)
+    return this.http.delete(`http://localhost:3000/news/deletePost/${id}`)
   }
 
   addToLikeList(likedPost: NewsfeedStory) {

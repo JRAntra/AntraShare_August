@@ -19,5 +19,10 @@
                 <mat-icon>favorite_border</mat-icon>
             </button>
         </div>
+        <div class="action">
+            <button (click)="onDeleteClick(post?._id)" mat-icon-button class = "button">
+                <mat-icon>delete icon</mat-icon>
+            </button>
+        </div>
     </mat-card-actions>
 </mat-card>

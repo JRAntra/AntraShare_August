@@ -34,4 +34,16 @@ export class StoryComponent implements OnInit {
     )
   }
 
+  onDeleteClick(id: string | undefined) {
+    this.newsFeedService.deletePost(id).subscribe(
+      res => {
+        console.log(res)
+        this.newsFeedService.updateStoryList()
+      }
+    )
+  }
+
+
+
+
 }

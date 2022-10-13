@@ -26,8 +26,9 @@ export class PostLoginService {
     return (value)
   }
 
-  findEmail(username: string) {
-    const url = ('http://localhost:4231/api/users/getProfile/'+ username)
+  findEmail(username: string) : Observable<boolean> {
+    // const url = ('http://localhost:4231/api/users/getProfile/'+ username)
+    const url = ('http://localhost:3000/users/getProfile/'+ username)
     return this.http.get<boolean>(url)
   }
 }

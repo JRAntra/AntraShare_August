@@ -10,6 +10,7 @@ export class PostStoryService {
 
   constructor(private http: HttpClient){}
   postStory(story: NewsfeedStory) : Observable<NewsfeedStory>{
-    return this.http.post<NewsfeedStory>("http://localhost:4231/api/news", story)
+    // return this.http.post<NewsfeedStory>("http://localhost:4231/api/news", story)
+    return this.http.post<NewsfeedStory>("http://localhost:3000/news/", story)
   }
 }
