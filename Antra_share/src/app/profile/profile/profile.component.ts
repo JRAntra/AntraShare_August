@@ -88,6 +88,10 @@ export class ProfileComponent implements OnInit {
     return this.userPanel.get('username');
   }
 
+  get email() {
+    return this.userPanel.get('email');
+  }
+
   get errorsMsgUser(): any {
     const arr = [];
     for (let key in this.username?.errors) {
