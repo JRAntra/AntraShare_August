@@ -10,13 +10,16 @@ import { LoginModule } from './login/login.module';
 import { ProfileModule } from './profile/profile.module';
 import { SettingModule } from './setting/setting.module';
 import { RegisterModule } from './register/register.module';
-
 import { HttpClientModule } from '@angular/common/http';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
 import { NewsfeedService } from './shared/services/newsfeed.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { AdminguardService } from './shared/services/adminguard.service';
 import { LocalService } from './shared/services/local.service';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,7 +35,11 @@ import { LocalService } from './shared/services/local.service';
     RegisterModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatFormFieldModule
+
+    MatFormFieldModule,
+
+    MatSliderModule,
+
   ],
   providers: [NewsfeedService, AdminguardService, LocalService],
   bootstrap: [AppComponent],

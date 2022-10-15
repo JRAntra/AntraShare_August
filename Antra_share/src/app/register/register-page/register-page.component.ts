@@ -1,4 +1,6 @@
+import { formatCurrency } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+
 import { Validators, FormBuilder } from '@angular/forms';
 import { ValidateUsernameService } from 'src/app/shared/services/validate-username.service';
 import { ValidateEmailService } from 'src/app/shared/services/validate-email.service';
@@ -6,12 +8,22 @@ import { checkPasswordComplexity, doesEmailMatch, doesPasswordMatch, doesUsernam
 import { RegisterService } from 'src/app/shared/services/register.service';
 import { Router } from '@angular/router';
 
+import { FormControl, Validators } from '@angular/forms';
+import { ValidateRegisterService } from 'src/app/shared/services/validate-register.service';
+import { checkValidate } from 'src/app/shared/validator/validators';
+
+
 @Component({
   selector: 'app-register-page',
   templateUrl: './register-page.component.html',
-  styleUrls: ['./register-page.component.sass']
+  styleUrls: ['./register-page.component.sass'],
 })
 export class RegisterPageComponent implements OnInit {
+  constructor(
+    private fb: FormBuilder,
+    private validateService: ValidateRegisterService
+  ) {}
+
 
   constructor(
     private fb : FormBuilder, 
@@ -166,6 +178,26 @@ export class RegisterPageComponent implements OnInit {
       arr.push(key);
     }
     return arr;
+
+ /* userPanel = this.fb.group({
+    username: new FormControl('', [Validators.minLength(7)]),
+    email: new FormControl('', [checkValidate(this.validateService)]),
+    password: new FormControl(''),
+    passwordConfirm: new FormControl(),
+  });
+
+  get password(): FormControl {
+    return this.userPanel.get('password') as FormControl;*/
+
   }
 
+  get username(): FormControl {
+    return this.userPanel.get('username') as FormControl;
+  }
+
+  get email(): FormControl {
+    return this.userPanel.get('email') as FormControl;
+  }
+
+  ngOnInit(): void {}
 }
