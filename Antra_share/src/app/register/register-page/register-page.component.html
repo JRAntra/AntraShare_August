@@ -1,12 +1,46 @@
-<div class="register">
-  <div><input placeholder="Username Input" /></div>
-  <div><input placeholder="User Email Input" /></div>
-  <div><input placeholder="Password Input" /></div>
-  <div><input placeholder="Password confirm Input" /></div>
+<div class="register" [formGroup]="registerPanel">
+  <div><input placeholder="Username Input" formControlName="username"></div>
+  <div *ngIf="username?.errors">
+    <div *ngFor="let item of errorMessageUsername">
+        <p class="error-message">
+            {{showError(item)}}
+        </p>
+    </div>
+  </div>
+
+  <div><input placeholder="User Email Input" formControlName="email"/></div>
+  <div *ngIf="email?.errors">
+    <div *ngFor="let item of errorMessageEmail">
+        <p class="error-message">
+            {{showError(item)}}
+        </p>
+    </div>
+  </div>
+
+  <div><input placeholder="Password Input" formControlName="password"></div>
+  <div *ngIf="password?.errors">
+    <div *ngFor="let item of errorMessagePassword">
+        <p class="error-message">
+            {{showError(item)}}
+        </p>
+    </div>
+  </div>
+
+  <div><input placeholder="Password confirm Input" formControlName="repass"/></div>
+  <div *ngIf="repass?.errors">
+    <div *ngFor="let item of errorMessageRepass">
+        <p class="error-message">
+            {{showError(item)}}
+        </p>
+    </div>
+  </div>
+
 </div>
 
+<!-- [routerLink]="['../login']" -->
+<p class="error-message" *ngIf="tempValidator">{{tempMessage}}</p>
 
 
 <div>
-  <button [routerLink]="['../login']" class="registerButton">Register</button>
+  <button (click)="onRegister()" class="registerButton">Register</button>
 </div>

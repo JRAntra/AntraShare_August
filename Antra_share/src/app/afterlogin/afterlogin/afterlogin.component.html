@@ -1,10 +1,13 @@
 <div id="al-body">
-    <div class="post-form">
-        <textarea class="post-box" name="post-box"></textarea>
-        <input type="submit" value="Post" class="steam-button">
-    </div>
+    <mat-form-field class="post-form" [formGroup]="newsPoster">
+        <!-- <textarea class="post-box" name="post-box"></textarea> -->
+        <input type="text" placeholder="Image" formControlName="image">
+        <input type="text" placeholder="Video" formControlName="video">
+        <input type="text" placeholder="Text" formControlName="text">
+        <input type="submit" value="Post" class="steam-button" (click)="onPost()">
+    </mat-form-field>
 
-    <div class="story-and-comments" *ngFor="let story of storyList">
+    <div class="story-and-comments" *ngFor="let story of storyList; let i = index">
         <div class="story">
             <div id="content-header">
                 <p class="avatar">Avatar</p>
@@ -13,7 +16,7 @@
             </div>
     
             <div id="content-body">
-                <p class="content">{{story.content.text}}</p>
+                <p class="content">{{story.content?.text}}</p>
                 <img class="content-image" *ngIf="story.content.image != null" src={{story.content.image}}>
             </div>
     
@@ -26,14 +29,14 @@
                     <p class="like-icon">Likes</p>
                     <p class="like-number">{{story.likedIdList.length}}</p>
                 </div>
-                <button class="like-button steam-button" (click)="like()">Like</button>
+                <button class="like-button steam-button" (click)="like(i)">Like</button>
             </div>
         </div>
 
         <div class="story comments" *ngFor="let comment of story.comment">
             <div id="content-header">
                 <p class="avatar">Avatar</p>
-                <p class="username">{{comment.publisher}}</p>
+                <p class="username">{{comment.publisherName}}</p>
                 <p class="time">{{comment.publishedTime}}</p>
             </div>
 

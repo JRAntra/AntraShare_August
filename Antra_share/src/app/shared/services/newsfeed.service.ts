@@ -10,7 +10,9 @@ import { storyInterface } from '../interfaces/storyInterface';
 export class NewsfeedService {
   storyList = ['first', 'second'];
 
-  private _url: string = 'http://localhost:4231/api/news';
+
+  private _url : string = "http://localhost:4231/api/news"
+ 
 
   constructor(private http: HttpClient) {}
 
