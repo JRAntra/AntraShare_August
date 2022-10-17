@@ -4,8 +4,9 @@ export interface UserProfile {
     userEmail: string;
     password: string;
 
-    userRole: "hardCodedUserRole",
+    userRole: string;
     age: number;
     gender: string;
     phone: number;
+    token: string;
   };

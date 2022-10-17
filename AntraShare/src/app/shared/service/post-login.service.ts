@@ -26,6 +26,19 @@ export class PostLoginService {
     return (value)
   }
 
+  setToken(token: string) {
+    localStorage.setItem("TOKEN",JSON.stringify(token))
+  }
+
+  getToken() {
+    let token = localStorage.getItem("TOKEN");
+    if (token === null) {
+      return null;
+    } else {
+      return JSON.parse(token)
+    }
+  }
+
   findEmail(username: string) : Observable<boolean> {
     // const url = ('http://localhost:4231/api/users/getProfile/'+ username)
     const url = ('http://localhost:3000/users/getProfile/'+ username)

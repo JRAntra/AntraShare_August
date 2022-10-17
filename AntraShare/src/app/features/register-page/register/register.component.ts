@@ -137,10 +137,11 @@ export class RegisterComponent implements OnInit {
       userEmail: this.email?.value!,
       password: this.password?.value!,
 
-      userRole: "hardCodedUserRole",
+      userRole: "user",
       age: 123,
       gender: "hardCodedGender",
-      phone: 911
+      phone: 911,
+      token: "hardCodedToken",
     }
     this.validateServiceEmail.registerUser(profile).subscribe(
       //TODO: handle response

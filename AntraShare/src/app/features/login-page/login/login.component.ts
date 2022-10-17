@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
     private postService: PostLoginService,
   ) { }
 
+  
 
 
   form: FormGroup = new FormGroup({
@@ -71,9 +72,13 @@ export class LoginComponent implements OnInit {
   
     }
     var profile : UserProfile
+    var token : string
     this.postService.postLogin(userInfo).subscribe(res => {
       profile = res 
       console.log(profile)
+      this.postService.setToken(res["token"])
+      token = this.postService.getToken()
+      console.log(token)
       this.postService.updateRole(profile.userRole)
     }) 
   }
