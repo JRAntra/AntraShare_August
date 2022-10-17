@@ -1,16 +1,18 @@
 <div id="like-list" ngModel #likelist>
-    <ul class="inner-box">
-        <p *ngIf="likedStories.length === 0">Stories list is empty! {{likedStories.length}}</p>
-        <div>123</div>
-        <div class="liked-story" *ngFor="let story of likedStories">
-            <div class="publish-info">
-                <p>{{story.publisherName}}</p>
-                <p>{{story.publishedTime}}</p>
-            </div>
-            <div class="content">
-                <p>{{story.content.text | limit20}}</p>
-            </div>
-            <button class="remove-button steam-button" >Remove</button>
-        </div>
-    </ul>
+  <ul class="inner-box">
+    <p *ngIf="likedStories.length === 0">
+      Stories list is empty! {{ likedStories.length }}
+    </p>
+    <div>123</div>
+    <div class="liked-story" *ngFor="let story of likedStories">
+      <div class="publish-info">
+        <p>{{ story.publisherName }}</p>
+        <p>{{ story.publishedTime }}</p>
+      </div>
+      <div class="content">
+        <p>{{ story.content.text }}</p>
+      </div>
+      <button class="remove-button steam-button">Remove</button>
+    </div>
+  </ul>
 </div>
