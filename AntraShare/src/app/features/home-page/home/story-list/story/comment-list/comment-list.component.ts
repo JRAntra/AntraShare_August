@@ -4,7 +4,8 @@ import { Comment } from 'src/app/shared/models/newsfeed';
 import { NewsfeedStory } from 'src/app/shared/models/newsfeed';
 import { PostCommentService } from 'src/app/features/home-page/services/comment.service';
 import { FormControl } from '@angular/forms';
-import {PageEvent} from '@angular/material/paginator';
+import { PageEvent } from '@angular/material/paginator';
+import { PostLoginService } from 'src/app/shared/service/post-login.service';
 @Component({
   selector: 'app-comment-list',
   templateUrl: './comment-list.component.html',
@@ -20,7 +21,11 @@ export class CommentListComponent implements OnInit {
 
   contentText: FormControl<string> = new FormControl()
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: NewsfeedStory, private service: PostCommentService) {}
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: NewsfeedStory, 
+    private service: PostCommentService,
+    private postLoginService: PostLoginService,
+    ) {}
   
   ngOnInit(): void {
   }
@@ -34,8 +39,10 @@ export class CommentListComponent implements OnInit {
       index*size + size)
   }
   onPostComment(){
+    const userToken = this.postLoginService.getToken()
+    const userName = userToken?.userName
     const comment : Comment = {
-      publisherName: "90DegreesHardCodeName",
+      publisherName: userName,
       content: {text: this.contentText.value}
     }
     console.log(typeof this.data._id)

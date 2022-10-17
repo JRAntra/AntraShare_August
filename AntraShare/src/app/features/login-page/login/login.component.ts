@@ -6,6 +6,7 @@ import { ValidateLoginService } from 'src/app/shared/service/validate-login.serv
 import { PostLoginService } from 'src/app/shared/service/post-login.service';
 import { Login } from 'src/app/shared/models/login';
 import { UserProfile } from 'src/app/shared/models/userprofile';
+import { userToken } from 'src/app/shared/models/userToken';
 
 
 @Component({
@@ -71,15 +72,14 @@ export class LoginComponent implements OnInit {
       password: this.form.controls['password'].value
   
     }
-    var profile : UserProfile
-    var token : string
+    var profile : UserProfile;
+    var token : userToken | null;
     this.postService.postLogin(userInfo).subscribe(res => {
       profile = res 
       console.log(profile)
       this.postService.setToken(res["token"])
       token = this.postService.getToken()
       console.log(token)
-      this.postService.updateRole(profile.userRole)
     }) 
   }
 

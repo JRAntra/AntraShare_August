@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { NewsfeedStory } from 'src/app/shared/models/newsfeed';
 import { NewsfeedStoryService } from '../../services/newsfeed-story.service';
-import { PostStoryService } from '../../services/post-story.service';
+import jwt_decode from 'jwt-decode'
+import { PostLoginService } from 'src/app/shared/service/post-login.service';
 
 @Component({
   selector: 'app-postform',
@@ -16,14 +17,21 @@ export class PostformComponent implements OnInit {
     //TODO: 1. image and video upload 
     //      2. validate user input
   })
-  constructor(private service: NewsfeedStoryService) {}
+  constructor(
+    private service: NewsfeedStoryService,
+    private postLoginService: PostLoginService,
+    ) {}
 
   ngOnInit(): void {
+
   }
+
+
   onPostButtonClick(){
+    const userToken = this.postLoginService.getToken()
+    const userName = userToken?.userName
     const story : NewsfeedStory = {
-      //TODO: get username from local storage for now
-      publisherName: "90DegreesHardCodeName",
+      publisherName: userName,
       content: {text: this.postForm.controls['text'].value}
     }
     this.service.postStory(story).subscribe(

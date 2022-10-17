@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Login } from '../models/login';
 import { UserProfile } from '../models/userprofile';
+import jwt_decode from 'jwt-decode';
+import { userToken } from '../models/userToken';
 
 @Injectable({
   providedIn: 'root'
@@ -30,14 +32,17 @@ export class PostLoginService {
     localStorage.setItem("TOKEN",JSON.stringify(token))
   }
 
-  getToken() {
+  getToken() : userToken | null {
     let token = localStorage.getItem("TOKEN");
     if (token === null) {
       return null;
     } else {
-      return JSON.parse(token)
+      let raw_data = JSON.parse(token)
+      return jwt_decode(raw_data)
     }
   }
+
+
 
   findEmail(username: string) : Observable<boolean> {
     // const url = ('http://localhost:4231/api/users/getProfile/'+ username)

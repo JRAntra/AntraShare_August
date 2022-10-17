@@ -1,5 +1,5 @@
 export interface NewsfeedStory {
-    publisherName: string;
+    publisherName: string | undefined;
     publishedTime?: string;
     content: Content;
     comment?: Comment[];
@@ -20,7 +20,7 @@ export interface LikedIdList {
 
 export interface Comment {
     content: Content;
-    publisherName: string;
+    publisherName: string | undefined;
     publishedTime?: string;
     _id?: string;
 }

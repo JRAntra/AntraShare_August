@@ -14,7 +14,9 @@ export class AuthorizeAdminGuard implements CanActivate {
   }
 
   private isAuthorized(route: ActivatedRouteSnapshot): boolean {
-    const role = this.postService.getRole()
+    const userToken = this.postService.getToken()
+    const role = userToken?.userRole
+    // const role = this.postService.getRole()
     console.log("the role in guard is: "+ role)
     return (role === 'admin')? true: false
   }
